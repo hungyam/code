@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Hungyam</title>
+    <link>https://hungyam.gitee.io/code/post/</link>
+    <description>Recent content in Posts on Hungyam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://hungyam.gitee.io/code/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Polynomials of one indeterminate</title>
+      <link>https://hungyam.gitee.io/code/p/polynomials-of-one-indeterminate/</link>
+      <pubDate>Tue, 13 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hungyam.gitee.io/code/p/polynomials-of-one-indeterminate/</guid>
+      <description>Requirements: Note: Programming in C, Let n be a positive integer with specified initial value n=30. Use an array of n units to store polynomials of one indeterminate (一元多项式). Design and implement a C program to:
+ Determine the data structure of the array Use a stack S in the array to store unused units. Initially all the units are unused and the 0 to (n-1) indexes spread randomly on the stack Use two lists LP and LQ in the array to store two polynomials P and Q of one indeterminate Show the map of the array Adding P and Q, restore the result as a list LPQ in the array, and release all garbage units to the stack Show the map of the array again  Solution： ​	链表的静态实现法，利用数组模拟动态链表，用栈来标记还未使用的节点。</description>
+    </item>
+    
+  </channel>
+</rss>
