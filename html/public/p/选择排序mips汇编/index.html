@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Mars编程： ​	先输入12个整数保存起来，再分成两组（5个整数和7个整数），然后把它们分别用选择排序方法进行排序，最后再显示这两个组的数据的排序结果。
+​	例如：
+​	输入：20 12 5 6 34 15 4 8 2 6 12 30
+​	显示：5 6 12 20 34 2 4 6 8 12 15 30
+​	要求排序用一个具有两个参数(基地址和排序整数个数)的叶过程实现。
+​	* 选择排序：先利用一个数与其他数比较，找出最大的数，然后在剩余的数中再用同样的方法找最大的，&amp;hellip;
+源代码: .text .globl main main: li $v0, 4 la $a0, msg syscall la $s1, nums move $s0, $zero get: li $v0,5 syscall sll $t0, $s0, 2 add $t1, $s1, $t0 sw $v0, 0($t1) addi $s0, $s0, 1 slti $t2, $s0, 12 bne $t2, $zero, get add $s0, $zero, $zero sort1: add $s2, $zero, $zero #内循环控制变量j  lw $t3, 0($s1) #存最大值  add $s6, $zero, $zero #最大值所在的下标  add $t6, $zero, $zero #临时存数组值 loop1: sll $s3, $s2, 2 add $s4, $s3, $s1 lw $t6, 0($s4) #数组值放进t6  slt $s5, $t3, $t6 beq $s5, $zero ,skip1 #max&amp;lt;t6,赋值  add $t3, $zero ,$t6 #更新最大值  add $s6, $zero ,$s2 #更新最大值所在的index skip1: addi $s2 ,$s2, 1 #j&#43;&#43;  addi $t4 ,$zero, 4 sub $t4 ,$t4 ,$s0 #t4=4-i  addi $a3 ,$t4 ,1 slt $t5 ,$s2 ,$a3 bne $t5 ,$zero, loop1 #j&amp;lt;t4  sll $t7, $t4 ,2 add $t8, $s1 ,$t7 lw $a1, 0($t8) sll $t7, $s6 ,2 add $t9, $s1 ,$t7 lw $a2, 0($t9) sw $a1, 0($t9) sw $a2, 0($t8) addi $s0, $s0, 1 slti $t2, $s0, 4 bne $t2, $zero, sort1 add $s0, $zero, $zero add $s1, $s1, 20 sort2: add $s2, $zero, $zero #内循环控制变量j  lw $t3, 0($s1) #存最大值  add $s6, $zero, $zero #最大值所在的下标  add $t6, $zero, $zero #临时存数组值 loop2: sll $s3, $s2, 2 add $s4, $s3, $s1 lw $t6, 0($s4) #数组值放进t6  slt $s5, $t3, $t6 beq $s5, $zero ,skip2 #max&amp;lt;t6,赋值  add $t3, $zero ,$t6 #更新最大值  add $s6, $zero ,$s2 #更新最大值所在的index skip2: addi $s2 ,$s2, 1 #j&#43;&#43;  addi $t4 ,$zero, 6 sub $t4 ,$t4 ,$s0 #t4=6-i  addi $a3 ,$t4 ,1 slt $t5 ,$s2 ,$a3 bne $t5 ,$zero, loop2 #j&amp;lt;t4  sll $t7, $t4 ,2 add $t8, $s1 ,$t7 lw $a1, 0($t8) sll $t7, $s6 ,2 add $t9, $s1 ,$t7 lw $a2, 0($t9) sw $a1, 0($t9) sw $a2, 0($t8) addi $s0, $s0, 1 slti $t2, $s0, 6 bne $t2, $zero, sort2 move $s0, $zero la $s1, nums out: sll $t0, $s0, 2 add $t1, $s1, $t0 lw $a0, 0($t1) li $v0, 1 syscall la $a0, seperate li $v0, 4 syscall addi $s0, $s0, 1 slti $t2, $s0, 12 bne $t2, $zero, out li $v0, 10 syscall .'><title>选择排序(mips汇编)</title>
+    
+    <link rel='canonical' href='https://hungyam.gitee.io/code/p/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8Fmips%E6%B1%87%E7%BC%96/'>
+
+<link rel="stylesheet" href="/code/scss/style.min.css"><meta property='og:title' content='选择排序(mips汇编)'>
+<meta property='og:description' content='Mars编程： ​	先输入12个整数保存起来，再分成两组（5个整数和7个整数），然后把它们分别用选择排序方法进行排序，最后再显示这两个组的数据的排序结果。
+​	例如：
+​	输入：20 12 5 6 34 15 4 8 2 6 12 30
+​	显示：5 6 12 20 34 2 4 6 8 12 15 30
+​	要求排序用一个具有两个参数(基地址和排序整数个数)的叶过程实现。
+​	* 选择排序：先利用一个数与其他数比较，找出最大的数，然后在剩余的数中再用同样的方法找最大的，&amp;hellip;
+源代码: .text .globl main main: li $v0, 4 la $a0, msg syscall la $s1, nums move $s0, $zero get: li $v0,5 syscall sll $t0, $s0, 2 add $t1, $s1, $t0 sw $v0, 0($t1) addi $s0, $s0, 1 slti $t2, $s0, 12 bne $t2, $zero, get add $s0, $zero, $zero sort1: add $s2, $zero, $zero #内循环控制变量j  lw $t3, 0($s1) #存最大值  add $s6, $zero, $zero #最大值所在的下标  add $t6, $zero, $zero #临时存数组值 loop1: sll $s3, $s2, 2 add $s4, $s3, $s1 lw $t6, 0($s4) #数组值放进t6  slt $s5, $t3, $t6 beq $s5, $zero ,skip1 #max&amp;lt;t6,赋值  add $t3, $zero ,$t6 #更新最大值  add $s6, $zero ,$s2 #更新最大值所在的index skip1: addi $s2 ,$s2, 1 #j&#43;&#43;  addi $t4 ,$zero, 4 sub $t4 ,$t4 ,$s0 #t4=4-i  addi $a3 ,$t4 ,1 slt $t5 ,$s2 ,$a3 bne $t5 ,$zero, loop1 #j&amp;lt;t4  sll $t7, $t4 ,2 add $t8, $s1 ,$t7 lw $a1, 0($t8) sll $t7, $s6 ,2 add $t9, $s1 ,$t7 lw $a2, 0($t9) sw $a1, 0($t9) sw $a2, 0($t8) addi $s0, $s0, 1 slti $t2, $s0, 4 bne $t2, $zero, sort1 add $s0, $zero, $zero add $s1, $s1, 20 sort2: add $s2, $zero, $zero #内循环控制变量j  lw $t3, 0($s1) #存最大值  add $s6, $zero, $zero #最大值所在的下标  add $t6, $zero, $zero #临时存数组值 loop2: sll $s3, $s2, 2 add $s4, $s3, $s1 lw $t6, 0($s4) #数组值放进t6  slt $s5, $t3, $t6 beq $s5, $zero ,skip2 #max&amp;lt;t6,赋值  add $t3, $zero ,$t6 #更新最大值  add $s6, $zero ,$s2 #更新最大值所在的index skip2: addi $s2 ,$s2, 1 #j&#43;&#43;  addi $t4 ,$zero, 6 sub $t4 ,$t4 ,$s0 #t4=6-i  addi $a3 ,$t4 ,1 slt $t5 ,$s2 ,$a3 bne $t5 ,$zero, loop2 #j&amp;lt;t4  sll $t7, $t4 ,2 add $t8, $s1 ,$t7 lw $a1, 0($t8) sll $t7, $s6 ,2 add $t9, $s1 ,$t7 lw $a2, 0($t9) sw $a1, 0($t9) sw $a2, 0($t8) addi $s0, $s0, 1 slti $t2, $s0, 6 bne $t2, $zero, sort2 move $s0, $zero la $s1, nums out: sll $t0, $s0, 2 add $t1, $s1, $t0 lw $a0, 0($t1) li $v0, 1 syscall la $a0, seperate li $v0, 4 syscall addi $s0, $s0, 1 slti $t2, $s0, 12 bne $t2, $zero, out li $v0, 10 syscall .'>
+<meta property='og:url' content='https://hungyam.gitee.io/code/p/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8Fmips%E6%B1%87%E7%BC%96/'>
+<meta property='og:site_name' content='Hungyam'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2020-10-27T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-10-27T00:00:00&#43;00:00'/><meta property='og:image' content='https://hungyam.gitee.io/code/p/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8Fmips%E6%B1%87%E7%BC%96/3.jpg' />
+<meta name="twitter:title" content="选择排序(mips汇编)">
+<meta name="twitter:description" content="Mars编程： ​	先输入12个整数保存起来，再分成两组（5个整数和7个整数），然后把它们分别用选择排序方法进行排序，最后再显示这两个组的数据的排序结果。
+​	例如：
+​	输入：20 12 5 6 34 15 4 8 2 6 12 30
+​	显示：5 6 12 20 34 2 4 6 8 12 15 30
+​	要求排序用一个具有两个参数(基地址和排序整数个数)的叶过程实现。
+​	* 选择排序：先利用一个数与其他数比较，找出最大的数，然后在剩余的数中再用同样的方法找最大的，&amp;hellip;
+源代码: .text .globl main main: li $v0, 4 la $a0, msg syscall la $s1, nums move $s0, $zero get: li $v0,5 syscall sll $t0, $s0, 2 add $t1, $s1, $t0 sw $v0, 0($t1) addi $s0, $s0, 1 slti $t2, $s0, 12 bne $t2, $zero, get add $s0, $zero, $zero sort1: add $s2, $zero, $zero #内循环控制变量j  lw $t3, 0($s1) #存最大值  add $s6, $zero, $zero #最大值所在的下标  add $t6, $zero, $zero #临时存数组值 loop1: sll $s3, $s2, 2 add $s4, $s3, $s1 lw $t6, 0($s4) #数组值放进t6  slt $s5, $t3, $t6 beq $s5, $zero ,skip1 #max&amp;lt;t6,赋值  add $t3, $zero ,$t6 #更新最大值  add $s6, $zero ,$s2 #更新最大值所在的index skip1: addi $s2 ,$s2, 1 #j&#43;&#43;  addi $t4 ,$zero, 4 sub $t4 ,$t4 ,$s0 #t4=4-i  addi $a3 ,$t4 ,1 slt $t5 ,$s2 ,$a3 bne $t5 ,$zero, loop1 #j&amp;lt;t4  sll $t7, $t4 ,2 add $t8, $s1 ,$t7 lw $a1, 0($t8) sll $t7, $s6 ,2 add $t9, $s1 ,$t7 lw $a2, 0($t9) sw $a1, 0($t9) sw $a2, 0($t8) addi $s0, $s0, 1 slti $t2, $s0, 4 bne $t2, $zero, sort1 add $s0, $zero, $zero add $s1, $s1, 20 sort2: add $s2, $zero, $zero #内循环控制变量j  lw $t3, 0($s1) #存最大值  add $s6, $zero, $zero #最大值所在的下标  add $t6, $zero, $zero #临时存数组值 loop2: sll $s3, $s2, 2 add $s4, $s3, $s1 lw $t6, 0($s4) #数组值放进t6  slt $s5, $t3, $t6 beq $s5, $zero ,skip2 #max&amp;lt;t6,赋值  add $t3, $zero ,$t6 #更新最大值  add $s6, $zero ,$s2 #更新最大值所在的index skip2: addi $s2 ,$s2, 1 #j&#43;&#43;  addi $t4 ,$zero, 6 sub $t4 ,$t4 ,$s0 #t4=6-i  addi $a3 ,$t4 ,1 slt $t5 ,$s2 ,$a3 bne $t5 ,$zero, loop2 #j&amp;lt;t4  sll $t7, $t4 ,2 add $t8, $s1 ,$t7 lw $a1, 0($t8) sll $t7, $s6 ,2 add $t9, $s1 ,$t7 lw $a2, 0($t9) sw $a1, 0($t9) sw $a2, 0($t8) addi $s0, $s0, 1 slti $t2, $s0, 6 bne $t2, $zero, sort2 move $s0, $zero la $s1, nums out: sll $t0, $s0, 2 add $t1, $s1, $t0 lw $a0, 0($t1) li $v0, 1 syscall la $a0, seperate li $v0, 4 syscall addi $s0, $s0, 1 slti $t2, $s0, 12 bne $t2, $zero, out li $v0, 10 syscall ."><meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content='https://hungyam.gitee.io/code/p/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8Fmips%E6%B1%87%E7%BC%96/3.jpg' /></head><body class="">
+        <div class="container flex on-phone--column align-items--flex-start extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+
+                
+                    
+                    <img src="/code/img/avatar_hu271a79c54c9badde22d864b5ad68a303_161614_300x300_resize_q75_box.jpg" width="300"
+                        height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+
+                <span class="emoji">🐤</span>
+            </figure>
+        
+        <h1 class="site-name"><a href="https://hungyam.gitee.io/code">Hungyam</a></h1>
+        <h2 class="site-description">Programming enthusiast</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='https://hungyam.gitee.io/code/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='https://hungyam.gitee.io/code/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About me</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='https://hungyam.gitee.io/code/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+    </ol>
+</aside>
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://hungyam.gitee.io/code" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <img srcset="/code/p/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8Fmips%E6%B1%87%E7%BC%96/3_huf941de4769045cdfa8c9ee7036519a2a_35369_1024x0_resize_q75_box.jpg 1024w, /code/p/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8Fmips%E6%B1%87%E7%BC%96/3_huf941de4769045cdfa8c9ee7036519a2a_35369_2000x0_resize_q75_box.jpg 2000w"
+                    src="/code/p/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8Fmips%E6%B1%87%E7%BC%96/3_huf941de4769045cdfa8c9ee7036519a2a_35369_2000x0_resize_q75_box.jpg" width="1000" height="708" loading="lazy"
+                    alt="Featured image of post 选择排序(mips汇编)" />
+            
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="https://hungyam.gitee.io/code/categories/mips/" 
+                    class="color-tag"
+                    data-image="/code/p/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8Fmips%E6%B1%87%E7%BC%96/3_huf941de4769045cdfa8c9ee7036519a2a_35369_20x20_fill_q75_box_smart1.jpg" 
+                    data-key="" 
+                    data-hash="md5-YBFrHM/IYy6aZffVHfPvwg==">
+                    Mips
+                </a>
+            
+        
+            <a href="https://hungyam.gitee.io/code/categories/sort/" 
+                    class="color-tag"
+                    data-image="/code/p/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8Fmips%E6%B1%87%E7%BC%96/3_huf941de4769045cdfa8c9ee7036519a2a_35369_20x20_fill_q75_box_smart1.jpg" 
+                    data-key="" 
+                    data-hash="md5-YBFrHM/IYy6aZffVHfPvwg==">
+                    Sort
+                </a>
+            
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="https://hungyam.gitee.io/code/p/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8Fmips%E6%B1%87%E7%BC%96/">选择排序(mips汇编)</a>
+    </h2>
+
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">2020 Oct 27</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h3 id="mars编程">Mars编程：</h3>
+<p>​		先输入12个整数保存起来，再分成两组（5个整数和7个整数），然后把它们分别用选择排序方法进行排序，最后再显示这两个组的数据的排序结果。</p>
+<p>​		例如：</p>
+<p>​				输入：20 12 5 6 34 15 4 8 2 6 12 30</p>
+<p>​				显示：5 6 12 20 34  2 4 6 8 12 15 30</p>
+<p>​	    要求排序用一个具有两个参数(基地址和排序整数个数)的叶过程实现。</p>
+<p>​	 * 选择排序：先利用一个数与其他数比较，找出最大的数，然后在剩余的数中再用同样的方法找最大的，&hellip;</p>
+<h3 id="源代码">源代码:</h3>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="o">.</span><span class="nx">text</span>
+<span class="o">.</span><span class="nx">globl</span> <span class="nx">main</span>
+<span class="nx">main</span><span class="o">:</span>
+    <span class="nx">li</span>      <span class="nv">$v0</span><span class="p">,</span> <span class="mi">4</span>
+    <span class="nx">la</span>      <span class="nv">$a0</span><span class="p">,</span> <span class="nx">msg</span>
+    <span class="nx">syscall</span>
+
+    <span class="nx">la</span>      <span class="nv">$s1</span><span class="p">,</span> <span class="nx">nums</span>
+    <span class="nx">move</span>    <span class="nv">$s0</span><span class="p">,</span> <span class="nv">$zero</span>
+<span class="nx">get</span><span class="o">:</span>
+    <span class="nx">li</span>      <span class="nv">$v0</span><span class="p">,</span><span class="mi">5</span>
+    <span class="nx">syscall</span>
+    <span class="nx">sll</span>     <span class="nv">$t0</span><span class="p">,</span> <span class="nv">$s0</span><span class="p">,</span> <span class="mi">2</span>
+    <span class="nx">add</span>     <span class="nv">$t1</span><span class="p">,</span> <span class="nv">$s1</span><span class="p">,</span> <span class="nv">$t0</span>
+    <span class="nx">sw</span>      <span class="nv">$v0</span><span class="p">,</span> <span class="mi">0</span><span class="p">(</span><span class="nv">$t1</span><span class="p">)</span>
+    <span class="nx">addi</span>    <span class="nv">$s0</span><span class="p">,</span> <span class="nv">$s0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="nx">slti</span>    <span class="nv">$t2</span><span class="p">,</span> <span class="nv">$s0</span><span class="p">,</span> <span class="mi">12</span>
+    <span class="nx">bne</span>     <span class="nv">$t2</span><span class="p">,</span> <span class="nv">$zero</span><span class="p">,</span> <span class="nx">get</span>
+
+    <span class="nx">add</span>     <span class="nv">$s0</span><span class="p">,</span> <span class="nv">$zero</span><span class="p">,</span> <span class="nv">$zero</span>
+<span class="nx">sort1</span><span class="o">:</span>
+    <span class="nx">add</span>     <span class="nv">$s2</span><span class="p">,</span> <span class="nv">$zero</span><span class="p">,</span> <span class="nv">$zero</span> <span class="c1">#内循环控制变量j
+</span><span class="c1"></span>    <span class="nx">lw</span>      <span class="nv">$t3</span><span class="p">,</span> <span class="mi">0</span><span class="p">(</span><span class="nv">$s1</span><span class="p">)</span>       <span class="c1">#存最大值
+</span><span class="c1"></span>    <span class="nx">add</span>     <span class="nv">$s6</span><span class="p">,</span> <span class="nv">$zero</span><span class="p">,</span> <span class="nv">$zero</span> <span class="c1">#最大值所在的下标  
+</span><span class="c1"></span>    <span class="nx">add</span>     <span class="nv">$t6</span><span class="p">,</span> <span class="nv">$zero</span><span class="p">,</span> <span class="nv">$zero</span> <span class="c1">#临时存数组值
+</span><span class="c1"></span><span class="nx">loop1</span><span class="o">:</span>
+    <span class="nx">sll</span>     <span class="nv">$s3</span><span class="p">,</span> <span class="nv">$s2</span><span class="p">,</span> <span class="mi">2</span>
+    <span class="nx">add</span>     <span class="nv">$s4</span><span class="p">,</span> <span class="nv">$s3</span><span class="p">,</span> <span class="nv">$s1</span>     
+    <span class="nx">lw</span>      <span class="nv">$t6</span><span class="p">,</span> <span class="mi">0</span><span class="p">(</span><span class="nv">$s4</span><span class="p">)</span>       <span class="c1">#数组值放进t6
+</span><span class="c1"></span>    <span class="nx">slt</span>     <span class="nv">$s5</span><span class="p">,</span> <span class="nv">$t3</span><span class="p">,</span> <span class="nv">$t6</span>     
+    <span class="nx">beq</span>     <span class="nv">$s5</span><span class="p">,</span> <span class="nv">$zero</span> <span class="p">,</span><span class="nx">skip1</span>  <span class="c1">#max&lt;t6,赋值
+</span><span class="c1"></span>    <span class="nx">add</span>     <span class="nv">$t3</span><span class="p">,</span> <span class="nv">$zero</span> <span class="p">,</span><span class="nv">$t6</span>   <span class="c1">#更新最大值
+</span><span class="c1"></span>    <span class="nx">add</span>     <span class="nv">$s6</span><span class="p">,</span> <span class="nv">$zero</span> <span class="p">,</span><span class="nv">$s2</span>   <span class="c1">#更新最大值所在的index
+</span><span class="c1"></span><span class="nx">skip1</span><span class="o">:</span>
+    <span class="nx">addi</span>    <span class="nv">$s2</span> <span class="p">,</span><span class="nv">$s2</span><span class="p">,</span> <span class="mi">1</span>       <span class="c1">#j++
+</span><span class="c1"></span>    <span class="nx">addi</span>    <span class="nv">$t4</span> <span class="p">,</span><span class="nv">$zero</span><span class="p">,</span> <span class="mi">4</span>     
+    <span class="nx">sub</span>     <span class="nv">$t4</span> <span class="p">,</span><span class="nv">$t4</span> <span class="p">,</span><span class="nv">$s0</span>     <span class="c1">#t4=4-i
+</span><span class="c1"></span>    <span class="nx">addi</span>    <span class="nv">$a3</span> <span class="p">,</span><span class="nv">$t4</span> <span class="p">,</span><span class="mi">1</span>
+    <span class="nx">slt</span>     <span class="nv">$t5</span> <span class="p">,</span><span class="nv">$s2</span> <span class="p">,</span><span class="nv">$a3</span>
+    <span class="nx">bne</span>     <span class="nv">$t5</span> <span class="p">,</span><span class="nv">$zero</span><span class="p">,</span> <span class="nx">loop1</span>  <span class="c1">#j&lt;t4
+</span><span class="c1"></span>
+    <span class="nx">sll</span>     <span class="nv">$t7</span><span class="p">,</span> <span class="nv">$t4</span> <span class="p">,</span><span class="mi">2</span>
+    <span class="nx">add</span>     <span class="nv">$t8</span><span class="p">,</span> <span class="nv">$s1</span> <span class="p">,</span><span class="nv">$t7</span>
+    <span class="nx">lw</span>      <span class="nv">$a1</span><span class="p">,</span> <span class="mi">0</span><span class="p">(</span><span class="nv">$t8</span><span class="p">)</span>      
+    <span class="nx">sll</span>     <span class="nv">$t7</span><span class="p">,</span> <span class="nv">$s6</span> <span class="p">,</span><span class="mi">2</span>
+    <span class="nx">add</span>     <span class="nv">$t9</span><span class="p">,</span> <span class="nv">$s1</span> <span class="p">,</span><span class="nv">$t7</span>
+    <span class="nx">lw</span>      <span class="nv">$a2</span><span class="p">,</span> <span class="mi">0</span><span class="p">(</span><span class="nv">$t9</span><span class="p">)</span>
+    <span class="nx">sw</span>      <span class="nv">$a1</span><span class="p">,</span> <span class="mi">0</span><span class="p">(</span><span class="nv">$t9</span><span class="p">)</span>
+    <span class="nx">sw</span>      <span class="nv">$a2</span><span class="p">,</span> <span class="mi">0</span><span class="p">(</span><span class="nv">$t8</span><span class="p">)</span>
+
+    <span class="nx">addi</span>    <span class="nv">$s0</span><span class="p">,</span> <span class="nv">$s0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="nx">slti</span>    <span class="nv">$t2</span><span class="p">,</span> <span class="nv">$s0</span><span class="p">,</span> <span class="mi">4</span>
+    <span class="nx">bne</span>     <span class="nv">$t2</span><span class="p">,</span> <span class="nv">$zero</span><span class="p">,</span> <span class="nx">sort1</span>
+
+
+    <span class="nx">add</span>     <span class="nv">$s0</span><span class="p">,</span> <span class="nv">$zero</span><span class="p">,</span> <span class="nv">$zero</span>
+    <span class="nx">add</span>     <span class="nv">$s1</span><span class="p">,</span> <span class="nv">$s1</span><span class="p">,</span> <span class="mi">20</span>
+<span class="nx">sort2</span><span class="o">:</span>
+    <span class="nx">add</span>     <span class="nv">$s2</span><span class="p">,</span> <span class="nv">$zero</span><span class="p">,</span> <span class="nv">$zero</span> <span class="c1">#内循环控制变量j
+</span><span class="c1"></span>    <span class="nx">lw</span>      <span class="nv">$t3</span><span class="p">,</span> <span class="mi">0</span><span class="p">(</span><span class="nv">$s1</span><span class="p">)</span>       <span class="c1">#存最大值
+</span><span class="c1"></span>    <span class="nx">add</span>     <span class="nv">$s6</span><span class="p">,</span> <span class="nv">$zero</span><span class="p">,</span> <span class="nv">$zero</span> <span class="c1">#最大值所在的下标  
+</span><span class="c1"></span>    <span class="nx">add</span>     <span class="nv">$t6</span><span class="p">,</span> <span class="nv">$zero</span><span class="p">,</span> <span class="nv">$zero</span> <span class="c1">#临时存数组值
+</span><span class="c1"></span><span class="nx">loop2</span><span class="o">:</span>
+    <span class="nx">sll</span>     <span class="nv">$s3</span><span class="p">,</span> <span class="nv">$s2</span><span class="p">,</span> <span class="mi">2</span>
+    <span class="nx">add</span>     <span class="nv">$s4</span><span class="p">,</span> <span class="nv">$s3</span><span class="p">,</span> <span class="nv">$s1</span>     
+    <span class="nx">lw</span>      <span class="nv">$t6</span><span class="p">,</span> <span class="mi">0</span><span class="p">(</span><span class="nv">$s4</span><span class="p">)</span>       <span class="c1">#数组值放进t6
+</span><span class="c1"></span>    <span class="nx">slt</span>     <span class="nv">$s5</span><span class="p">,</span> <span class="nv">$t3</span><span class="p">,</span> <span class="nv">$t6</span>     
+    <span class="nx">beq</span>     <span class="nv">$s5</span><span class="p">,</span> <span class="nv">$zero</span> <span class="p">,</span><span class="nx">skip2</span>  <span class="c1">#max&lt;t6,赋值
+</span><span class="c1"></span>    <span class="nx">add</span>     <span class="nv">$t3</span><span class="p">,</span> <span class="nv">$zero</span> <span class="p">,</span><span class="nv">$t6</span>   <span class="c1">#更新最大值
+</span><span class="c1"></span>    <span class="nx">add</span>     <span class="nv">$s6</span><span class="p">,</span> <span class="nv">$zero</span> <span class="p">,</span><span class="nv">$s2</span>   <span class="c1">#更新最大值所在的index
+</span><span class="c1"></span><span class="nx">skip2</span><span class="o">:</span>
+    <span class="nx">addi</span>    <span class="nv">$s2</span> <span class="p">,</span><span class="nv">$s2</span><span class="p">,</span> <span class="mi">1</span>       <span class="c1">#j++
+</span><span class="c1"></span>    <span class="nx">addi</span>    <span class="nv">$t4</span> <span class="p">,</span><span class="nv">$zero</span><span class="p">,</span> <span class="mi">6</span>     
+    <span class="nx">sub</span>     <span class="nv">$t4</span> <span class="p">,</span><span class="nv">$t4</span> <span class="p">,</span><span class="nv">$s0</span>     <span class="c1">#t4=6-i
+</span><span class="c1"></span>    <span class="nx">addi</span>    <span class="nv">$a3</span> <span class="p">,</span><span class="nv">$t4</span> <span class="p">,</span><span class="mi">1</span>
+    <span class="nx">slt</span>     <span class="nv">$t5</span> <span class="p">,</span><span class="nv">$s2</span> <span class="p">,</span><span class="nv">$a3</span>
+    <span class="nx">bne</span>     <span class="nv">$t5</span> <span class="p">,</span><span class="nv">$zero</span><span class="p">,</span> <span class="nx">loop2</span>  <span class="c1">#j&lt;t4
+</span><span class="c1"></span>
+    <span class="nx">sll</span>     <span class="nv">$t7</span><span class="p">,</span> <span class="nv">$t4</span> <span class="p">,</span><span class="mi">2</span>
+    <span class="nx">add</span>     <span class="nv">$t8</span><span class="p">,</span> <span class="nv">$s1</span> <span class="p">,</span><span class="nv">$t7</span>
+    <span class="nx">lw</span>      <span class="nv">$a1</span><span class="p">,</span> <span class="mi">0</span><span class="p">(</span><span class="nv">$t8</span><span class="p">)</span>      
+    <span class="nx">sll</span>     <span class="nv">$t7</span><span class="p">,</span> <span class="nv">$s6</span> <span class="p">,</span><span class="mi">2</span>
+    <span class="nx">add</span>     <span class="nv">$t9</span><span class="p">,</span> <span class="nv">$s1</span> <span class="p">,</span><span class="nv">$t7</span>
+    <span class="nx">lw</span>      <span class="nv">$a2</span><span class="p">,</span> <span class="mi">0</span><span class="p">(</span><span class="nv">$t9</span><span class="p">)</span>
+    <span class="nx">sw</span>      <span class="nv">$a1</span><span class="p">,</span> <span class="mi">0</span><span class="p">(</span><span class="nv">$t9</span><span class="p">)</span>
+    <span class="nx">sw</span>      <span class="nv">$a2</span><span class="p">,</span> <span class="mi">0</span><span class="p">(</span><span class="nv">$t8</span><span class="p">)</span>
+
+    <span class="nx">addi</span>    <span class="nv">$s0</span><span class="p">,</span> <span class="nv">$s0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="nx">slti</span>    <span class="nv">$t2</span><span class="p">,</span> <span class="nv">$s0</span><span class="p">,</span> <span class="mi">6</span>
+    <span class="nx">bne</span>     <span class="nv">$t2</span><span class="p">,</span> <span class="nv">$zero</span><span class="p">,</span> <span class="nx">sort2</span>
+
+
+    <span class="nx">move</span>    <span class="nv">$s0</span><span class="p">,</span> <span class="nv">$zero</span>
+    <span class="nx">la</span>      <span class="nv">$s1</span><span class="p">,</span> <span class="nx">nums</span>
+<span class="nx">out</span><span class="o">:</span>
+    <span class="nx">sll</span>     <span class="nv">$t0</span><span class="p">,</span> <span class="nv">$s0</span><span class="p">,</span> <span class="mi">2</span>
+    <span class="nx">add</span>     <span class="nv">$t1</span><span class="p">,</span> <span class="nv">$s1</span><span class="p">,</span> <span class="nv">$t0</span>
+    <span class="nx">lw</span>      <span class="nv">$a0</span><span class="p">,</span> <span class="mi">0</span><span class="p">(</span><span class="nv">$t1</span><span class="p">)</span>
+    <span class="nx">li</span>      <span class="nv">$v0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="nx">syscall</span>
+    <span class="nx">la</span>      <span class="nv">$a0</span><span class="p">,</span> <span class="nx">seperate</span>
+    <span class="nx">li</span>      <span class="nv">$v0</span><span class="p">,</span> <span class="mi">4</span>
+    <span class="nx">syscall</span>
+    <span class="nx">addi</span>    <span class="nv">$s0</span><span class="p">,</span> <span class="nv">$s0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="nx">slti</span>    <span class="nv">$t2</span><span class="p">,</span> <span class="nv">$s0</span><span class="p">,</span> <span class="mi">12</span>
+    <span class="nx">bne</span>     <span class="nv">$t2</span><span class="p">,</span> <span class="nv">$zero</span><span class="p">,</span> <span class="nx">out</span>
+
+    <span class="nx">li</span> <span class="nv">$v0</span><span class="p">,</span> <span class="mi">10</span>
+    <span class="nx">syscall</span>
+<span class="o">.</span><span class="nx">data</span>
+ <span class="nx">msg</span><span class="o">:</span>
+    <span class="o">.</span><span class="nx">asciiz</span> <span class="s2">&#34;input 12 integers:</span><span class="se">\n</span><span class="s2">&#34;</span> 
+    <span class="o">.</span><span class="nx">align</span> <span class="mi">2</span>
+ <span class="nx">nums</span><span class="o">:</span>
+    <span class="o">.</span><span class="nx">word</span> 
+    <span class="o">.</span><span class="nx">space</span> <span class="mi">48</span>
+<span class="nx">seperate</span><span class="o">:</span>
+    <span class="o">.</span><span class="nx">asciiz</span> <span class="s2">&#34; &#34;</span>
+</code></pre></div>
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="renderMathInElement(document.querySelector(`.article-content`));"></script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+</aside>
+
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">&copy; 2020 Hungyam</section>
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="1.0.5">Stack</a></b> designed by
+        <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true" style="display:none">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/code/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<link rel="stylesheet" href="/code/css/highlight/light.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="/code/css/highlight/dark.min.css" media="(prefers-color-scheme: dark)">
+
+    </body>
+</html>

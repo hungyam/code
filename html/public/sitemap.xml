@@ -3,27 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://hungyam.gitee.io/code/categories/</loc>
+    <lastmod>2020-10-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hungyam.gitee.io/code/</loc>
+    <lastmod>2020-10-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hungyam.gitee.io/code/categories/javascript/</loc>
+    <lastmod>2020-10-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hungyam.gitee.io/code/categories/mips/</loc>
+    <lastmod>2020-10-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hungyam.gitee.io/code/post/</loc>
+    <lastmod>2020-10-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hungyam.gitee.io/code/categories/sort/</loc>
+    <lastmod>2020-10-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hungyam.gitee.io/code/p/two-game-by-javascript/</loc>
+    <lastmod>2020-10-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hungyam.gitee.io/code/p/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8Fmips%E6%B1%87%E7%BC%96/</loc>
+    <lastmod>2020-10-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://hungyam.gitee.io/code/categories/c/</loc>
     <lastmod>2020-10-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://hungyam.gitee.io/code/categories/</loc>
-    <lastmod>2020-10-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hungyam.gitee.io/code/</loc>
-    <lastmod>2020-10-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://hungyam.gitee.io/code/p/polynomials-of-one-indeterminate/</loc>
-    <lastmod>2020-10-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hungyam.gitee.io/code/post/</loc>
     <lastmod>2020-10-13T00:00:00+00:00</lastmod>
   </url>
   

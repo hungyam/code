@@ -6,7 +6,205 @@
         <description>Recent content on Hungyam</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 13 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://hungyam.gitee.io/code/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 27 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://hungyam.gitee.io/code/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Two Game by JavaScript</title>
+        <link>https://hungyam.gitee.io/code/p/two-game-by-javascript/</link>
+        <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://hungyam.gitee.io/code/p/two-game-by-javascript/</guid>
+        <description>&lt;img src="https://hungyam.gitee.io/code/p/two-game-by-javascript/2.jpg" alt="Featured image of post Two Game by JavaScript" /&gt;&lt;h2 id=&#34;题目一迷宫&#34;&gt;题目一：迷宫&lt;/h2&gt;
+&lt;p&gt;制作网页实现下图中的迷宫：&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/two-game-by-javascript/maze.png&#34; data-size=&#34;934x632&#34;&gt;
+			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/two-game-by-javascript/maze_hue30b6a56cbd40597c15ae4a26ff8e27d_52495_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/two-game-by-javascript/maze_hue30b6a56cbd40597c15ae4a26ff8e27d_52495_1024x0_resize_box_2.png 1024w&#34;
+				src=&#34;https://hungyam.gitee.io/code/code/p/two-game-by-javascript/maze.png&#34; width=&#34;934&#34; height=&#34;632&#34; loading=&#34;lazy&#34;
+				alt=&#34;img&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;img&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;需求规格&#34;&gt;需求规格&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;UI：UI与上图完全一致；或者，自由发挥，设计出更加漂亮、合理的UI。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;正常赢：移动鼠标，从S开始，到E结束，中间不碰墙，赢得游戏，显示“You Win”&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;碰墙输：从S开始后，到E结束之前，碰墙，墙变红，输，显示“You Lose”&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;重置结果：离开迷宫，墙恢复正常；从S开始时，隐藏结果显示&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;发现作弊：如果用户未经过S，就指到E，又或者指向S之后，从迷宫外绕路指向E，显示&amp;quot;Don&amp;rsquo;t cheat, you should start form the &amp;lsquo;S&amp;rsquo; and move to the &amp;lsquo;E&amp;rsquo; inside the maze!&amp;quot;&lt;/p&gt;
+&lt;h2 id=&#34;迷宫实现网页index1html&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;index1.html&#34; &gt;迷宫实现网页&lt;/a&gt;&lt;/h2&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;题目二打地鼠&#34;&gt;题目二：打地鼠&lt;/h2&gt;
+&lt;p&gt;制作网页实现下图中的简版的打地鼠：&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/two-game-by-javascript/mole.png&#34; data-size=&#34;776x494&#34;&gt;
+			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/two-game-by-javascript/mole_hu8537993c17ed334a65fa25316e9eeea9_55488_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/two-game-by-javascript/mole_hu8537993c17ed334a65fa25316e9eeea9_55488_1024x0_resize_box_2.png 1024w&#34;
+				src=&#34;https://hungyam.gitee.io/code/code/p/two-game-by-javascript/mole.png&#34; width=&#34;776&#34; height=&#34;494&#34; loading=&#34;lazy&#34;
+				alt=&#34;img&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;img&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;需求规格-1&#34;&gt;需求规格&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;UI：UI与上图完全一致；或者，自由发挥，设计出更加漂亮、合理的UI。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;打地鼠：能够随机出现地鼠，鼠标能够击中（点击正确，地鼠消失，出现新地鼠；点击错误，地鼠不消失）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;正确计分：正确计算分数并显示，包括正确结束游戏&lt;/p&gt;
+&lt;h2 id=&#34;打地鼠实现网页indexhtml&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;index.html&#34; &gt;打地鼠实现网页&lt;/a&gt;&lt;/h2&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
+        <title>选择排序(mips汇编)</title>
+        <link>https://hungyam.gitee.io/code/p/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8Fmips%E6%B1%87%E7%BC%96/</link>
+        <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://hungyam.gitee.io/code/p/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8Fmips%E6%B1%87%E7%BC%96/</guid>
+        <description>&lt;img src="https://hungyam.gitee.io/code/p/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8Fmips%E6%B1%87%E7%BC%96/3.jpg" alt="Featured image of post 选择排序(mips汇编)" /&gt;&lt;h3 id=&#34;mars编程&#34;&gt;Mars编程：&lt;/h3&gt;
+&lt;p&gt;​		先输入12个整数保存起来，再分成两组（5个整数和7个整数），然后把它们分别用选择排序方法进行排序，最后再显示这两个组的数据的排序结果。&lt;/p&gt;
+&lt;p&gt;​		例如：&lt;/p&gt;
+&lt;p&gt;​				输入：20 12 5 6 34 15 4 8 2 6 12 30&lt;/p&gt;
+&lt;p&gt;​				显示：5 6 12 20 34  2 4 6 8 12 15 30&lt;/p&gt;
+&lt;p&gt;​	    要求排序用一个具有两个参数(基地址和排序整数个数)的叶过程实现。&lt;/p&gt;
+&lt;p&gt;​	 * 选择排序：先利用一个数与其他数比较，找出最大的数，然后在剩余的数中再用同样的方法找最大的，&amp;hellip;&lt;/p&gt;
+&lt;h3 id=&#34;源代码&#34;&gt;源代码:&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;text&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;globl&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;li&lt;/span&gt;      &lt;span class=&#34;nv&#34;&gt;$v0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;la&lt;/span&gt;      &lt;span class=&#34;nv&#34;&gt;$a0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;msg&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;syscall&lt;/span&gt;
+
+    &lt;span class=&#34;nx&#34;&gt;la&lt;/span&gt;      &lt;span class=&#34;nv&#34;&gt;$s1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;nums&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;move&lt;/span&gt;    &lt;span class=&#34;nv&#34;&gt;$s0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;li&lt;/span&gt;      &lt;span class=&#34;nv&#34;&gt;$v0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;syscall&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;sll&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$t0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$s0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;add&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$t1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$s1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$t0&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;sw&lt;/span&gt;      &lt;span class=&#34;nv&#34;&gt;$v0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$t1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;addi&lt;/span&gt;    &lt;span class=&#34;nv&#34;&gt;$s0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$s0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;slti&lt;/span&gt;    &lt;span class=&#34;nv&#34;&gt;$t2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$s0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;12&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;bne&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$t2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;get&lt;/span&gt;
+
+    &lt;span class=&#34;nx&#34;&gt;add&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$s0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;sort1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;add&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$s2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;#内循环控制变量j
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;lw&lt;/span&gt;      &lt;span class=&#34;nv&#34;&gt;$t3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$s1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;       &lt;span class=&#34;c1&#34;&gt;#存最大值
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;add&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$s6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;#最大值所在的下标  
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;add&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$t6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;#临时存数组值
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;loop1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;sll&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$s3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$s2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;add&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$s4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$s3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$s1&lt;/span&gt;     
+    &lt;span class=&#34;nx&#34;&gt;lw&lt;/span&gt;      &lt;span class=&#34;nv&#34;&gt;$t6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$s4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;       &lt;span class=&#34;c1&#34;&gt;#数组值放进t6
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;slt&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$s5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$t3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$t6&lt;/span&gt;     
+    &lt;span class=&#34;nx&#34;&gt;beq&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$s5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;skip1&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;#max&amp;lt;t6,赋值
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;add&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$t3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$t6&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;#更新最大值
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;add&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$s6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$s2&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;#更新最大值所在的index
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;skip1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;addi&lt;/span&gt;    &lt;span class=&#34;nv&#34;&gt;$s2&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$s2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;       &lt;span class=&#34;c1&#34;&gt;#j++
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;addi&lt;/span&gt;    &lt;span class=&#34;nv&#34;&gt;$t4&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;     
+    &lt;span class=&#34;nx&#34;&gt;sub&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$t4&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$t4&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$s0&lt;/span&gt;     &lt;span class=&#34;c1&#34;&gt;#t4=4-i
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;addi&lt;/span&gt;    &lt;span class=&#34;nv&#34;&gt;$a3&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$t4&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;slt&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$t5&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$s2&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$a3&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;bne&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$t5&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;loop1&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;#j&amp;lt;t4
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;sll&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$t7&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$t4&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;add&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$t8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$s1&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$t7&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;lw&lt;/span&gt;      &lt;span class=&#34;nv&#34;&gt;$a1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$t8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;      
+    &lt;span class=&#34;nx&#34;&gt;sll&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$t7&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$s6&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;add&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$t9&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$s1&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$t7&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;lw&lt;/span&gt;      &lt;span class=&#34;nv&#34;&gt;$a2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$t9&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;sw&lt;/span&gt;      &lt;span class=&#34;nv&#34;&gt;$a1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$t9&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;sw&lt;/span&gt;      &lt;span class=&#34;nv&#34;&gt;$a2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$t8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+    &lt;span class=&#34;nx&#34;&gt;addi&lt;/span&gt;    &lt;span class=&#34;nv&#34;&gt;$s0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$s0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;slti&lt;/span&gt;    &lt;span class=&#34;nv&#34;&gt;$t2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$s0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;bne&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$t2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;sort1&lt;/span&gt;
+
+
+    &lt;span class=&#34;nx&#34;&gt;add&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$s0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;add&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$s1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$s1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;20&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;sort2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;add&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$s2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;#内循环控制变量j
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;lw&lt;/span&gt;      &lt;span class=&#34;nv&#34;&gt;$t3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$s1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;       &lt;span class=&#34;c1&#34;&gt;#存最大值
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;add&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$s6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;#最大值所在的下标  
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;add&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$t6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;#临时存数组值
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;loop2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;sll&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$s3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$s2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;add&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$s4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$s3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$s1&lt;/span&gt;     
+    &lt;span class=&#34;nx&#34;&gt;lw&lt;/span&gt;      &lt;span class=&#34;nv&#34;&gt;$t6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$s4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;       &lt;span class=&#34;c1&#34;&gt;#数组值放进t6
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;slt&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$s5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$t3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$t6&lt;/span&gt;     
+    &lt;span class=&#34;nx&#34;&gt;beq&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$s5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;skip2&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;#max&amp;lt;t6,赋值
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;add&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$t3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$t6&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;#更新最大值
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;add&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$s6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$s2&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;#更新最大值所在的index
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;skip2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;addi&lt;/span&gt;    &lt;span class=&#34;nv&#34;&gt;$s2&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$s2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;       &lt;span class=&#34;c1&#34;&gt;#j++
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;addi&lt;/span&gt;    &lt;span class=&#34;nv&#34;&gt;$t4&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt;     
+    &lt;span class=&#34;nx&#34;&gt;sub&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$t4&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$t4&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$s0&lt;/span&gt;     &lt;span class=&#34;c1&#34;&gt;#t4=6-i
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;addi&lt;/span&gt;    &lt;span class=&#34;nv&#34;&gt;$a3&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$t4&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;slt&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$t5&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$s2&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$a3&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;bne&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$t5&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;loop2&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;#j&amp;lt;t4
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;sll&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$t7&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$t4&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;add&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$t8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$s1&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$t7&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;lw&lt;/span&gt;      &lt;span class=&#34;nv&#34;&gt;$a1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$t8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;      
+    &lt;span class=&#34;nx&#34;&gt;sll&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$t7&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$s6&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;add&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$t9&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$s1&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$t7&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;lw&lt;/span&gt;      &lt;span class=&#34;nv&#34;&gt;$a2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$t9&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;sw&lt;/span&gt;      &lt;span class=&#34;nv&#34;&gt;$a1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$t9&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;sw&lt;/span&gt;      &lt;span class=&#34;nv&#34;&gt;$a2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$t8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+    &lt;span class=&#34;nx&#34;&gt;addi&lt;/span&gt;    &lt;span class=&#34;nv&#34;&gt;$s0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$s0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;slti&lt;/span&gt;    &lt;span class=&#34;nv&#34;&gt;$t2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$s0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;bne&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$t2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;sort2&lt;/span&gt;
+
+
+    &lt;span class=&#34;nx&#34;&gt;move&lt;/span&gt;    &lt;span class=&#34;nv&#34;&gt;$s0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;la&lt;/span&gt;      &lt;span class=&#34;nv&#34;&gt;$s1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;nums&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;sll&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$t0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$s0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;add&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$t1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$s1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$t0&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;lw&lt;/span&gt;      &lt;span class=&#34;nv&#34;&gt;$a0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$t1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;li&lt;/span&gt;      &lt;span class=&#34;nv&#34;&gt;$v0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;syscall&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;la&lt;/span&gt;      &lt;span class=&#34;nv&#34;&gt;$a0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;seperate&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;li&lt;/span&gt;      &lt;span class=&#34;nv&#34;&gt;$v0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;syscall&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;addi&lt;/span&gt;    &lt;span class=&#34;nv&#34;&gt;$s0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$s0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;slti&lt;/span&gt;    &lt;span class=&#34;nv&#34;&gt;$t2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$s0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;12&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;bne&lt;/span&gt;     &lt;span class=&#34;nv&#34;&gt;$t2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$zero&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;out&lt;/span&gt;
+
+    &lt;span class=&#34;nx&#34;&gt;li&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$v0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;syscall&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;data&lt;/span&gt;
+ &lt;span class=&#34;nx&#34;&gt;msg&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;asciiz&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;input 12 integers:&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; 
+    &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;align&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;
+ &lt;span class=&#34;nx&#34;&gt;nums&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;word&lt;/span&gt; 
+    &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;space&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;48&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;seperate&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;asciiz&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
         <title>Polynomials of one indeterminate</title>
         <link>https://hungyam.gitee.io/code/p/polynomials-of-one-indeterminate/</link>
         <pubDate>Tue, 13 Oct 2020 00:00:00 +0000</pubDate>

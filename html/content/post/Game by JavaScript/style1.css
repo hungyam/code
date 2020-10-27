@@ -1,0 +1,76 @@
+body{
+	font-family: "Lucida Grande";
+	text-align: center;
+}
+
+.message{
+	font-size: 20px;
+}
+
+#sign{
+	font-size: 30px;
+}
+
+.block{
+	background-color: lightgray;
+	width:300px;
+	height:50px;
+	margin: auto;
+}
+
+#map{
+	width: 600px;
+  	height: 360px;
+  	margin: auto;
+  	display: grid;
+  	grid-template: repeat(6, 1fr) / repeat(10, 1fr);
+}
+
+.s_block{
+	margin: 5px;
+	background-color: rgb(0,255,0);
+}
+.s_block::after{
+	content: "S";
+	color: black;
+  	font-weight: bold;
+  	font-size: 35px;
+}
+.e_block{
+	margin: 5px;
+	background-color: rgb(100,149,237);
+}
+.e_block::after{
+	content: "E";
+	color: black;
+  	font-weight: bold;
+  	font-size: 35px;
+}
+
+.wall{
+	background-color: lightgray;
+	transition: 0.5s ease-in-out ;
+}
+.wall_red{
+	background-color: rgb(210,100,100);
+}
+.wall_green{
+	background-color: rgb(100,210,100);
+}
+
+
+.line_top{
+	border-top: 1px solid black;
+}
+.line_bottom{
+	border-bottom: 1px solid black;
+}
+.line_left{
+	border-left: 1px solid black;
+}
+.line_right{
+	border-right: 1px solid black;
+}
+.line_all{
+	border: 1px solid black;
+}
