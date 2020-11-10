@@ -6,7 +6,18 @@
     <description>Recent content in Stack on Hungyam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://hungyam.gitee.io/code/categories/stack/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://hungyam.gitee.io/code/categories/stack/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>中缀转后缀、后缀求解</title>
+      <link>https://hungyam.gitee.io/code/p/%E4%B8%AD%E7%BC%80%E8%BD%AC%E5%90%8E%E7%BC%80%E5%90%8E%E7%BC%80%E6%B1%82%E8%A7%A3/</link>
+      <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hungyam.gitee.io/code/p/%E4%B8%AD%E7%BC%80%E8%BD%AC%E5%90%8E%E7%BC%80%E5%90%8E%E7%BC%80%E6%B1%82%E8%A7%A3/</guid>
+      <description>Lab Work 04-1. Application of Stacks Note: Programming in C,
+Design a C program to implement:
+ (1) Arithmetic expression translation: from in-fix to post-fix notation (2) Evaluation of an arithmetic expression in post-fix notation  Solution: #include&amp;lt;stdio.h&amp;gt;#include&amp;lt;string.h&amp;gt;int main(){ char in_fix[20]={0};//中缀  char post_fix[20]={0};//后准  char stack[20]={0};//  int top=0; int index=0; scanf(&amp;#34;%s&amp;#34;,in_fix); /*translation*/ for(int i=0;i&amp;lt;strlen(in_fix);i++){ if(in_fix[i]&amp;gt;=&amp;#39;0&amp;#39;&amp;amp;&amp;amp;in_fix[i]&amp;lt;=&amp;#39;9&amp;#39;){ post_fix[index++]=in_fix[i]; }else if(in_fix[i]==&amp;#39;(&amp;#39;){ stack[top++]=&amp;#39;(&amp;#39;; }else if(in_fix[i]==&amp;#39;)&amp;#39;){ while(stack[top-1]!=&amp;#39;(&amp;#39;){ post_fix[index++]=stack[top-1]; top--; } }else if(in_fix[i]==&amp;#39;+&amp;#39;||in_fix[i]==&amp;#39;-&amp;#39;){ if(top){ while(stack[top-1]==&amp;#39;*&amp;#39;||stack[top-1]==&amp;#39;/&amp;#39;){ post_fix[index++]=stack[top-1]; top--; } } stack[top++]=in_fix[i]; }else{ stack[top++]=in_fix[i]; } } while(top){ if(stack[top-1]!</description>
+    </item>
+    
     <item>
       <title>Polynomials of one indeterminate</title>
       <link>https://hungyam.gitee.io/code/p/polynomials-of-one-indeterminate/</link>

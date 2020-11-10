@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>My Game</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <link href="style.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="game.js" defer></script>
+        </script>
+        <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+    </head>
+    <body>
+    	<h1>Whac-a-mole</h1>
+    	<p>Test your skill.How many boxes(males)can you check(hit)in 30 seconds?</p>
+    	<div id="grand">
+	    	<button onclick="start_stop()">Start Game|Stop Game</button>
+	    	<p class="text">Time:</p>
+	    	<input id="time" readonly="readonly" />
+	    	<input id="message" readonly="readonly"  />
+	    	<p class="text">Score:</p>
+	    	<input id="score" readonly="readonly"  />
+	    </div>
+    	<div id="map">
+    	</div>
+    	<h3>Instructions:</h3>
+    	<p class="instruction">1. Click on the radio buttons(moles) as they are selected randomly by the computer.</p>
+    	<p class="instruction">2. 1 point per hit,minus 1 point per miss</p>
+    </body>
+</html>
