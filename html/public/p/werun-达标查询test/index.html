@@ -1,54 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us"><head>
     <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='题目一：迷宫 制作网页实现下图中的迷宫：
-  img 
-需求规格   UI：UI与上图完全一致；或者，自由发挥，设计出更加漂亮、合理的UI。
-  正常赢：移动鼠标，从S开始，到E结束，中间不碰墙，赢得游戏，显示“You Win”
-  碰墙输：从S开始后，到E结束之前，碰墙，墙变红，输，显示“You Lose”
-  重置结果：离开迷宫，墙恢复正常；从S开始时，隐藏结果显示
-  发现作弊：如果用户未经过S，就指到E，又或者指向S之后，从迷宫外绕路指向E，显示&amp;quot;Don&amp;rsquo;t cheat, you should start form the &amp;lsquo;S&amp;rsquo; and move to the &amp;lsquo;E&amp;rsquo; inside the maze!&amp;quot;
-迷宫实现网页   题目二：打地鼠 制作网页实现下图中的简版的打地鼠：
-  img 
-需求规格   UI：UI与上图完全一致；或者，自由发挥，设计出更加漂亮、合理的UI。
-  打地鼠：能够随机出现地鼠，鼠标能够击中（点击正确，地鼠消失，出现新地鼠；点击错误，地鼠不消失）
-  正确计分：正确计算分数并显示，包括正确结束游戏
-打地鼠实现网页   '><title>Two Game by JavaScript</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='查询入口 '><title>Werun 达标查询(test)</title>
     
-    <link rel='canonical' href='https://hungyam.gitee.io/code/p/two-game-by-javascript/'>
+    <link rel='canonical' href='https://hungyam.gitee.io/code/p/werun-%E8%BE%BE%E6%A0%87%E6%9F%A5%E8%AF%A2test/'>
 
-<link rel="stylesheet" href="/code/scss/style.min.css"><meta property='og:title' content='Two Game by JavaScript'>
-<meta property='og:description' content='题目一：迷宫 制作网页实现下图中的迷宫：
-  img 
-需求规格   UI：UI与上图完全一致；或者，自由发挥，设计出更加漂亮、合理的UI。
-  正常赢：移动鼠标，从S开始，到E结束，中间不碰墙，赢得游戏，显示“You Win”
-  碰墙输：从S开始后，到E结束之前，碰墙，墙变红，输，显示“You Lose”
-  重置结果：离开迷宫，墙恢复正常；从S开始时，隐藏结果显示
-  发现作弊：如果用户未经过S，就指到E，又或者指向S之后，从迷宫外绕路指向E，显示&amp;quot;Don&amp;rsquo;t cheat, you should start form the &amp;lsquo;S&amp;rsquo; and move to the &amp;lsquo;E&amp;rsquo; inside the maze!&amp;quot;
-迷宫实现网页   题目二：打地鼠 制作网页实现下图中的简版的打地鼠：
-  img 
-需求规格   UI：UI与上图完全一致；或者，自由发挥，设计出更加漂亮、合理的UI。
-  打地鼠：能够随机出现地鼠，鼠标能够击中（点击正确，地鼠消失，出现新地鼠；点击错误，地鼠不消失）
-  正确计分：正确计算分数并显示，包括正确结束游戏
-打地鼠实现网页   '>
-<meta property='og:url' content='https://hungyam.gitee.io/code/p/two-game-by-javascript/'>
+<link rel="stylesheet" href="/code/scss/style.min.css"><meta property='og:title' content='Werun 达标查询(test)'>
+<meta property='og:description' content='查询入口 '>
+<meta property='og:url' content='https://hungyam.gitee.io/code/p/werun-%E8%BE%BE%E6%A0%87%E6%9F%A5%E8%AF%A2test/'>
 <meta property='og:site_name' content='Hungyam'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2020-10-27T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-10-27T00:00:00&#43;00:00'/><meta property='og:image' content='https://hungyam.gitee.io/code/p/two-game-by-javascript/2.jpg' />
-<meta name="twitter:title" content="Two Game by JavaScript">
-<meta name="twitter:description" content="题目一：迷宫 制作网页实现下图中的迷宫：
-  img 
-需求规格   UI：UI与上图完全一致；或者，自由发挥，设计出更加漂亮、合理的UI。
-  正常赢：移动鼠标，从S开始，到E结束，中间不碰墙，赢得游戏，显示“You Win”
-  碰墙输：从S开始后，到E结束之前，碰墙，墙变红，输，显示“You Lose”
-  重置结果：离开迷宫，墙恢复正常；从S开始时，隐藏结果显示
-  发现作弊：如果用户未经过S，就指到E，又或者指向S之后，从迷宫外绕路指向E，显示&amp;quot;Don&amp;rsquo;t cheat, you should start form the &amp;lsquo;S&amp;rsquo; and move to the &amp;lsquo;E&amp;rsquo; inside the maze!&amp;quot;
-迷宫实现网页   题目二：打地鼠 制作网页实现下图中的简版的打地鼠：
-  img 
-需求规格   UI：UI与上图完全一致；或者，自由发挥，设计出更加漂亮、合理的UI。
-  打地鼠：能够随机出现地鼠，鼠标能够击中（点击正确，地鼠消失，出现新地鼠；点击错误，地鼠不消失）
-  正确计分：正确计算分数并显示，包括正确结束游戏
-打地鼠实现网页   "><meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:image" content='https://hungyam.gitee.io/code/p/two-game-by-javascript/2.jpg' /></head><body class="">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2020-11-11T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-11-11T00:00:00&#43;00:00'/><meta property='og:image' content='https://hungyam.gitee.io/code/p/werun-%E8%BE%BE%E6%A0%87%E6%9F%A5%E8%AF%A2test/2.jpg' />
+<meta name="twitter:title" content="Werun 达标查询(test)">
+<meta name="twitter:description" content="查询入口 "><meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content='https://hungyam.gitee.io/code/p/werun-%E8%BE%BE%E6%A0%87%E6%9F%A5%E8%AF%A2test/2.jpg' /></head><body class="">
         <div class="container flex on-phone--column align-items--flex-start extended article-page with-toolbar">
             <aside class="sidebar left-sidebar sticky">
     <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
@@ -153,9 +117,9 @@
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <img srcset="/code/p/two-game-by-javascript/2_hu958d513eeefe5556a31d065479ecc5ac_14205_1024x0_resize_q75_box.jpg 1024w, /code/p/two-game-by-javascript/2_hu958d513eeefe5556a31d065479ecc5ac_14205_2000x0_resize_q75_box.jpg 2000w"
-                    src="/code/p/two-game-by-javascript/2_hu958d513eeefe5556a31d065479ecc5ac_14205_2000x0_resize_q75_box.jpg" width="1500" height="1000" loading="lazy"
-                    alt="Featured image of post Two Game by JavaScript" />
+            <img srcset="/code/p/werun-%E8%BE%BE%E6%A0%87%E6%9F%A5%E8%AF%A2test/2_hu958d513eeefe5556a31d065479ecc5ac_14205_1024x0_resize_q75_box.jpg 1024w, /code/p/werun-%E8%BE%BE%E6%A0%87%E6%9F%A5%E8%AF%A2test/2_hu958d513eeefe5556a31d065479ecc5ac_14205_2000x0_resize_q75_box.jpg 2000w"
+                    src="/code/p/werun-%E8%BE%BE%E6%A0%87%E6%9F%A5%E8%AF%A2test/2_hu958d513eeefe5556a31d065479ecc5ac_14205_2000x0_resize_q75_box.jpg" width="1500" height="1000" loading="lazy"
+                    alt="Featured image of post Werun 达标查询(test)" />
             
         </div>
     
@@ -166,7 +130,7 @@
         
             <a href="https://hungyam.gitee.io/code/categories/javascript/" 
                     class="color-tag"
-                    data-image="/code/p/two-game-by-javascript/2_hu958d513eeefe5556a31d065479ecc5ac_14205_20x20_fill_q75_box_smart1.jpg" 
+                    data-image="/code/p/werun-%E8%BE%BE%E6%A0%87%E6%9F%A5%E8%AF%A2test/2_hu958d513eeefe5556a31d065479ecc5ac_14205_20x20_fill_q75_box_smart1.jpg" 
                     data-key="" 
                     data-hash="md5-jq4GZk3fs&#43;jcbgAHVstwOw==">
                     JavaScript
@@ -177,7 +141,7 @@
     
 
     <h2 class="article-title">
-        <a href="https://hungyam.gitee.io/code/p/two-game-by-javascript/">Two Game by JavaScript</a>
+        <a href="https://hungyam.gitee.io/code/p/werun-%E8%BE%BE%E6%A0%87%E6%9F%A5%E8%AF%A2test/">Werun 达标查询(test)</a>
     </h2>
 
     <footer class="article-time">
@@ -189,67 +153,12 @@
 
 
 
-        <time class="article-time--published">2020 Oct 27</time>
+        <time class="article-time--published">2020 Nov 11</time>
     </footer></div>
 </header>
 
     <section class="article-content">
-    <h2 id="题目一迷宫">题目一：迷宫</h2>
-<p>制作网页实现下图中的迷宫：</p>
-<p><figure>
-		<a href="/code/p/two-game-by-javascript/maze.png" data-size="934x632">
-			<img srcset="/code/p/two-game-by-javascript/maze_hue30b6a56cbd40597c15ae4a26ff8e27d_52495_480x0_resize_box_2.png 480w, /code/p/two-game-by-javascript/maze_hue30b6a56cbd40597c15ae4a26ff8e27d_52495_1024x0_resize_box_2.png 1024w"
-				src="/code/p/two-game-by-javascript/maze.png" width="934" height="632" loading="lazy"
-				alt="img">
-		</a>
-		
-		<figcaption>img</figcaption>
-		
-	</figure></p>
-<h3 id="需求规格">需求规格</h3>
-<ol>
-<li>
-<p>UI：UI与上图完全一致；或者，自由发挥，设计出更加漂亮、合理的UI。</p>
-</li>
-<li>
-<p>正常赢：移动鼠标，从S开始，到E结束，中间不碰墙，赢得游戏，显示“You Win”</p>
-</li>
-<li>
-<p>碰墙输：从S开始后，到E结束之前，碰墙，墙变红，输，显示“You Lose”</p>
-</li>
-<li>
-<p>重置结果：离开迷宫，墙恢复正常；从S开始时，隐藏结果显示</p>
-</li>
-<li>
-<p>发现作弊：如果用户未经过S，就指到E，又或者指向S之后，从迷宫外绕路指向E，显示&quot;Don&rsquo;t cheat, you should start form the &lsquo;S&rsquo; and move to the &lsquo;E&rsquo; inside the maze!&quot;</p>
-<h2 id="迷宫实现网页index1html"><a class="link" href="index1.html" >迷宫实现网页</a></h2>
-</li>
-</ol>
-<h2 id="题目二打地鼠">题目二：打地鼠</h2>
-<p>制作网页实现下图中的简版的打地鼠：</p>
-<p><figure>
-		<a href="/code/p/two-game-by-javascript/mole.png" data-size="776x494">
-			<img srcset="/code/p/two-game-by-javascript/mole_hu8537993c17ed334a65fa25316e9eeea9_55488_480x0_resize_box_2.png 480w, /code/p/two-game-by-javascript/mole_hu8537993c17ed334a65fa25316e9eeea9_55488_1024x0_resize_box_2.png 1024w"
-				src="/code/p/two-game-by-javascript/mole.png" width="776" height="494" loading="lazy"
-				alt="img">
-		</a>
-		
-		<figcaption>img</figcaption>
-		
-	</figure></p>
-<h3 id="需求规格-1">需求规格</h3>
-<ol>
-<li>
-<p>UI：UI与上图完全一致；或者，自由发挥，设计出更加漂亮、合理的UI。</p>
-</li>
-<li>
-<p>打地鼠：能够随机出现地鼠，鼠标能够击中（点击正确，地鼠消失，出现新地鼠；点击错误，地鼠不消失）</p>
-</li>
-<li>
-<p>正确计分：正确计算分数并显示，包括正确结束游戏</p>
-<h2 id="打地鼠实现网页index2html"><a class="link" href="index2.html" >打地鼠实现网页</a></h2>
-</li>
-</ol>
+    <h2 id="查询入口1html"><a class="link" href="1.html" >查询入口</a></h2>
 
 </section>
 
@@ -280,18 +189,18 @@
                 
                     
 <article class="has-image">
-    <a href="https://hungyam.gitee.io/code/p/werun-%E8%BE%BE%E6%A0%87%E6%9F%A5%E8%AF%A2test/">
+    <a href="https://hungyam.gitee.io/code/p/two-game-by-javascript/">
         
         
             <div class="article-image">
-                <img src="/code/p/werun-%E8%BE%BE%E6%A0%87%E6%9F%A5%E8%AF%A2test/2_hu958d513eeefe5556a31d065479ecc5ac_14205_250x150_fill_q75_box_smart1.jpg" width="250" height="150" 
+                <img src="/code/p/two-game-by-javascript/2_hu958d513eeefe5556a31d065479ecc5ac_14205_250x150_fill_q75_box_smart1.jpg" width="250" height="150" 
                         loading="lazy" data-key="" data-hash="md5-jq4GZk3fs&#43;jcbgAHVstwOw==">
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">Werun 达标查询(test)</h2>
+            <h2 class="article-title">Two Game by JavaScript</h2>
         </div>
     </a>
 </article>

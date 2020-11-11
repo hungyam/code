@@ -6,7 +6,16 @@
     <description>Recent content in Categories on Hungyam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://hungyam.gitee.io/code/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://hungyam.gitee.io/code/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript</title>
+      <link>https://hungyam.gitee.io/code/categories/javascript/</link>
+      <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hungyam.gitee.io/code/categories/javascript/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>C</title>
       <link>https://hungyam.gitee.io/code/categories/c/</link>
@@ -22,15 +31,6 @@
       <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://hungyam.gitee.io/code/categories/stack/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>JavaScript</title>
-      <link>https://hungyam.gitee.io/code/categories/javascript/</link>
-      <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://hungyam.gitee.io/code/categories/javascript/</guid>
       <description></description>
     </item>
     

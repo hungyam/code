@@ -3,22 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://hungyam.gitee.io/code/categories/c/</loc>
-    <lastmod>2020-11-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://hungyam.gitee.io/code/categories/</loc>
-    <lastmod>2020-11-10T00:00:00+00:00</lastmod>
+    <lastmod>2020-11-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://hungyam.gitee.io/code/</loc>
-    <lastmod>2020-11-10T00:00:00+00:00</lastmod>
+    <lastmod>2020-11-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hungyam.gitee.io/code/categories/javascript/</loc>
+    <lastmod>2020-11-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://hungyam.gitee.io/code/post/</loc>
+    <lastmod>2020-11-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hungyam.gitee.io/code/p/werun-%E8%BE%BE%E6%A0%87%E6%9F%A5%E8%AF%A2test/</loc>
+    <lastmod>2020-11-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hungyam.gitee.io/code/categories/c/</loc>
     <lastmod>2020-11-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -30,11 +40,6 @@
   <url>
     <loc>https://hungyam.gitee.io/code/p/%E4%B8%AD%E7%BC%80%E8%BD%AC%E5%90%8E%E7%BC%80%E5%90%8E%E7%BC%80%E6%B1%82%E8%A7%A3/</loc>
     <lastmod>2020-11-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hungyam.gitee.io/code/categories/javascript/</loc>
-    <lastmod>2020-10-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
