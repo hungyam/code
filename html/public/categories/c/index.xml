@@ -6,7 +6,21 @@
     <description>Recent content in C on Hungyam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://hungyam.gitee.io/code/categories/c/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://hungyam.gitee.io/code/categories/c/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>括号匹配</title>
+      <link>https://hungyam.gitee.io/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/</link>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hungyam.gitee.io/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/</guid>
+      <description>括号匹配 1.直接对相应的左右括号进行记录，左括号加一，右括号减一，一旦计数出现负数则不匹配（因为不能先出现右括号）
+#include &amp;lt;stdio.h&amp;gt;int main (void){ char c; char ch[60]; int a,b,d; a=b=d=0; while(scanf(&amp;#34;%c&amp;#34;,&amp;amp;c)==1){ switch(c){ case &amp;#39;(&amp;#39;:a++;break; case &amp;#39;)&amp;#39;:a--;break; case &amp;#39;[&amp;#39;:b++;break; case &amp;#39;]&amp;#39;:b--;break; case &amp;#39;{&amp;#39;:d++;break; case &amp;#39;}&amp;#39;:d--;break; } if(a&amp;lt;0||b&amp;lt;0||d&amp;lt;0){ printf(&amp;#34;No&amp;#34;); return 0; } } if(a==0&amp;amp;&amp;amp;b==0&amp;amp;&amp;amp;d==0) printf(&amp;#34;Yes&amp;#34;); else printf(&amp;#34;No&amp;#34;); return 0; } 2.用栈实现。
+​	遇到左括号，将其压入栈；
+​	遇到右括号，若栈顶为对应的左括号，则将左括号出栈。
+​	最后判断栈是否为空，空则匹配。
+#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;string.h&amp;gt;int main() { char a[100]={0}; char stack[100]={0}; scanf(&amp;#34;%s&amp;#34;,a); int len=strlen(a); int k=0; if(a[0]==&amp;#39;{&amp;#39;||a[0]==&amp;#39;}&amp;#39;||a[0]==&amp;#39;[&amp;#39;||a[0]==&amp;#39;]&amp;#39;||a[0]==&amp;#39;(&amp;#39;||a[0]==&amp;#39;)&amp;#39;) { stack[k++]=a[0]; } for(int i=1;i&amp;lt;len;i++) { if(a[i]==&amp;#39;{&amp;#39;||a[i]==&amp;#39;[&amp;#39;||a[i]==&amp;#39;(&amp;#39;) stack[k++]=a[i]; if(a[i]==&amp;#39;}&amp;#39;) { if(stack[k-1]==&amp;#39;{&amp;#39;) stack[--k]=0; else stack[k++]=a[i]; } if(a[i]==&amp;#39;]&amp;#39;) { if(stack[k-1]==&amp;#39;[&amp;#39;) stack[--k]=0; else stack[k++]=a[i]; } if(a[i]==&amp;#39;)&amp;#39;) { if(stack[k-1]==&amp;#39;(&amp;#39;) stack[--k]=0; else stack[k++]=a[i]; } } if(stack[0]==0&amp;amp;&amp;amp;stack[1]==0) printf(&amp;#34;Yes&amp;#34;); else printf(&amp;#34;No&amp;#34;); return 0; } 例如：4+(2+8)*[5/(9-7)]​ 由于栈具有“先进后出”的特点，能很好地表现优先级这个性质，因此可以用栈来存储已经检测到的括号。</description>
+    </item>
+    
     <item>
       <title>中缀转后缀、后缀求解</title>
       <link>https://hungyam.gitee.io/code/p/%E4%B8%AD%E7%BC%80%E8%BD%AC%E5%90%8E%E7%BC%80%E5%90%8E%E7%BC%80%E6%B1%82%E8%A7%A3/</link>
@@ -26,20 +40,6 @@ Design a C program to implement:
       <guid>https://hungyam.gitee.io/code/p/polynomials-of-one-indeterminate/</guid>
       <description>Requirements: Note: Programming in C, Let n be a positive integer with specified initial value n=30. Use an array of n units to store polynomials of one indeterminate (一元多项式). Design and implement a C program to:
  Determine the data structure of the array Use a stack S in the array to store unused units. Initially all the units are unused and the 0 to (n-1) indexes spread randomly on the stack Use two lists LP and LQ in the array to store two polynomials P and Q of one indeterminate Show the map of the array Adding P and Q, restore the result as a list LPQ in the array, and release all garbage units to the stack Show the map of the array again  Solution： ​	链表的静态实现法，利用数组模拟动态链表，用栈来标记还未使用的节点。</description>
-    </item>
-    
-    <item>
-      <title>括号匹配</title>
-      <link>https://hungyam.gitee.io/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://hungyam.gitee.io/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/</guid>
-      <description>括号匹配 1.直接对相应的左右括号进行记录，左括号加一，右括号减一，一旦计数出现负数则不匹配（因为不能先出现右括号）
-#include &amp;lt;stdio.h&amp;gt;int main (void){ char c; char ch[60]; int a,b,d; a=b=d=0; while(scanf(&amp;#34;%c&amp;#34;,&amp;amp;c)==1){ switch(c){ case &amp;#39;(&amp;#39;:a++;break; case &amp;#39;)&amp;#39;:a--;break; case &amp;#39;[&amp;#39;:b++;break; case &amp;#39;]&amp;#39;:b--;break; case &amp;#39;{&amp;#39;:d++;break; case &amp;#39;}&amp;#39;:d--;break; } if(a&amp;lt;0||b&amp;lt;0||d&amp;lt;0){ printf(&amp;#34;No&amp;#34;); return 0; } } if(a==0&amp;amp;&amp;amp;b==0&amp;amp;&amp;amp;d==0) printf(&amp;#34;Yes&amp;#34;); else printf(&amp;#34;No&amp;#34;); return 0; } 2.用栈实现。
-​	遇到左括号，将其压入栈；
-​	遇到右括号，若栈顶为对应的左括号，则将左括号出栈。
-​	最后判断栈是否为空，空则匹配。
-#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;string.h&amp;gt;int main() { char a[100]={0}; char stack[100]={0}; scanf(&amp;#34;%s&amp;#34;,a); int len=strlen(a); int k=0; if(a[0]==&amp;#39;{&amp;#39;||a[0]==&amp;#39;}&amp;#39;||a[0]==&amp;#39;[&amp;#39;||a[0]==&amp;#39;]&amp;#39;||a[0]==&amp;#39;(&amp;#39;||a[0]==&amp;#39;)&amp;#39;) { stack[k++]=a[0]; } for(int i=1;i&amp;lt;len;i++) { if(a[i]==&amp;#39;{&amp;#39;||a[i]==&amp;#39;[&amp;#39;||a[i]==&amp;#39;(&amp;#39;) stack[k++]=a[i]; if(a[i]==&amp;#39;}&amp;#39;) { if(stack[k-1]==&amp;#39;{&amp;#39;) stack[--k]=0; else stack[k++]=a[i]; } if(a[i]==&amp;#39;]&amp;#39;) { if(stack[k-1]==&amp;#39;[&amp;#39;) stack[--k]=0; else stack[k++]=a[i]; } if(a[i]==&amp;#39;)&amp;#39;) { if(stack[k-1]==&amp;#39;(&amp;#39;) stack[--k]=0; else stack[k++]=a[i]; } } if(stack[0]==0&amp;amp;&amp;amp;stack[1]==0) printf(&amp;#34;Yes&amp;#34;); else printf(&amp;#34;No&amp;#34;); return 0; } 例如：4+(2+8)*[5/(9-7)]​ 由于栈具有“先进后出”的特点，能很好地表现优先级这个性质，因此可以用栈来存储已经检测到的括号。</description>
     </item>
     
   </channel>

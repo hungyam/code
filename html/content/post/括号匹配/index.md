@@ -1,7 +1,7 @@
 ---
 author: Hungyam
 title: 括号匹配
-date: 2020-12-1
+date: 2020-12-01
 description: 
 math: true
 image : 3.jpg
@@ -105,9 +105,9 @@ int main()
 
 以（A）为例：
 
-![img](https://img2018.cnblogs.com/blog/1494653/201810/1494653-20181021134741514-2141924486.png)![img](https://img2018.cnblogs.com/blog/1494653/201810/1494653-20181021134748033-1613033952.png)![img](https://img2018.cnblogs.com/blog/1494653/201810/1494653-20181021134759032-638607951.png)
+![img](1.png)![img](2.png)![img](3.png)
 
-![img](https://img2018.cnblogs.com/blog/1494653/201810/1494653-20181021135214948-336628777.jpg)![img](https://img2018.cnblogs.com/blog/1494653/201810/1494653-20181021134818043-1910468283.png)![img](https://img2018.cnblogs.com/blog/1494653/201810/1494653-20181021134823234-1189325220.png)![img](https://img2018.cnblogs.com/blog/1494653/201810/1494653-20181021135230321-594426221.png)
+![img](4.jpg)![img](5.png)![img](6.png)![img](1.png)
 
 有以下步骤：
 

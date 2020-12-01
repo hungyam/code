@@ -19,7 +19,7 @@
 #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;string.h&amp;gt;int main() { char a[100]={0}; char stack[100]={0}; scanf(&amp;#34;%s&amp;#34;,a); int len=strlen(a); int k=0; if(a[0]==&amp;#39;{&amp;#39;||a[0]==&amp;#39;}&amp;#39;||a[0]==&amp;#39;[&amp;#39;||a[0]==&amp;#39;]&amp;#39;||a[0]==&amp;#39;(&amp;#39;||a[0]==&amp;#39;)&amp;#39;) { stack[k&#43;&#43;]=a[0]; } for(int i=1;i&amp;lt;len;i&#43;&#43;) { if(a[i]==&amp;#39;{&amp;#39;||a[i]==&amp;#39;[&amp;#39;||a[i]==&amp;#39;(&amp;#39;) stack[k&#43;&#43;]=a[i]; if(a[i]==&amp;#39;}&amp;#39;) { if(stack[k-1]==&amp;#39;{&amp;#39;) stack[--k]=0; else stack[k&#43;&#43;]=a[i]; } if(a[i]==&amp;#39;]&amp;#39;) { if(stack[k-1]==&amp;#39;[&amp;#39;) stack[--k]=0; else stack[k&#43;&#43;]=a[i]; } if(a[i]==&amp;#39;)&amp;#39;) { if(stack[k-1]==&amp;#39;(&amp;#39;) stack[--k]=0; else stack[k&#43;&#43;]=a[i]; } } if(stack[0]==0&amp;amp;&amp;amp;stack[1]==0) printf(&amp;#34;Yes&amp;#34;); else printf(&amp;#34;No&amp;#34;); return 0; } 例如：4&#43;(2&#43;8)*[5/(9-7)]​ 由于栈具有“先进后出”的特点，能很好地表现优先级这个性质，因此可以用栈来存储已经检测到的括号。'>
 <meta property='og:url' content='https://hungyam.gitee.io/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/'>
 <meta property='og:site_name' content='Hungyam'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='og:image' content='https://hungyam.gitee.io/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/3.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2020-12-01T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-12-01T00:00:00&#43;00:00'/><meta property='og:image' content='https://hungyam.gitee.io/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/3.jpg' />
 <meta name="twitter:title" content="括号匹配">
 <meta name="twitter:description" content="括号匹配 1.直接对相应的左右括号进行记录，左括号加一，右括号减一，一旦计数出现负数则不匹配（因为不能先出现右括号）
 #include &amp;lt;stdio.h&amp;gt;int main (void){ char c; char ch[60]; int a,b,d; a=b=d=0; while(scanf(&amp;#34;%c&amp;#34;,&amp;amp;c)==1){ switch(c){ case &amp;#39;(&amp;#39;:a&#43;&#43;;break; case &amp;#39;)&amp;#39;:a--;break; case &amp;#39;[&amp;#39;:b&#43;&#43;;break; case &amp;#39;]&amp;#39;:b--;break; case &amp;#39;{&amp;#39;:d&#43;&#43;;break; case &amp;#39;}&amp;#39;:d--;break; } if(a&amp;lt;0||b&amp;lt;0||d&amp;lt;0){ printf(&amp;#34;No&amp;#34;); return 0; } } if(a==0&amp;amp;&amp;amp;b==0&amp;amp;&amp;amp;d==0) printf(&amp;#34;Yes&amp;#34;); else printf(&amp;#34;No&amp;#34;); return 0; } 2.用栈实现。
@@ -168,7 +168,17 @@
         <a href="https://hungyam.gitee.io/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/">括号匹配</a>
     </h2>
 
-    </div>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">2020 Dec 01</time>
+    </footer></div>
 </header>
 
     <section class="article-content">
@@ -251,8 +261,71 @@
 </code></pre></div><h3 id="例如42859-7">例如：4+(2+8)*[5/(9-7)]​</h3>
 <p>由于栈具有“先进后出”的特点，能很好地表现优先级这个性质，因此可以用栈来存储已经检测到的括号。</p>
 <p>以（A）为例：</p>
-<p><img src="https://img2018.cnblogs.com/blog/1494653/201810/1494653-20181021134741514-2141924486.png" alt="img"  /><img src="https://img2018.cnblogs.com/blog/1494653/201810/1494653-20181021134748033-1613033952.png" alt="img"  /><img src="https://img2018.cnblogs.com/blog/1494653/201810/1494653-20181021134759032-638607951.png" alt="img"  /></p>
-<p><img src="https://img2018.cnblogs.com/blog/1494653/201810/1494653-20181021135214948-336628777.jpg" alt="img"  /><img src="https://img2018.cnblogs.com/blog/1494653/201810/1494653-20181021134818043-1910468283.png" alt="img"  /><img src="https://img2018.cnblogs.com/blog/1494653/201810/1494653-20181021134823234-1189325220.png" alt="img"  /><img src="https://img2018.cnblogs.com/blog/1494653/201810/1494653-20181021135230321-594426221.png" alt="img"  /></p>
+<p><figure>
+		<a href="/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/1.png" data-size="144x358">
+			<img srcset="/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/1_hu8d4da9da5b7e55bfc3f4fe8f435c6655_1881_480x0_resize_box_2.png 480w, /code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/1_hu8d4da9da5b7e55bfc3f4fe8f435c6655_1881_1024x0_resize_box_2.png 1024w"
+				src="/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/1.png" width="144" height="358" loading="lazy"
+				alt="img">
+		</a>
+		
+		<figcaption>img</figcaption>
+		
+	</figure><figure>
+		<a href="/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/2.png" data-size="123x354">
+			<img srcset="/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/2_hu20dfd1d7e699e5dce4dd495a51ebb8e3_1930_480x0_resize_box_2.png 480w, /code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/2_hu20dfd1d7e699e5dce4dd495a51ebb8e3_1930_1024x0_resize_box_2.png 1024w"
+				src="/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/2.png" width="123" height="354" loading="lazy"
+				alt="img">
+		</a>
+		
+		<figcaption>img</figcaption>
+		
+	</figure><figure>
+		<a href="/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/3.png" data-size="127x354">
+			<img srcset="/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/3_hub5452d808c6ed83e5868cbaefb7acec3_1682_480x0_resize_box_2.png 480w, /code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/3_hub5452d808c6ed83e5868cbaefb7acec3_1682_1024x0_resize_box_2.png 1024w"
+				src="/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/3.png" width="127" height="354" loading="lazy"
+				alt="img">
+		</a>
+		
+		<figcaption>img</figcaption>
+		
+	</figure></p>
+<p><figure>
+		<a href="/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/4.jpg" data-size="122x351">
+			<img srcset="/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/4_hu8f247dc7b2ed912aa7dfae59c851bfd4_818459_480x0_resize_q75_box.jpg 480w, /code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/4_hu8f247dc7b2ed912aa7dfae59c851bfd4_818459_1024x0_resize_q75_box.jpg 1024w"
+				src="/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/4.jpg" width="122" height="351" loading="lazy"
+				alt="img">
+		</a>
+		
+		<figcaption>img</figcaption>
+		
+	</figure><figure>
+		<a href="/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/5.png" data-size="121x353">
+			<img srcset="/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/5_hub56cc6ba5185a4484f201af767e68af0_2008_480x0_resize_box_2.png 480w, /code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/5_hub56cc6ba5185a4484f201af767e68af0_2008_1024x0_resize_box_2.png 1024w"
+				src="/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/5.png" width="121" height="353" loading="lazy"
+				alt="img">
+		</a>
+		
+		<figcaption>img</figcaption>
+		
+	</figure><figure>
+		<a href="/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/6.png" data-size="117x356">
+			<img srcset="/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/6_hue33c81f109501ccb6f8fa3fb8be9b55e_1857_480x0_resize_box_2.png 480w, /code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/6_hue33c81f109501ccb6f8fa3fb8be9b55e_1857_1024x0_resize_box_2.png 1024w"
+				src="/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/6.png" width="117" height="356" loading="lazy"
+				alt="img">
+		</a>
+		
+		<figcaption>img</figcaption>
+		
+	</figure><figure>
+		<a href="/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/1.png" data-size="144x358">
+			<img srcset="/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/1_hu8d4da9da5b7e55bfc3f4fe8f435c6655_1881_480x0_resize_box_2.png 480w, /code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/1_hu8d4da9da5b7e55bfc3f4fe8f435c6655_1881_1024x0_resize_box_2.png 1024w"
+				src="/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/1.png" width="144" height="358" loading="lazy"
+				alt="img">
+		</a>
+		
+		<figcaption>img</figcaption>
+		
+	</figure></p>
 <p>有以下步骤：</p>
 <p>（1）检测到第一个括号“(”，进栈；</p>
 <p>（2）检测到第二个括号“)”，进栈。子表达式 “<strong>4+(2+8)</strong>” 完成匹配，匹配的括号都出栈；</p>
