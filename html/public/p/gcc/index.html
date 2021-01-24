@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='MacOS/Win x86 C语言编译器的搭建 Windows x86 MinGW最大的特点就是编译出来的可执行文件能够独立在Windows上运行。
+MinGW的组成：
+ 编译器(支持C、C&#43;&#43;、ADA和Fortran) GNU工具  1. MinGW安装 MinGW官方网址：http://www.mingw.org/
+由于是墙外网站，经常会出现网站打不开，下载不了的情况，就不详细描述mingw的下载方法。
+这里为读者准备了完整的内容包 点此下载
+下载完毕将压缩包内容解压到C盘下（个人习惯，放其他位置也可，但需记住所放位置）
+2. 添加环境变量   
+  解压后出现mingw64文件夹
+  
+  在此电脑上右键选择属性
+  
+  左侧选择高级系统设置
+  
+  高级页下选择环境变量
+  
+  在系统变量栏中双击Path变量
+  
+  点击右侧浏览
+  
+  找到第一步解压的mingw64下的bin文件夹
+到这里，环境变量已设置完毕
+  3. 测试是否搭建成功'><title>GCC</title>
+    
+    <link rel='canonical' href='https://hungyam.gitee.io/code/p/gcc/'>
+
+<link rel="stylesheet" href="/code/scss/style.min.css"><meta property='og:title' content='GCC'>
+<meta property='og:description' content='MacOS/Win x86 C语言编译器的搭建 Windows x86 MinGW最大的特点就是编译出来的可执行文件能够独立在Windows上运行。
+MinGW的组成：
+ 编译器(支持C、C&#43;&#43;、ADA和Fortran) GNU工具  1. MinGW安装 MinGW官方网址：http://www.mingw.org/
+由于是墙外网站，经常会出现网站打不开，下载不了的情况，就不详细描述mingw的下载方法。
+这里为读者准备了完整的内容包 点此下载
+下载完毕将压缩包内容解压到C盘下（个人习惯，放其他位置也可，但需记住所放位置）
+2. 添加环境变量   
+  解压后出现mingw64文件夹
+  
+  在此电脑上右键选择属性
+  
+  左侧选择高级系统设置
+  
+  高级页下选择环境变量
+  
+  在系统变量栏中双击Path变量
+  
+  点击右侧浏览
+  
+  找到第一步解压的mingw64下的bin文件夹
+到这里，环境变量已设置完毕
+  3. 测试是否搭建成功'>
+<meta property='og:url' content='https://hungyam.gitee.io/code/p/gcc/'>
+<meta property='og:site_name' content='Hungyam'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-01-23T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-01-23T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="GCC">
+<meta name="twitter:description" content="MacOS/Win x86 C语言编译器的搭建 Windows x86 MinGW最大的特点就是编译出来的可执行文件能够独立在Windows上运行。
+MinGW的组成：
+ 编译器(支持C、C&#43;&#43;、ADA和Fortran) GNU工具  1. MinGW安装 MinGW官方网址：http://www.mingw.org/
+由于是墙外网站，经常会出现网站打不开，下载不了的情况，就不详细描述mingw的下载方法。
+这里为读者准备了完整的内容包 点此下载
+下载完毕将压缩包内容解压到C盘下（个人习惯，放其他位置也可，但需记住所放位置）
+2. 添加环境变量   
+  解压后出现mingw64文件夹
+  
+  在此电脑上右键选择属性
+  
+  左侧选择高级系统设置
+  
+  高级页下选择环境变量
+  
+  在系统变量栏中双击Path变量
+  
+  点击右侧浏览
+  
+  找到第一步解压的mingw64下的bin文件夹
+到这里，环境变量已设置完毕
+  3. 测试是否搭建成功"></head><body class="">
+        <div class="container flex on-phone--column align-items--flex-start extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+
+                
+                    
+                    <img src="/code/img/avatar_hu271a79c54c9badde22d864b5ad68a303_161614_300x300_resize_q75_box.jpg" width="300"
+                        height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+
+                <span class="emoji">🐤</span>
+            </figure>
+        
+        <h1 class="site-name"><a href="https://hungyam.gitee.io/code">Hungyam</a></h1>
+        <h2 class="site-description">Hungyam&#39;s Blog</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='https://hungyam.gitee.io/code/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='https://hungyam.gitee.io/code/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About me</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='https://hungyam.gitee.io/code/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+    </ol>
+</aside>
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://hungyam.gitee.io/code" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <h2 class="article-title">
+        <a href="https://hungyam.gitee.io/code/p/gcc/">GCC</a>
+    </h2>
+
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">2021 Jan 23</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h1 id="macoswin-x86-c语言编译器的搭建">MacOS/Win x86 C语言编译器的搭建</h1>
+<h2 id="windows-x86">Windows x86</h2>
+<p>MinGW最大的特点就是编译出来的可执行文件能够独立在Windows上运行。</p>
+<p>MinGW的组成：</p>
+<ul>
+<li>编译器(支持C、C++、ADA和Fortran)</li>
+<li>GNU工具</li>
+</ul>
+<h3 id="1-mingw安装">1. MinGW安装</h3>
+<p>MinGW官方网址：<a class="link" href="http://www.mingw.org/"  target="_blank" rel="noopener"
+    >http://www.mingw.org/</a></p>
+<p>由于是墙外网站，经常会出现网站打不开，下载不了的情况，就不详细描述mingw的下载方法。</p>
+<p>这里为读者准备了完整的内容包 <a class="link" href="mingw64_GCC8.1.7z" >点此下载</a></p>
+<p>下载完毕将压缩包内容解压到C盘下（个人习惯，放其他位置也可，但需记住所放位置）</p>
+<h3 id="2-添加环境变量">2. 添加环境变量</h3>
+<p><figure>
+		<a href="/code/p/gcc/1.png" data-size="1314x846">
+			<img srcset="/code/p/gcc/1_hu6c4b118021901279affc1ac6a3a416de_270772_480x0_resize_box_2.png 480w, /code/p/gcc/1_hu6c4b118021901279affc1ac6a3a416de_270772_1024x0_resize_box_2.png 1024w"
+				src="/code/p/gcc/1.png" width="1314" height="846" loading="lazy"
+				alt="&nbsp;">
+		</a>
+		
+	</figure></p>
+<ul>
+<li>
+<p>解压后出现<strong>mingw64文件夹</strong></p>
+<p><figure>
+		<a href="/code/p/gcc/2.png" data-size="774x610">
+			<img srcset="/code/p/gcc/2_hu4ac61235fa1326e9cbe0e9bcf695d5c9_141990_480x0_resize_box_2.png 480w, /code/p/gcc/2_hu4ac61235fa1326e9cbe0e9bcf695d5c9_141990_1024x0_resize_box_2.png 1024w"
+				src="/code/p/gcc/2.png" width="774" height="610" loading="lazy"
+				alt="&nbsp;">
+		</a>
+		
+	</figure></p>
+</li>
+<li>
+<p>在<strong>此电脑</strong>上右键选择<strong>属性</strong></p>
+<p><figure>
+		<a href="/code/p/gcc/3.png" data-size="1370x940">
+			<img srcset="/code/p/gcc/3_huf9834ca72c1f4b68fe6ced3f39ab516e_254550_480x0_resize_box_2.png 480w, /code/p/gcc/3_huf9834ca72c1f4b68fe6ced3f39ab516e_254550_1024x0_resize_box_2.png 1024w"
+				src="/code/p/gcc/3.png" width="1370" height="940" loading="lazy"
+				alt="&nbsp;">
+		</a>
+		
+	</figure></p>
+</li>
+<li>
+<p>左侧选择<strong>高级系统设置</strong></p>
+<p><figure>
+		<a href="/code/p/gcc/4.png" data-size="700x798">
+			<img srcset="/code/p/gcc/4_hu89286852a3bf61b42cd8ea39219bd736_132527_480x0_resize_box_2.png 480w, /code/p/gcc/4_hu89286852a3bf61b42cd8ea39219bd736_132527_1024x0_resize_box_2.png 1024w"
+				src="/code/p/gcc/4.png" width="700" height="798" loading="lazy"
+				alt="&nbsp;">
+		</a>
+		
+	</figure></p>
+</li>
+<li>
+<p>高级页下选择<strong>环境变量</strong></p>
+<p><figure>
+		<a href="/code/p/gcc/5.png" data-size="910x878">
+			<img srcset="/code/p/gcc/5_hub5bf005e8ab4de2fec400c301132f0f5_243974_480x0_resize_box_2.png 480w, /code/p/gcc/5_hub5bf005e8ab4de2fec400c301132f0f5_243974_1024x0_resize_box_2.png 1024w"
+				src="/code/p/gcc/5.png" width="910" height="878" loading="lazy"
+				alt="&nbsp;">
+		</a>
+		
+	</figure></p>
+</li>
+<li>
+<p>在<strong>系统变量</strong>栏中双击<strong>Path</strong>变量</p>
+<p><figure>
+		<a href="/code/p/gcc/6.png" data-size="910x878">
+			<img srcset="/code/p/gcc/6_hub5bf005e8ab4de2fec400c301132f0f5_201664_480x0_resize_box_2.png 480w, /code/p/gcc/6_hub5bf005e8ab4de2fec400c301132f0f5_201664_1024x0_resize_box_2.png 1024w"
+				src="/code/p/gcc/6.png" width="910" height="878" loading="lazy"
+				alt="&nbsp;">
+		</a>
+		
+	</figure></p>
+</li>
+<li>
+<p>点击右侧<strong>浏览</strong></p>
+<p><figure>
+		<a href="/code/p/gcc/7.png" data-size="910x878">
+			<img srcset="/code/p/gcc/7_hub5bf005e8ab4de2fec400c301132f0f5_193098_480x0_resize_box_2.png 480w, /code/p/gcc/7_hub5bf005e8ab4de2fec400c301132f0f5_193098_1024x0_resize_box_2.png 1024w"
+				src="/code/p/gcc/7.png" width="910" height="878" loading="lazy"
+				alt="&nbsp;">
+		</a>
+		
+	</figure></p>
+</li>
+<li>
+<p>找到第一步解压的<strong>mingw64下的bin</strong>文件夹</p>
+<p>到这里，环境变量已设置完毕</p>
+</li>
+</ul>
+<h3 id="3-测试是否搭建成功">3. 测试是否搭建成功</h3>
+<p><figure>
+		<a href="/code/p/gcc/8.png" data-size="1316x844">
+			<img srcset="/code/p/gcc/8_hu582e427e4f5fda37fbfa10d7ac37db50_244783_480x0_resize_box_2.png 480w, /code/p/gcc/8_hu582e427e4f5fda37fbfa10d7ac37db50_244783_1024x0_resize_box_2.png 1024w"
+				src="/code/p/gcc/8.png" width="1316" height="844" loading="lazy"
+				alt="&nbsp;">
+		</a>
+		
+	</figure></p>
+<ul>
+<li>
+<p>在资源管理器的地址栏中输入<strong>cmd，并按回车</strong>，打开命令行</p>
+<p><figure>
+		<a href="/code/p/gcc/9.png" data-size="1246x802">
+			<img srcset="/code/p/gcc/9_hu179b98727275f4d75b07478552d99fd9_730719_480x0_resize_box_2.png 480w, /code/p/gcc/9_hu179b98727275f4d75b07478552d99fd9_730719_1024x0_resize_box_2.png 1024w"
+				src="/code/p/gcc/9.png" width="1246" height="802" loading="lazy"
+				alt="&nbsp;">
+		</a>
+		
+	</figure></p>
+</li>
+<li>
+<p>在命令行下键入 <strong>gcc -v</strong>，若出现版本号，则为搭建成功</p>
+</li>
+</ul>
+<h2 id="macos">MacOS</h2>
+<h3 id="安装及搭建">安装及搭建</h3>
+<ol>
+<li>可直接在App Store中下载Xcode，完成安装即可</li>
+</ol>
+<p>（若不想安装整套Xcode开发工具，也可直接在命令行下安装<strong>Xcode Command Line Tools</strong>）</p>
+<p><figure>
+		<a href="/code/p/gcc/10.png" data-size="1498x948">
+			<img srcset="/code/p/gcc/10_huf873cb4b5b39ca85f4314e97dc2f0c78_633793_480x0_resize_box_2.png 480w, /code/p/gcc/10_huf873cb4b5b39ca85f4314e97dc2f0c78_633793_1024x0_resize_box_2.png 1024w"
+				src="/code/p/gcc/10.png" width="1498" height="948" loading="lazy"
+				alt="&nbsp;">
+		</a>
+		
+	</figure></p>
+<ul>
+<li>
+<p>应用中选择<strong>终端机</strong></p>
+<p><figure>
+		<a href="/code/p/gcc/11.png" data-size="1364x1014">
+			<img srcset="/code/p/gcc/11_hu9df04d0d19b5ddfbfb035a8f2078acd6_259319_480x0_resize_box_2.png 480w, /code/p/gcc/11_hu9df04d0d19b5ddfbfb035a8f2078acd6_259319_1024x0_resize_box_2.png 1024w"
+				src="/code/p/gcc/11.png" width="1364" height="1014" loading="lazy"
+				alt="&nbsp;">
+		</a>
+		
+	</figure></p>
+</li>
+<li>
+<div class="highlight"><pre class="chroma"><code class="language-C" data-lang="C"><span class="c1">//输入安装命令
+</span><span class="c1"></span><span class="n">xcode</span><span class="o">-</span><span class="n">select</span> <span class="o">--</span><span class="n">install</span>
+</code></pre></div><p><figure>
+		<a href="/code/p/gcc/12.png" data-size="1364x1014">
+			<img srcset="/code/p/gcc/12_hu9df04d0d19b5ddfbfb035a8f2078acd6_290781_480x0_resize_box_2.png 480w, /code/p/gcc/12_hu9df04d0d19b5ddfbfb035a8f2078acd6_290781_1024x0_resize_box_2.png 1024w"
+				src="/code/p/gcc/12.png" width="1364" height="1014" loading="lazy"
+				alt="&nbsp;">
+		</a>
+		
+	</figure></p>
+</li>
+<li>
+<div class="highlight"><pre class="chroma"><code class="language-C" data-lang="C"><span class="c1">//查询版本号
+</span><span class="c1"></span><span class="n">xcode</span><span class="o">-</span><span class="n">select</span> <span class="o">--</span><span class="n">version</span>
+</code></pre></div></li>
+</ul>
+<h2 id="编译运行自己的第一个程序">编译运行自己的第一个程序</h2>
+<h3 id="这里以vscode为例适用于macoswin-x86">这里以VScode为例（适用于MacOS/Win x86）</h3>
+<p><figure>
+		<a href="/code/p/gcc/13.png" data-size="2280x1742">
+			<img srcset="/code/p/gcc/13_hu0fa4b359e682707cb491f1081e9bda1c_712712_480x0_resize_box_2.png 480w, /code/p/gcc/13_hu0fa4b359e682707cb491f1081e9bda1c_712712_1024x0_resize_box_2.png 1024w"
+				src="/code/p/gcc/13.png" width="2280" height="1742" loading="lazy"
+				alt="&nbsp;">
+		</a>
+		
+	</figure></p>
+<ul>
+<li>
+<p>选择Open folder打开任意一个文件夹（存代码）</p>
+<p><figure>
+		<a href="/code/p/gcc/15.png" data-size="2280x1742">
+			<img srcset="/code/p/gcc/15_hu0fa4b359e682707cb491f1081e9bda1c_741009_480x0_resize_box_2.png 480w, /code/p/gcc/15_hu0fa4b359e682707cb491f1081e9bda1c_741009_1024x0_resize_box_2.png 1024w"
+				src="/code/p/gcc/15.png" width="2280" height="1742" loading="lazy"
+				alt="&nbsp;">
+		</a>
+		
+	</figure></p>
+</li>
+<li>
+<p>创建一个新文件 文件以  .c  为后缀即可</p>
+<p><figure>
+		<a href="/code/p/gcc/16.png" data-size="2280x1742">
+			<img srcset="/code/p/gcc/16_hu0fa4b359e682707cb491f1081e9bda1c_542033_480x0_resize_box_2.png 480w, /code/p/gcc/16_hu0fa4b359e682707cb491f1081e9bda1c_542033_1024x0_resize_box_2.png 1024w"
+				src="/code/p/gcc/16.png" width="2280" height="1742" loading="lazy"
+				alt="&nbsp;">
+		</a>
+		
+	</figure></p>
+</li>
+<li>
+<p>这里随便写一段打印功能的代码，写完后**Ctrl+S（win）/Command+S（mac）**保存</p>
+<p><figure>
+		<a href="/code/p/gcc/17.png" data-size="938x804">
+			<img srcset="/code/p/gcc/17_hub943b3da6a2ac3df5114f38d6963a2fe_275640_480x0_resize_box_2.png 480w, /code/p/gcc/17_hub943b3da6a2ac3df5114f38d6963a2fe_275640_1024x0_resize_box_2.png 1024w"
+				src="/code/p/gcc/17.png" width="938" height="804" loading="lazy"
+				alt="&nbsp;">
+		</a>
+		
+	</figure></p>
+</li>
+<li>
+<p>打开一个新终端</p>
+<p><figure>
+		<a href="/code/p/gcc/18.png" data-size="2280x1742">
+			<img srcset="/code/p/gcc/18_hu0fa4b359e682707cb491f1081e9bda1c_574867_480x0_resize_box_2.png 480w, /code/p/gcc/18_hu0fa4b359e682707cb491f1081e9bda1c_574867_1024x0_resize_box_2.png 1024w"
+				src="/code/p/gcc/18.png" width="2280" height="1742" loading="lazy"
+				alt="&nbsp;">
+		</a>
+		
+	</figure></p>
+</li>
+<li>
+<p>键入<strong>gcc 1.c(你的文件名)</strong>，执行编译</p>
+</li>
+<li>
+<p>编译完成后运行程序</p>
+<ul>
+<li>
+<p>./a.exe（win 下编译后默认的文件名）</p>
+</li>
+<li>
+<p>./a.out（mac 下编译后默认的文件名）</p>
+</li>
+</ul>
+<p>可见到终端输出 程序中的打印内容</p>
+</li>
+</ul>
+<h3 id="macos上非常推荐xcode作主力ide">MacOS上非常推荐Xcode作主力IDE</h3>
+<p><figure>
+		<a href="/code/p/gcc/19.png" data-size="1828x1144">
+			<img srcset="/code/p/gcc/19_hud6b935907b7e30b5e3ddb9ed78a9b57c_576755_480x0_resize_box_2.png 480w, /code/p/gcc/19_hud6b935907b7e30b5e3ddb9ed78a9b57c_576755_1024x0_resize_box_2.png 1024w"
+				src="/code/p/gcc/19.png" width="1828" height="1144" loading="lazy"
+				alt="&nbsp;">
+		</a>
+		
+	</figure></p>
+<ul>
+<li>
+<p>选择 <strong>Create a new Xcode project</strong></p>
+<p><figure>
+		<a href="/code/p/gcc/20.png" data-size="3024x2024">
+			<img srcset="/code/p/gcc/20_hu3f802372b7b1e7bf2de30fecd9a5558d_967788_480x0_resize_box_2.png 480w, /code/p/gcc/20_hu3f802372b7b1e7bf2de30fecd9a5558d_967788_1024x0_resize_box_2.png 1024w"
+				src="/code/p/gcc/20.png" width="3024" height="2024" loading="lazy"
+				alt="&nbsp;">
+		</a>
+		
+	</figure></p>
+</li>
+<li>
+<p>macOS页下的 <strong>Command Line Tool</strong></p>
+<p><figure>
+		<a href="/code/p/gcc/21.png" data-size="3024x2024">
+			<img srcset="/code/p/gcc/21_hu3f802372b7b1e7bf2de30fecd9a5558d_916915_480x0_resize_box_2.png 480w, /code/p/gcc/21_hu3f802372b7b1e7bf2de30fecd9a5558d_916915_1024x0_resize_box_2.png 1024w"
+				src="/code/p/gcc/21.png" width="3024" height="2024" loading="lazy"
+				alt="&nbsp;">
+		</a>
+		
+	</figure></p>
+</li>
+<li>
+<p>随便输入一个工程名字，选择C语言</p>
+<p><figure>
+		<a href="/code/p/gcc/22.png" data-size="3024x2024">
+			<img srcset="/code/p/gcc/22_hu3f802372b7b1e7bf2de30fecd9a5558d_736338_480x0_resize_box_2.png 480w, /code/p/gcc/22_hu3f802372b7b1e7bf2de30fecd9a5558d_736338_1024x0_resize_box_2.png 1024w"
+				src="/code/p/gcc/22.png" width="3024" height="2024" loading="lazy"
+				alt="&nbsp;">
+		</a>
+		
+	</figure></p>
+</li>
+<li>
+<p>选择main.c文件即可进行编辑，创建时会有默认代码</p>
+<p><figure>
+		<a href="/code/p/gcc/23.png" data-size="3024x2024">
+			<img srcset="/code/p/gcc/23_hu3f802372b7b1e7bf2de30fecd9a5558d_760338_480x0_resize_box_2.png 480w, /code/p/gcc/23_hu3f802372b7b1e7bf2de30fecd9a5558d_760338_1024x0_resize_box_2.png 1024w"
+				src="/code/p/gcc/23.png" width="3024" height="2024" loading="lazy"
+				alt="&nbsp;">
+		</a>
+		
+	</figure></p>
+</li>
+<li>
+<p>输入<strong>Command+R</strong>进行编译运行</p>
+<hr>
+</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="renderMathInElement(document.querySelector(`.article-content`));"></script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+</aside>
+
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">&copy; 2021 Hungyam</section>
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="1.0.5">Stack</a></b> designed by
+        <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true" style="display:none">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/code/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<link rel="stylesheet" href="/code/css/highlight/light.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="/code/css/highlight/dark.min.css" media="(prefers-color-scheme: dark)">
+
+    </body>
+</html>

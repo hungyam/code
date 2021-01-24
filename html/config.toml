@@ -15,6 +15,7 @@ DefaultContentLanguage = "zh-CN"                   # Theme i18n support
     featuredImageField = "image"
     rssFullContent = true
     
+
     [params.dateFormat]
         published = "2006 Jan 02"
         lastUpdated = "2006 Jan 02 ,15:04"
@@ -22,7 +23,7 @@ DefaultContentLanguage = "zh-CN"                   # Theme i18n support
     [params.sidebar]
         emoji = "🐤"
         avatar = "img/avatar.jpg"
-        subtitle = "Programming enthusiast"
+        subtitle = "Hungyam's Blog"
         
     [params.article]
         math = false
