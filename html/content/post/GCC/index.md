@@ -25,7 +25,7 @@ MinGW官方网址：[http://www.mingw.org/](http://www.mingw.org/)
 
 由于是墙外网站，经常会出现网站打不开，下载不了的情况，就不详细描述mingw的下载方法。
 
-这里为读者准备了完整的内容包 [点此下载](mingw64_GCC8.1.7z)
+这里为读者准备了完整的内容包 [点此下载](https://gitee.com/hungyam/code/tree/master/html/public/p/gcc/mingw64_GCC8.1.7z)
 
 下载完毕将压缩包内容解压到C盘下（个人习惯，放其他位置也可，但需记住所放位置）
 

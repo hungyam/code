@@ -24,7 +24,8 @@
 &lt;p&gt;MinGW官方网址：&lt;a class=&#34;link&#34; href=&#34;http://www.mingw.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;http://www.mingw.org/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;由于是墙外网站，经常会出现网站打不开，下载不了的情况，就不详细描述mingw的下载方法。&lt;/p&gt;
-&lt;p&gt;这里为读者准备了完整的内容包 &lt;a class=&#34;link&#34; href=&#34;mingw64_GCC8.1.7z&#34; &gt;点此下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这里为读者准备了完整的内容包 &lt;a class=&#34;link&#34; href=&#34;https://gitee.com/hungyam/code/tree/master/html/public/p/gcc/mingw64_GCC8.1.7z&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;点此下载&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;下载完毕将压缩包内容解压到C盘下（个人习惯，放其他位置也可，但需记住所放位置）&lt;/p&gt;
 &lt;h3 id=&#34;2-添加环境变量&#34;&gt;2. 添加环境变量&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
