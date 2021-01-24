@@ -12,8 +12,8 @@
         <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
         
         <guid>https://hungyam.gitee.io/code/p/gcc/</guid>
-        <description>&lt;img src="https://hungyam.gitee.io/code/p/gcc/2.jpg" alt="Featured image of post GCC" /&gt;&lt;h1 id=&#34;macoswin-x86-c语言编译器的搭建&#34;&gt;MacOS/Win x86 C语言编译器的搭建&lt;/h1&gt;
-&lt;h2 id=&#34;windows-x86&#34;&gt;Windows x86&lt;/h2&gt;
+        <description>&lt;img src="https://hungyam.gitee.io/code/p/gcc/2.jpg" alt="Featured image of post GCC" /&gt;&lt;h1 id=&#34;macoswin-x64-c语言编译器的搭建&#34;&gt;MacOS/Win x64 C语言编译器的搭建&lt;/h1&gt;
+&lt;h2 id=&#34;windows-x64&#34;&gt;Windows x64&lt;/h2&gt;
 &lt;p&gt;MinGW最大的特点就是编译出来的可执行文件能够独立在Windows上运行。&lt;/p&gt;
 &lt;p&gt;MinGW的组成：&lt;/p&gt;
 &lt;ul&gt;
@@ -177,7 +177,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;编译运行自己的第一个程序&#34;&gt;编译运行自己的第一个程序&lt;/h2&gt;
-&lt;h3 id=&#34;这里以vscode为例适用于macoswin-x86&#34;&gt;这里以VScode为例（适用于MacOS/Win x86）&lt;/h3&gt;
+&lt;h3 id=&#34;这里以vscode为例适用于macoswin-x64&#34;&gt;这里以VScode为例（适用于MacOS/Win x64）&lt;/h3&gt;
 &lt;p&gt;&lt;figure&gt;
 		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/13.png&#34; data-size=&#34;2280x1742&#34;&gt;
 			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/13_hu0fa4b359e682707cb491f1081e9bda1c_712712_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/13_hu0fa4b359e682707cb491f1081e9bda1c_712712_1024x0_resize_box_2.png 1024w&#34;

@@ -8,9 +8,9 @@ image : 2.jpg
 categories:
 ---
 
-# MacOS/Win x86 C语言编译器的搭建
+# MacOS/Win x64 C语言编译器的搭建
 
-## Windows x86
+## Windows x64
 
 MinGW最大的特点就是编译出来的可执行文件能够独立在Windows上运行。
 
@@ -103,7 +103,7 @@ MinGW官方网址：[http://www.mingw.org/](http://www.mingw.org/)
 
 ## 编译运行自己的第一个程序
 
-### 这里以VScode为例（适用于MacOS/Win x86）
+### 这里以VScode为例（适用于MacOS/Win x64）
 
   ![](13.png)
 

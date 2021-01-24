@@ -13,7 +13,7 @@
       <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://hungyam.gitee.io/code/p/gcc/</guid>
-      <description>MacOS/Win x86 C语言编译器的搭建 Windows x86 MinGW最大的特点就是编译出来的可执行文件能够独立在Windows上运行。
+      <description>MacOS/Win x64 C语言编译器的搭建 Windows x64 MinGW最大的特点就是编译出来的可执行文件能够独立在Windows上运行。
 MinGW的组成：
  编译器(支持C、C++、ADA和Fortran) GNU工具  1. MinGW安装 MinGW官方网址：http://www.mingw.org/
 由于是墙外网站，经常会出现网站打不开，下载不了的情况，就不详细描述mingw的下载方法。
