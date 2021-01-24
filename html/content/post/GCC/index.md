@@ -4,7 +4,7 @@ title: GCC
 date: 2021-01-23
 description: 
 math: true
-image : 
+image : 2.jpg
 categories:
 ---
 
