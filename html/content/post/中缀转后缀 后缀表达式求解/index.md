@@ -7,7 +7,7 @@ math: true
 image : 3.jpg
 categories:
     - C
-    - Stack
+    - 数据结构
 ---
 
 ### Lab Work 04-1. Application of Stacks

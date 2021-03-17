@@ -1,12 +1,216 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Hungyam</title>
+        <title>小橘子&#39;s BLOG</title>
         <link>https://hungyam.gitee.io/code/</link>
-        <description>Recent content on Hungyam</description>
+        <description>Recent content on 小橘子&#39;s BLOG</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sat, 23 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hungyam.gitee.io/code/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 17 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hungyam.gitee.io/code/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>How To Use Clion</title>
+        <link>https://hungyam.gitee.io/code/p/how-to-use-clion/</link>
+        <pubDate>Wed, 17 Mar 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://hungyam.gitee.io/code/p/how-to-use-clion/</guid>
+        <description>&lt;img src="https://hungyam.gitee.io/code/p/how-to-use-clion/3.jpg" alt="Featured image of post How To Use Clion" /&gt;&lt;h1 id=&#34;clion的安装配置与使用-以及如何对代码进行调试debug&#34;&gt;CLion的安装、配置与使用 以及如何对代码进行调试(debug)&lt;/h1&gt;
+&lt;h2 id=&#34;1编译器的安装&#34;&gt;1.编译器的安装&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Win&lt;/p&gt;
+&lt;p&gt;MinGW，&lt;a class=&#34;link&#34; href=&#34;https://pan.baidu.com/s/1I_TIYaPc2go7uNm2jEhXlg&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;点此下载&lt;/a&gt; ，解压密码：hpat&lt;/p&gt;
+&lt;p&gt;下载完毕将压缩包内容解压到C盘下（个人习惯，放其他位置也可，但需记住所放位置）
+&lt;figure style=&#34;flex-grow: 155; flex-basis: 372px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/1.png&#34; data-size=&#34;1314x846&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/1.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/1_hu6c4b118021901279affc1ac6a3a416de_270772_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/how-to-use-clion/1_hu6c4b118021901279affc1ac6a3a416de_270772_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1314&#34;
+				height=&#34;846&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;将mingw64解压在根目录&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;将mingw64解压在根目录&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Mac&lt;/p&gt;
+&lt;p&gt;终端执行&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;  xcode-select --install
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;2下载安装clion&#34;&gt;2.下载安装Clion&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;地址：&lt;a class=&#34;link&#34; href=&#34;https://www.jetbrains.com/zh-cn/clion/download/#section=windows&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;点此下载&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;下载后正常安装即可&lt;/li&gt;
+&lt;li&gt;安装后弹出登陆选项，此时需要注册一个教育账号即可激活，&lt;a class=&#34;link&#34; href=&#34;https://www.jetbrains.com/zh-cn/community/education/#students&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;点此注册&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;进入后用教育（中大）邮箱注册&lt;/li&gt;
+&lt;li&gt;注册后登录激活即可（若注册失败也可尝试使用本人账号激活&lt;strong&gt;username:1159292671@qq.com,password:#Xhx0530!&lt;/strong&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;3开始使用运行自己的第一个程序&#34;&gt;3.开始使用，运行自己的第一个程序&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;创建工程&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 127; flex-basis: 306px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/2.png&#34; data-size=&#34;802x629&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/2.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/2_huec9a3c64277a37ac1a31ebb1ceea9b8e_31388_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/how-to-use-clion/2_huec9a3c64277a37ac1a31ebb1ceea9b8e_31388_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;802&#34;
+				height=&#34;629&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;选择创建新工程&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;选择创建新工程&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;选择C语言工程，并为工程命名&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 127; flex-basis: 306px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/3.png&#34; data-size=&#34;802x629&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/3.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/3_hu952dba558f078e4e68785d08c16175ba_48260_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/how-to-use-clion/3_hu952dba558f078e4e68785d08c16175ba_48260_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;802&#34;
+				height=&#34;629&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;进入设置&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 139; flex-basis: 334px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/4.png&#34; data-size=&#34;1386x993&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/4.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/4_hu7d410ccf0b11be8dc6078e1e7b7fe17d_63784_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/how-to-use-clion/4_hu7d410ccf0b11be8dc6078e1e7b7fe17d_63784_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1386&#34;
+				height=&#34;993&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;选择Toolchains-&amp;gt;MinGW&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 139; flex-basis: 334px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/5.png&#34; data-size=&#34;984x705&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/5.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/5_huee5019c3dbcfa47be9c355c8f205c2cd_58010_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/how-to-use-clion/5_huee5019c3dbcfa47be9c355c8f205c2cd_58010_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;984&#34;
+				height=&#34;705&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;若MinGW解压在C盘根目录下，一般将自动识别，若识别失败，也可自己填写所在位置&lt;strong&gt;C:\mingw64&lt;/strong&gt;（我将MinGW解压在C盘根目录，如果你的不是，按照你的情况改地址即可）&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 139; flex-basis: 334px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/11.png&#34; data-size=&#34;984x705&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/11.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/11_hua6385a69cc538cac8351246686534e3f_54283_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/how-to-use-clion/11_hua6385a69cc538cac8351246686534e3f_54283_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;984&#34;
+				height=&#34;705&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;成功识别到&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;成功识别到&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;保存设置即可运行第一个程序，点击右上角开始按键&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 139; flex-basis: 334px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/6.png&#34; data-size=&#34;1386x993&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/6.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/6_hu279ea05d7181d0175323fd8b30c17ec1_97773_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/how-to-use-clion/6_hu279ea05d7181d0175323fd8b30c17ec1_97773_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1386&#34;
+				height=&#34;993&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;成功完成输入输出&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;成功完成输入输出&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;至此软件配置成功，需要做另一个程序按上述步骤创建运行即可，不必再选择编译器&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;3如何调试自己的程序&#34;&gt;3.如何调试自己的程序&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;这里给一个样例，点击一下序号右边，会出现小红点（程序断点，表明程序执行到此处将暂停），接着点击运行案件右侧的调试按键。&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 139; flex-basis: 334px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/7.png&#34; data-size=&#34;1386x993&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/7.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/7_huaa9de2cc3c4e7f501c3bab1718797fd3_108540_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/how-to-use-clion/7_huaa9de2cc3c4e7f501c3bab1718797fd3_108540_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1386&#34;
+				height=&#34;993&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;程序运行至第6行停下&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;程序运行至第6行停下&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;可以看见此时下方有变量面板，表示运行到黄色箭头处，当前变量的值为多少（此时a为1，b为107(对应ascii的字符k)）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;点击下一步按钮，程序走向下一行&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 139; flex-basis: 334px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/8.png&#34; data-size=&#34;1386x993&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/8.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/8_hu2fe79217b21a7bd065933d9d222a9dc8_107908_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/how-to-use-clion/8_hu2fe79217b21a7bd065933d9d222a9dc8_107908_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1386&#34;
+				height=&#34;993&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;往前走了两行&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;往前走了两行&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;此时变量相应改变&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 139; flex-basis: 334px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/9.png&#34; data-size=&#34;1386x993&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/9.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/9_hu04bd54c293590d1e7402b097e973c796_77971_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/how-to-use-clion/9_hu04bd54c293590d1e7402b097e973c796_77971_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1386&#34;
+				height=&#34;993&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;再往前走两行&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;再往前走两行&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;使用调试器，能极大地帮助我们调试我们的程序，当我们写了Bug，便能够较为轻松地检查错误，并改正，真正做到高效。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;4-代码联想与编写时同步提醒&#34;&gt;4. 代码联想与编写时同步提醒&lt;/h2&gt;
+&lt;p&gt;该IDE的一大特点，在你未运行前，能提前告知你可能会出现错误的地方，并给出建议的解决办法，如下图的程序（这里引用一位学弟所编写的代码）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/12.png&#34; alt=&#34;发现无论输入什么都无法得到正确值&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;为什么值错了呢？由于C语言是一行一行运行的，未输入前先做运算导致此程序出错。&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 146; flex-basis: 350px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/10.png&#34; data-size=&#34;1361x932&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/10.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/how-to-use-clion/10_hua0b3ca83bef0a7f197536eea43652a16_74852_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/how-to-use-clion/10_hua0b3ca83bef0a7f197536eea43652a16_74852_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1361&#34;
+				height=&#34;932&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;将鼠标放到有黄色提醒的X上&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;将鼠标放到有黄色提醒的X上&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;告诉你X还未初始化，说明还没有值，这样就能发现自己的代码顺序出问题了吧！&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>GCC</title>
         <link>https://hungyam.gitee.io/code/p/gcc/</link>
         <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
@@ -28,77 +232,91 @@
     &gt;点此下载&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;下载完毕将压缩包内容解压到C盘下（个人习惯，放其他位置也可，但需记住所放位置）&lt;/p&gt;
 &lt;h3 id=&#34;2-添加环境变量&#34;&gt;2. 添加环境变量&lt;/h3&gt;
-&lt;p&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/1.png&#34; data-size=&#34;1314x846&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/1_hu6c4b118021901279affc1ac6a3a416de_270772_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/1_hu6c4b118021901279affc1ac6a3a416de_270772_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/gcc/1.png&#34; width=&#34;1314&#34; height=&#34;846&#34; loading=&#34;lazy&#34;
-				alt=&#34;&amp;nbsp;&#34;&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 155; flex-basis: 372px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/1.png&#34; data-size=&#34;1314x846&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/gcc/1.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/1_hu6c4b118021901279affc1ac6a3a416de_270772_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/1_hu6c4b118021901279affc1ac6a3a416de_270772_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1314&#34;
+				height=&#34;846&#34;
+				loading=&#34;lazy&#34;
+				&gt;
 		&lt;/a&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;解压后出现&lt;strong&gt;mingw64文件夹&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/2.png&#34; data-size=&#34;774x610&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/2_hu4ac61235fa1326e9cbe0e9bcf695d5c9_141990_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/2_hu4ac61235fa1326e9cbe0e9bcf695d5c9_141990_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/gcc/2.png&#34; width=&#34;774&#34; height=&#34;610&#34; loading=&#34;lazy&#34;
-				alt=&#34;&amp;nbsp;&#34;&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 126; flex-basis: 304px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/2.png&#34; data-size=&#34;774x610&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/gcc/2.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/2_hu4ac61235fa1326e9cbe0e9bcf695d5c9_141990_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/2_hu4ac61235fa1326e9cbe0e9bcf695d5c9_141990_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;774&#34;
+				height=&#34;610&#34;
+				loading=&#34;lazy&#34;
+				&gt;
 		&lt;/a&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;在&lt;strong&gt;此电脑&lt;/strong&gt;上右键选择&lt;strong&gt;属性&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/3.png&#34; data-size=&#34;1370x940&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/3_huf9834ca72c1f4b68fe6ced3f39ab516e_254550_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/3_huf9834ca72c1f4b68fe6ced3f39ab516e_254550_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/gcc/3.png&#34; width=&#34;1370&#34; height=&#34;940&#34; loading=&#34;lazy&#34;
-				alt=&#34;&amp;nbsp;&#34;&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 145; flex-basis: 349px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/3.png&#34; data-size=&#34;1370x940&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/gcc/3.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/3_huf9834ca72c1f4b68fe6ced3f39ab516e_254550_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/3_huf9834ca72c1f4b68fe6ced3f39ab516e_254550_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1370&#34;
+				height=&#34;940&#34;
+				loading=&#34;lazy&#34;
+				&gt;
 		&lt;/a&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;左侧选择&lt;strong&gt;高级系统设置&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/4.png&#34; data-size=&#34;700x798&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/4_hu89286852a3bf61b42cd8ea39219bd736_132527_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/4_hu89286852a3bf61b42cd8ea39219bd736_132527_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/gcc/4.png&#34; width=&#34;700&#34; height=&#34;798&#34; loading=&#34;lazy&#34;
-				alt=&#34;&amp;nbsp;&#34;&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 87; flex-basis: 210px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/4.png&#34; data-size=&#34;700x798&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/gcc/4.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/4_hu89286852a3bf61b42cd8ea39219bd736_132527_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/4_hu89286852a3bf61b42cd8ea39219bd736_132527_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;700&#34;
+				height=&#34;798&#34;
+				loading=&#34;lazy&#34;
+				&gt;
 		&lt;/a&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;高级页下选择&lt;strong&gt;环境变量&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/5.png&#34; data-size=&#34;910x878&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/5_hub5bf005e8ab4de2fec400c301132f0f5_243974_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/5_hub5bf005e8ab4de2fec400c301132f0f5_243974_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/gcc/5.png&#34; width=&#34;910&#34; height=&#34;878&#34; loading=&#34;lazy&#34;
-				alt=&#34;&amp;nbsp;&#34;&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 103; flex-basis: 248px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/5.png&#34; data-size=&#34;910x878&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/gcc/5.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/5_hub5bf005e8ab4de2fec400c301132f0f5_243974_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/5_hub5bf005e8ab4de2fec400c301132f0f5_243974_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;910&#34;
+				height=&#34;878&#34;
+				loading=&#34;lazy&#34;
+				&gt;
 		&lt;/a&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;在&lt;strong&gt;系统变量&lt;/strong&gt;栏中双击&lt;strong&gt;Path&lt;/strong&gt;变量&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/6.png&#34; data-size=&#34;910x878&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/6_hub5bf005e8ab4de2fec400c301132f0f5_201664_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/6_hub5bf005e8ab4de2fec400c301132f0f5_201664_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/gcc/6.png&#34; width=&#34;910&#34; height=&#34;878&#34; loading=&#34;lazy&#34;
-				alt=&#34;&amp;nbsp;&#34;&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 103; flex-basis: 248px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/6.png&#34; data-size=&#34;910x878&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/gcc/6.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/6_hub5bf005e8ab4de2fec400c301132f0f5_201664_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/6_hub5bf005e8ab4de2fec400c301132f0f5_201664_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;910&#34;
+				height=&#34;878&#34;
+				loading=&#34;lazy&#34;
+				&gt;
 		&lt;/a&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;点击右侧&lt;strong&gt;浏览&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/7.png&#34; data-size=&#34;910x878&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/7_hub5bf005e8ab4de2fec400c301132f0f5_193098_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/7_hub5bf005e8ab4de2fec400c301132f0f5_193098_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/gcc/7.png&#34; width=&#34;910&#34; height=&#34;878&#34; loading=&#34;lazy&#34;
-				alt=&#34;&amp;nbsp;&#34;&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 103; flex-basis: 248px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/7.png&#34; data-size=&#34;910x878&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/gcc/7.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/7_hub5bf005e8ab4de2fec400c301132f0f5_193098_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/7_hub5bf005e8ab4de2fec400c301132f0f5_193098_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;910&#34;
+				height=&#34;878&#34;
+				loading=&#34;lazy&#34;
+				&gt;
 		&lt;/a&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
@@ -109,22 +327,26 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;3-测试是否搭建成功&#34;&gt;3. 测试是否搭建成功&lt;/h3&gt;
-&lt;p&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/8.png&#34; data-size=&#34;1316x844&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/8_hu582e427e4f5fda37fbfa10d7ac37db50_244783_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/8_hu582e427e4f5fda37fbfa10d7ac37db50_244783_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/gcc/8.png&#34; width=&#34;1316&#34; height=&#34;844&#34; loading=&#34;lazy&#34;
-				alt=&#34;&amp;nbsp;&#34;&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 155; flex-basis: 374px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/8.png&#34; data-size=&#34;1316x844&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/gcc/8.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/8_hu582e427e4f5fda37fbfa10d7ac37db50_244783_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/8_hu582e427e4f5fda37fbfa10d7ac37db50_244783_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1316&#34;
+				height=&#34;844&#34;
+				loading=&#34;lazy&#34;
+				&gt;
 		&lt;/a&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;在资源管理器的地址栏中输入&lt;strong&gt;cmd，并按回车&lt;/strong&gt;，打开命令行&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/9.png&#34; data-size=&#34;1246x802&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/9_hu179b98727275f4d75b07478552d99fd9_730719_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/9_hu179b98727275f4d75b07478552d99fd9_730719_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/gcc/9.png&#34; width=&#34;1246&#34; height=&#34;802&#34; loading=&#34;lazy&#34;
-				alt=&#34;&amp;nbsp;&#34;&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 155; flex-basis: 372px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/9.png&#34; data-size=&#34;1246x802&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/gcc/9.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/9_hu179b98727275f4d75b07478552d99fd9_730719_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/9_hu179b98727275f4d75b07478552d99fd9_730719_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1246&#34;
+				height=&#34;802&#34;
+				loading=&#34;lazy&#34;
+				&gt;
 		&lt;/a&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
@@ -139,22 +361,26 @@
 &lt;li&gt;可直接在App Store中下载Xcode，完成安装即可&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;（若不想安装整套Xcode开发工具，也可直接在命令行下安装&lt;strong&gt;Xcode Command Line Tools&lt;/strong&gt;）&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/10.png&#34; data-size=&#34;1498x948&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/10_huf873cb4b5b39ca85f4314e97dc2f0c78_633793_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/10_huf873cb4b5b39ca85f4314e97dc2f0c78_633793_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/gcc/10.png&#34; width=&#34;1498&#34; height=&#34;948&#34; loading=&#34;lazy&#34;
-				alt=&#34;&amp;nbsp;&#34;&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 158; flex-basis: 379px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/10.png&#34; data-size=&#34;1498x948&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/gcc/10.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/10_huf873cb4b5b39ca85f4314e97dc2f0c78_633793_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/10_huf873cb4b5b39ca85f4314e97dc2f0c78_633793_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1498&#34;
+				height=&#34;948&#34;
+				loading=&#34;lazy&#34;
+				&gt;
 		&lt;/a&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;应用中选择&lt;strong&gt;终端机&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/11.png&#34; data-size=&#34;1364x1014&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/11_hu9df04d0d19b5ddfbfb035a8f2078acd6_259319_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/11_hu9df04d0d19b5ddfbfb035a8f2078acd6_259319_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/gcc/11.png&#34; width=&#34;1364&#34; height=&#34;1014&#34; loading=&#34;lazy&#34;
-				alt=&#34;&amp;nbsp;&#34;&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 134; flex-basis: 322px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/11.png&#34; data-size=&#34;1364x1014&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/gcc/11.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/11_hu9df04d0d19b5ddfbfb035a8f2078acd6_259319_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/11_hu9df04d0d19b5ddfbfb035a8f2078acd6_259319_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1364&#34;
+				height=&#34;1014&#34;
+				loading=&#34;lazy&#34;
+				&gt;
 		&lt;/a&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
@@ -162,11 +388,13 @@
 &lt;li&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C&#34; data-lang=&#34;C&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//输入安装命令
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;xcode&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;select&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;install&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/12.png&#34; data-size=&#34;1364x1014&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/12_hu9df04d0d19b5ddfbfb035a8f2078acd6_290781_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/12_hu9df04d0d19b5ddfbfb035a8f2078acd6_290781_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/gcc/12.png&#34; width=&#34;1364&#34; height=&#34;1014&#34; loading=&#34;lazy&#34;
-				alt=&#34;&amp;nbsp;&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;figure style=&#34;flex-grow: 134; flex-basis: 322px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/12.png&#34; data-size=&#34;1364x1014&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/gcc/12.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/12_hu9df04d0d19b5ddfbfb035a8f2078acd6_290781_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/12_hu9df04d0d19b5ddfbfb035a8f2078acd6_290781_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1364&#34;
+				height=&#34;1014&#34;
+				loading=&#34;lazy&#34;
+				&gt;
 		&lt;/a&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
@@ -178,55 +406,65 @@
 &lt;/ul&gt;
 &lt;h2 id=&#34;编译运行自己的第一个程序&#34;&gt;编译运行自己的第一个程序&lt;/h2&gt;
 &lt;h3 id=&#34;这里以vscode为例适用于macoswin-x64&#34;&gt;这里以VScode为例（适用于MacOS/Win x64）&lt;/h3&gt;
-&lt;p&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/13.png&#34; data-size=&#34;2280x1742&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/13_hu0fa4b359e682707cb491f1081e9bda1c_712712_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/13_hu0fa4b359e682707cb491f1081e9bda1c_712712_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/gcc/13.png&#34; width=&#34;2280&#34; height=&#34;1742&#34; loading=&#34;lazy&#34;
-				alt=&#34;&amp;nbsp;&#34;&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 130; flex-basis: 314px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/13.png&#34; data-size=&#34;2280x1742&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/gcc/13.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/13_hu0fa4b359e682707cb491f1081e9bda1c_712712_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/13_hu0fa4b359e682707cb491f1081e9bda1c_712712_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;2280&#34;
+				height=&#34;1742&#34;
+				loading=&#34;lazy&#34;
+				&gt;
 		&lt;/a&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;选择Open folder打开任意一个文件夹（存代码）&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/15.png&#34; data-size=&#34;2280x1742&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/15_hu0fa4b359e682707cb491f1081e9bda1c_741009_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/15_hu0fa4b359e682707cb491f1081e9bda1c_741009_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/gcc/15.png&#34; width=&#34;2280&#34; height=&#34;1742&#34; loading=&#34;lazy&#34;
-				alt=&#34;&amp;nbsp;&#34;&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 130; flex-basis: 314px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/15.png&#34; data-size=&#34;2280x1742&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/gcc/15.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/15_hu0fa4b359e682707cb491f1081e9bda1c_741009_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/15_hu0fa4b359e682707cb491f1081e9bda1c_741009_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;2280&#34;
+				height=&#34;1742&#34;
+				loading=&#34;lazy&#34;
+				&gt;
 		&lt;/a&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;创建一个新文件 文件以  .c  为后缀即可&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/16.png&#34; data-size=&#34;2280x1742&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/16_hu0fa4b359e682707cb491f1081e9bda1c_542033_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/16_hu0fa4b359e682707cb491f1081e9bda1c_542033_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/gcc/16.png&#34; width=&#34;2280&#34; height=&#34;1742&#34; loading=&#34;lazy&#34;
-				alt=&#34;&amp;nbsp;&#34;&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 130; flex-basis: 314px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/16.png&#34; data-size=&#34;2280x1742&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/gcc/16.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/16_hu0fa4b359e682707cb491f1081e9bda1c_542033_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/16_hu0fa4b359e682707cb491f1081e9bda1c_542033_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;2280&#34;
+				height=&#34;1742&#34;
+				loading=&#34;lazy&#34;
+				&gt;
 		&lt;/a&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;这里随便写一段打印功能的代码，写完后**Ctrl+S（win）/Command+S（mac）**保存&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/17.png&#34; data-size=&#34;938x804&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/17_hub943b3da6a2ac3df5114f38d6963a2fe_275640_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/17_hub943b3da6a2ac3df5114f38d6963a2fe_275640_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/gcc/17.png&#34; width=&#34;938&#34; height=&#34;804&#34; loading=&#34;lazy&#34;
-				alt=&#34;&amp;nbsp;&#34;&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 116; flex-basis: 280px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/17.png&#34; data-size=&#34;938x804&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/gcc/17.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/17_hub943b3da6a2ac3df5114f38d6963a2fe_275640_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/17_hub943b3da6a2ac3df5114f38d6963a2fe_275640_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;938&#34;
+				height=&#34;804&#34;
+				loading=&#34;lazy&#34;
+				&gt;
 		&lt;/a&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;打开一个新终端&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/18.png&#34; data-size=&#34;2280x1742&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/18_hu0fa4b359e682707cb491f1081e9bda1c_574867_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/18_hu0fa4b359e682707cb491f1081e9bda1c_574867_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/gcc/18.png&#34; width=&#34;2280&#34; height=&#34;1742&#34; loading=&#34;lazy&#34;
-				alt=&#34;&amp;nbsp;&#34;&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 130; flex-basis: 314px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/18.png&#34; data-size=&#34;2280x1742&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/gcc/18.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/18_hu0fa4b359e682707cb491f1081e9bda1c_574867_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/18_hu0fa4b359e682707cb491f1081e9bda1c_574867_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;2280&#34;
+				height=&#34;1742&#34;
+				loading=&#34;lazy&#34;
+				&gt;
 		&lt;/a&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
@@ -248,55 +486,65 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;macos上非常推荐xcode作主力ide&#34;&gt;MacOS上非常推荐Xcode作主力IDE&lt;/h3&gt;
-&lt;p&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/19.png&#34; data-size=&#34;1828x1144&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/19_hud6b935907b7e30b5e3ddb9ed78a9b57c_576755_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/19_hud6b935907b7e30b5e3ddb9ed78a9b57c_576755_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/gcc/19.png&#34; width=&#34;1828&#34; height=&#34;1144&#34; loading=&#34;lazy&#34;
-				alt=&#34;&amp;nbsp;&#34;&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 159; flex-basis: 383px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/19.png&#34; data-size=&#34;1828x1144&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/gcc/19.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/19_hud6b935907b7e30b5e3ddb9ed78a9b57c_576755_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/19_hud6b935907b7e30b5e3ddb9ed78a9b57c_576755_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1828&#34;
+				height=&#34;1144&#34;
+				loading=&#34;lazy&#34;
+				&gt;
 		&lt;/a&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;选择 &lt;strong&gt;Create a new Xcode project&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/20.png&#34; data-size=&#34;3024x2024&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/20_hu3f802372b7b1e7bf2de30fecd9a5558d_967788_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/20_hu3f802372b7b1e7bf2de30fecd9a5558d_967788_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/gcc/20.png&#34; width=&#34;3024&#34; height=&#34;2024&#34; loading=&#34;lazy&#34;
-				alt=&#34;&amp;nbsp;&#34;&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 149; flex-basis: 358px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/20.png&#34; data-size=&#34;3024x2024&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/gcc/20.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/20_hu3f802372b7b1e7bf2de30fecd9a5558d_967788_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/20_hu3f802372b7b1e7bf2de30fecd9a5558d_967788_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;3024&#34;
+				height=&#34;2024&#34;
+				loading=&#34;lazy&#34;
+				&gt;
 		&lt;/a&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;macOS页下的 &lt;strong&gt;Command Line Tool&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/21.png&#34; data-size=&#34;3024x2024&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/21_hu3f802372b7b1e7bf2de30fecd9a5558d_916915_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/21_hu3f802372b7b1e7bf2de30fecd9a5558d_916915_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/gcc/21.png&#34; width=&#34;3024&#34; height=&#34;2024&#34; loading=&#34;lazy&#34;
-				alt=&#34;&amp;nbsp;&#34;&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 149; flex-basis: 358px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/21.png&#34; data-size=&#34;3024x2024&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/gcc/21.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/21_hu3f802372b7b1e7bf2de30fecd9a5558d_916915_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/21_hu3f802372b7b1e7bf2de30fecd9a5558d_916915_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;3024&#34;
+				height=&#34;2024&#34;
+				loading=&#34;lazy&#34;
+				&gt;
 		&lt;/a&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;随便输入一个工程名字，选择C语言&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/22.png&#34; data-size=&#34;3024x2024&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/22_hu3f802372b7b1e7bf2de30fecd9a5558d_736338_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/22_hu3f802372b7b1e7bf2de30fecd9a5558d_736338_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/gcc/22.png&#34; width=&#34;3024&#34; height=&#34;2024&#34; loading=&#34;lazy&#34;
-				alt=&#34;&amp;nbsp;&#34;&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 149; flex-basis: 358px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/22.png&#34; data-size=&#34;3024x2024&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/gcc/22.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/22_hu3f802372b7b1e7bf2de30fecd9a5558d_736338_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/22_hu3f802372b7b1e7bf2de30fecd9a5558d_736338_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;3024&#34;
+				height=&#34;2024&#34;
+				loading=&#34;lazy&#34;
+				&gt;
 		&lt;/a&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;选择main.c文件即可进行编辑，创建时会有默认代码&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/23.png&#34; data-size=&#34;3024x2024&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/23_hu3f802372b7b1e7bf2de30fecd9a5558d_760338_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/23_hu3f802372b7b1e7bf2de30fecd9a5558d_760338_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/gcc/23.png&#34; width=&#34;3024&#34; height=&#34;2024&#34; loading=&#34;lazy&#34;
-				alt=&#34;&amp;nbsp;&#34;&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 149; flex-basis: 358px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/gcc/23.png&#34; data-size=&#34;3024x2024&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/gcc/23.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/gcc/23_hu3f802372b7b1e7bf2de30fecd9a5558d_760338_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/gcc/23_hu3f802372b7b1e7bf2de30fecd9a5558d_760338_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;3024&#34;
+				height=&#34;2024&#34;
+				loading=&#34;lazy&#34;
+				&gt;
 		&lt;/a&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
@@ -393,65 +641,79 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;例如42859-7&#34;&gt;例如：4+(2+8)*[5/(9-7)]​&lt;/h3&gt;
 &lt;p&gt;由于栈具有“先进后出”的特点，能很好地表现优先级这个性质，因此可以用栈来存储已经检测到的括号。&lt;/p&gt;
 &lt;p&gt;以（A）为例：&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/1.png&#34; data-size=&#34;144x358&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/1_hu8d4da9da5b7e55bfc3f4fe8f435c6655_1881_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/1_hu8d4da9da5b7e55bfc3f4fe8f435c6655_1881_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/1.png&#34; width=&#34;144&#34; height=&#34;358&#34; loading=&#34;lazy&#34;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 40; flex-basis: 96px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/1.png&#34; data-size=&#34;144x358&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/1.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/1_hu8d4da9da5b7e55bfc3f4fe8f435c6655_1881_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/1_hu8d4da9da5b7e55bfc3f4fe8f435c6655_1881_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;144&#34;
+				height=&#34;358&#34;
+				loading=&#34;lazy&#34;
 				alt=&#34;img&#34;&gt;
 		&lt;/a&gt;
 		
 		&lt;figcaption&gt;img&lt;/figcaption&gt;
 		
-	&lt;/figure&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/2.png&#34; data-size=&#34;123x354&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/2_hu20dfd1d7e699e5dce4dd495a51ebb8e3_1930_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/2_hu20dfd1d7e699e5dce4dd495a51ebb8e3_1930_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/2.png&#34; width=&#34;123&#34; height=&#34;354&#34; loading=&#34;lazy&#34;
+	&lt;/figure&gt;&lt;figure style=&#34;flex-grow: 34; flex-basis: 83px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/2.png&#34; data-size=&#34;123x354&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/2.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/2_hu20dfd1d7e699e5dce4dd495a51ebb8e3_1930_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/2_hu20dfd1d7e699e5dce4dd495a51ebb8e3_1930_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;123&#34;
+				height=&#34;354&#34;
+				loading=&#34;lazy&#34;
 				alt=&#34;img&#34;&gt;
 		&lt;/a&gt;
 		
 		&lt;figcaption&gt;img&lt;/figcaption&gt;
 		
-	&lt;/figure&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/3.png&#34; data-size=&#34;127x354&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/3_hub5452d808c6ed83e5868cbaefb7acec3_1682_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/3_hub5452d808c6ed83e5868cbaefb7acec3_1682_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/3.png&#34; width=&#34;127&#34; height=&#34;354&#34; loading=&#34;lazy&#34;
+	&lt;/figure&gt;&lt;figure style=&#34;flex-grow: 35; flex-basis: 86px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/3.png&#34; data-size=&#34;127x354&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/3.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/3_hub5452d808c6ed83e5868cbaefb7acec3_1682_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/3_hub5452d808c6ed83e5868cbaefb7acec3_1682_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;127&#34;
+				height=&#34;354&#34;
+				loading=&#34;lazy&#34;
 				alt=&#34;img&#34;&gt;
 		&lt;/a&gt;
 		
 		&lt;figcaption&gt;img&lt;/figcaption&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/4.jpg&#34; data-size=&#34;122x351&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/4_hu8f247dc7b2ed912aa7dfae59c851bfd4_818459_480x0_resize_q75_box.jpg 480w, https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/4_hu8f247dc7b2ed912aa7dfae59c851bfd4_818459_1024x0_resize_q75_box.jpg 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/4.jpg&#34; width=&#34;122&#34; height=&#34;351&#34; loading=&#34;lazy&#34;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 34; flex-basis: 83px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/4.jpg&#34; data-size=&#34;122x351&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/4.jpg&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/4_hu8f247dc7b2ed912aa7dfae59c851bfd4_818459_480x0_resize_q75_box.jpg 480w, https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/4_hu8f247dc7b2ed912aa7dfae59c851bfd4_818459_1024x0_resize_q75_box.jpg 1024w&#34;
+				width=&#34;122&#34;
+				height=&#34;351&#34;
+				loading=&#34;lazy&#34;
 				alt=&#34;img&#34;&gt;
 		&lt;/a&gt;
 		
 		&lt;figcaption&gt;img&lt;/figcaption&gt;
 		
-	&lt;/figure&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/5.png&#34; data-size=&#34;121x353&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/5_hub56cc6ba5185a4484f201af767e68af0_2008_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/5_hub56cc6ba5185a4484f201af767e68af0_2008_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/5.png&#34; width=&#34;121&#34; height=&#34;353&#34; loading=&#34;lazy&#34;
+	&lt;/figure&gt;&lt;figure style=&#34;flex-grow: 34; flex-basis: 82px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/5.png&#34; data-size=&#34;121x353&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/5.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/5_hub56cc6ba5185a4484f201af767e68af0_2008_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/5_hub56cc6ba5185a4484f201af767e68af0_2008_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;121&#34;
+				height=&#34;353&#34;
+				loading=&#34;lazy&#34;
 				alt=&#34;img&#34;&gt;
 		&lt;/a&gt;
 		
 		&lt;figcaption&gt;img&lt;/figcaption&gt;
 		
-	&lt;/figure&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/6.png&#34; data-size=&#34;117x356&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/6_hue33c81f109501ccb6f8fa3fb8be9b55e_1857_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/6_hue33c81f109501ccb6f8fa3fb8be9b55e_1857_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/6.png&#34; width=&#34;117&#34; height=&#34;356&#34; loading=&#34;lazy&#34;
+	&lt;/figure&gt;&lt;figure style=&#34;flex-grow: 32; flex-basis: 78px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/6.png&#34; data-size=&#34;117x356&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/6.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/6_hue33c81f109501ccb6f8fa3fb8be9b55e_1857_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/6_hue33c81f109501ccb6f8fa3fb8be9b55e_1857_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;117&#34;
+				height=&#34;356&#34;
+				loading=&#34;lazy&#34;
 				alt=&#34;img&#34;&gt;
 		&lt;/a&gt;
 		
 		&lt;figcaption&gt;img&lt;/figcaption&gt;
 		
-	&lt;/figure&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/1.png&#34; data-size=&#34;144x358&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/1_hu8d4da9da5b7e55bfc3f4fe8f435c6655_1881_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/1_hu8d4da9da5b7e55bfc3f4fe8f435c6655_1881_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/1.png&#34; width=&#34;144&#34; height=&#34;358&#34; loading=&#34;lazy&#34;
+	&lt;/figure&gt;&lt;figure style=&#34;flex-grow: 40; flex-basis: 96px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/1.png&#34; data-size=&#34;144x358&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/1.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/1_hu8d4da9da5b7e55bfc3f4fe8f435c6655_1881_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/1_hu8d4da9da5b7e55bfc3f4fe8f435c6655_1881_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;144&#34;
+				height=&#34;358&#34;
+				loading=&#34;lazy&#34;
 				alt=&#34;img&#34;&gt;
 		&lt;/a&gt;
 		
@@ -583,10 +845,12 @@ Evaluaion:  48
         <guid>https://hungyam.gitee.io/code/p/two-game-by-javascript/</guid>
         <description>&lt;img src="https://hungyam.gitee.io/code/p/two-game-by-javascript/2.jpg" alt="Featured image of post Two Game by JavaScript" /&gt;&lt;h2 id=&#34;题目一迷宫&#34;&gt;题目一：迷宫&lt;/h2&gt;
 &lt;p&gt;制作网页实现下图中的迷宫：&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/two-game-by-javascript/maze.png&#34; data-size=&#34;934x632&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/two-game-by-javascript/maze_hue30b6a56cbd40597c15ae4a26ff8e27d_52495_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/two-game-by-javascript/maze_hue30b6a56cbd40597c15ae4a26ff8e27d_52495_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/two-game-by-javascript/maze.png&#34; width=&#34;934&#34; height=&#34;632&#34; loading=&#34;lazy&#34;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 147; flex-basis: 354px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/two-game-by-javascript/maze.png&#34; data-size=&#34;934x632&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/two-game-by-javascript/maze.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/two-game-by-javascript/maze_hue30b6a56cbd40597c15ae4a26ff8e27d_52495_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/two-game-by-javascript/maze_hue30b6a56cbd40597c15ae4a26ff8e27d_52495_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;934&#34;
+				height=&#34;632&#34;
+				loading=&#34;lazy&#34;
 				alt=&#34;img&#34;&gt;
 		&lt;/a&gt;
 		
@@ -614,10 +878,12 @@ Evaluaion:  48
 &lt;/ol&gt;
 &lt;h2 id=&#34;题目二打地鼠&#34;&gt;题目二：打地鼠&lt;/h2&gt;
 &lt;p&gt;制作网页实现下图中的简版的打地鼠：&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/two-game-by-javascript/mole.png&#34; data-size=&#34;776x494&#34;&gt;
-			&lt;img srcset=&#34;https://hungyam.gitee.io/code/code/p/two-game-by-javascript/mole_hu8537993c17ed334a65fa25316e9eeea9_55488_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/two-game-by-javascript/mole_hu8537993c17ed334a65fa25316e9eeea9_55488_1024x0_resize_box_2.png 1024w&#34;
-				src=&#34;https://hungyam.gitee.io/code/code/p/two-game-by-javascript/mole.png&#34; width=&#34;776&#34; height=&#34;494&#34; loading=&#34;lazy&#34;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 157; flex-basis: 377px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/two-game-by-javascript/mole.png&#34; data-size=&#34;776x494&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/two-game-by-javascript/mole.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/two-game-by-javascript/mole_hu8537993c17ed334a65fa25316e9eeea9_55488_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/two-game-by-javascript/mole_hu8537993c17ed334a65fa25316e9eeea9_55488_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;776&#34;
+				height=&#34;494&#34;
+				loading=&#34;lazy&#34;
 				alt=&#34;img&#34;&gt;
 		&lt;/a&gt;
 		

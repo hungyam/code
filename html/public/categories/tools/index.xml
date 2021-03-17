@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tools on 小橘子&#39;s BLOG</title>
+    <link>https://hungyam.gitee.io/code/categories/tools/</link>
+    <description>Recent content in Tools on 小橘子&#39;s BLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hungyam.gitee.io/code/categories/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How To Use Clion</title>
+      <link>https://hungyam.gitee.io/code/p/how-to-use-clion/</link>
+      <pubDate>Wed, 17 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hungyam.gitee.io/code/p/how-to-use-clion/</guid>
+      <description>CLion的安装、配置与使用 以及如何对代码进行调试(debug) 1.编译器的安装   Win
+MinGW，点此下载 ，解压密码：hpat
+下载完毕将压缩包内容解压到C盘下（个人习惯，放其他位置也可，但需记住所放位置）  将mingw64解压在根目录 
+  Mac
+终端执行
+   xcode-select --install 2.下载安装Clion  地址：点此下载 下载后正常安装即可 安装后弹出登陆选项，此时需要注册一个教育账号即可激活，点此注册 进入后用教育（中大）邮箱注册 注册后登录激活即可（若注册失败也可尝试使用本人账号激活username:1159292671@qq.com,password:#Xhx0530!）  3.开始使用，运行自己的第一个程序   创建工程
+ 选择创建新工程 
+  选择C语言工程，并为工程命名
+ 
+  进入设置
+ 
+  选择Toolchains-&amp;gt;MinGW
+ 
+  若MinGW解压在C盘根目录下，一般将自动识别，若识别失败，也可自己填写所在位置C:\mingw64（我将MinGW解压在C盘根目录，如果你的不是，按照你的情况改地址即可）
+ 成功识别到 
+  保存设置即可运行第一个程序，点击右上角开始按键
+ 成功完成输入输出 
+   至此软件配置成功，需要做另一个程序按上述步骤创建运行即可，不必再选择编译器
+ 3.如何调试自己的程序   这里给一个样例，点击一下序号右边，会出现小红点（程序断点，表明程序执行到此处将暂停），接着点击运行案件右侧的调试按键。</description>
+    </item>
+    
+    <item>
+      <title>GCC</title>
+      <link>https://hungyam.gitee.io/code/p/gcc/</link>
+      <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hungyam.gitee.io/code/p/gcc/</guid>
+      <description>MacOS/Win x64 C语言编译器的搭建 Windows x64 MinGW最大的特点就是编译出来的可执行文件能够独立在Windows上运行。
+MinGW的组成：
+ 编译器(支持C、C++、ADA和Fortran) GNU工具  1. MinGW安装 MinGW官方网址：http://www.mingw.org/
+由于是墙外网站，经常会出现网站打不开，下载不了的情况，就不详细描述mingw的下载方法。
+这里为读者准备了完整的内容包 点此下载
+下载完毕将压缩包内容解压到C盘下（个人习惯，放其他位置也可，但需记住所放位置）
+2. 添加环境变量  
+  解压后出现mingw64文件夹
+ 
+  在此电脑上右键选择属性
+ 
+  左侧选择高级系统设置
+ 
+  高级页下选择环境变量
+ 
+  在系统变量栏中双击Path变量
+ 
+  点击右侧浏览
+ 
+  找到第一步解压的mingw64下的bin文件夹
+到这里，环境变量已设置完毕
+  3. 测试是否搭建成功  
+  在资源管理器的地址栏中输入cmd，并按回车，打开命令行
+ 
+  在命令行下键入 gcc -v，若出现版本号，则为搭建成功</description>
+    </item>
+    
+  </channel>
+</rss>

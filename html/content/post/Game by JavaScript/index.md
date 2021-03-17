@@ -6,7 +6,7 @@ description:
 math: true
 image : 2.jpg
 categories:
-    - JavaScript
+    - JS
 ---
 
 ## 题目一：迷宫

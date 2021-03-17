@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pages on Hungyam</title>
+    <title>Pages on 小橘子&#39;s BLOG</title>
     <link>https://hungyam.gitee.io/code/page/</link>
-    <description>Recent content in Pages on Hungyam</description>
+    <description>Recent content in Pages on 小橘子&#39;s BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 02 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://hungyam.gitee.io/code/page/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://hungyam.gitee.io/code/page/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>About</title>
-      <link>https://hungyam.gitee.io/code/about/</link>
-      <pubDate>Fri, 02 Oct 2020 00:00:00 +0000</pubDate>
+      <title>关于我</title>
+      <link>https://hungyam.gitee.io/code/%E5%85%B3%E4%BA%8E%E6%88%91/</link>
+      <pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://hungyam.gitee.io/code/about/</guid>
-      <description> School of Computer science and engineering，SYSU E-mail：xuhx37@mail2.sysu.edu.cn WeChat： x491159292671 Skill：   C/C++ , Familiar
+      <guid>https://hungyam.gitee.io/code/%E5%85%B3%E4%BA%8E%E6%88%91/</guid>
+      <description>  School of Computer science and engineering，SYSU
+  E-mail：xuhx37@mail2.sysu.edu.cn
+  WeChat： x491159292671
+  Skill：
+  C/C++ , Familiar
   Python , Learning
   Swift , Familiar&amp;amp;Learning
   Web Programing
- HTML/CSS Familiar JavaScript/Node.js Familiar&amp;amp;Learning    Markdown , Familiar
+ HTML/CSS Familiar JavaScript/TypeScript Familiar&amp;amp;Learning Node.js/Augular/Express Familiar&amp;amp;Learning    Markdown , Familiar
   LaTex , Familiar
   Linux , Learning
   Git , Learning
@@ -25,11 +29,20 @@
     </item>
     
     <item>
-      <title>Archives</title>
+      <title>分类</title>
       <link>https://hungyam.gitee.io/code/archives/</link>
-      <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://hungyam.gitee.io/code/archives/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>搜索</title>
+      <link>https://hungyam.gitee.io/code/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hungyam.gitee.io/code/search/</guid>
       <description></description>
     </item>
     

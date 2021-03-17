@@ -6,6 +6,7 @@ description:
 math: true
 image : 2.jpg
 categories:
+    - Tools
 ---
 
 # MacOS/Win x64 C语言编译器的搭建

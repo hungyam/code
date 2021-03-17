@@ -4,10 +4,11 @@ title: 选择排序(mips汇编)
 date: 2020-10-27
 description: 
 math: true
-image : 3.jpg
+image: 3.jpg
+comments: true
 categories:
-    - Mips
-    - Sort
+    - Assembly
+    - 算法
 ---
 
 ### Mars编程：

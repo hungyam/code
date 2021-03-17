@@ -7,7 +7,7 @@ math: true
 image : 3.jpg
 categories:
     - C
-    - Stack
+    - 数据结构
 
 ---
 

@@ -1,18 +1,27 @@
-+++
-title = "About"
-description = ""
-date = "2020-10-02"
-aliases = ["about-us", "contact"]
-author = "Hungyam"
-licence = false
-lastmod = "2021-01-03"
-
-+++
+---
+title: 关于我
+description: 🍊
+date: '2020-09-28'
+aliases:
+  - about-us
+  - about-hugo
+  - contact
+license: CC BY-NC-ND
+lastmod: '2020-10-09'
+menu:
+    main: 
+        weight: -90
+        pre: user
+---
 
 - School of Computer science and engineering，SYSU
+
 - E-mail：xuhx37@mail2.sysu.edu.cn
+
 - WeChat： x491159292671
+
 - Skill：
+
   - C/C++ , Familiar
 
   - Python , Learning
@@ -22,7 +31,8 @@ lastmod = "2021-01-03"
   - Web Programing
 
     -   HTML/CSS Familiar
-    -   JavaScript/Node.js Familiar&Learning
+    -   JavaScript/TypeScript Familiar&Learning
+    -   Node.js/Augular/Express Familiar&Learning
 
   - Markdown , Familiar
 
@@ -33,4 +43,3 @@ lastmod = "2021-01-03"
   - Git , Learning
 
     
-
