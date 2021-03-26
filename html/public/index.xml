@@ -6,7 +6,237 @@
         <description>Recent content on 小橘子&#39;s BLOG</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 17 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hungyam.gitee.io/code/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 24 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hungyam.gitee.io/code/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>BasicIO</title>
+        <link>https://hungyam.gitee.io/code/p/basicio/</link>
+        <pubDate>Wed, 24 Mar 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://hungyam.gitee.io/code/p/basicio/</guid>
+        <description>&lt;img src="https://hungyam.gitee.io/code/p/basicio/1.jpg" alt="Featured image of post BasicIO" /&gt;&lt;h1 id=&#34;输入缓冲区与scanf-的详细解读&#34;&gt;输入缓冲区与scanf( )的详细解读&lt;/h1&gt;
+&lt;h2 id=&#34;输入缓冲区&#34;&gt;输入缓冲区&lt;/h2&gt;
+&lt;p&gt;C语言中我们用到的最频繁的输入输出方式就是scanf()与printf()。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;scanf()： 从标准输入设备(键盘)读取数据，并将值存放在变量中。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;printf()： 将指定的文字/字符串输出到标准输出设备(屏幕)。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但从键盘读入数据到程序变量之间还有一个东西起着至关重要的作用&amp;mdash;&amp;mdash;缓冲区（如下图）&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 182; flex-basis: 436px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/basicio/1.png&#34; data-size=&#34;843x463&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/basicio/1.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/basicio/1_hud7ee0ce9a1c5b5559d4aded8ae5bddd0_18222_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/basicio/1_hud7ee0ce9a1c5b5559d4aded8ae5bddd0_18222_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;843&#34;
+				height=&#34;463&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;缓冲区&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;缓冲区&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;但缓冲区具体如何工作的呢？&lt;/p&gt;
+&lt;p&gt;当我们从键盘上输入输入某些内容（未敲回车前），这些内容将被读进缓冲区，等待被处理。直到敲击了回车键，回车键是将缓冲区内容提交到程序代码中的标志。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;特别要注意的是，作为标志的回车键本身也是字符（\n 换行符）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;因此，假设我在键盘上输入Love并按下回车，缓冲区应该是先读入换行符，再进行提交。&lt;/p&gt;
+&lt;p&gt;过程如下：&lt;/p&gt;
+&lt;p&gt;​	键盘输入:   					Love (回车)&lt;/p&gt;
+&lt;p&gt;​	缓冲区内容:       			Love\n    (得到提交要求)&lt;/p&gt;
+&lt;p&gt;​	程序获取缓冲区内容:    Love\n&lt;/p&gt;
+&lt;p&gt;看到这里，或许还是不清楚\n会对输入带来什么影响。在文章的后面内容会有关于字符读入的更详细的例子。&lt;/p&gt;
+&lt;p&gt;引入缓冲区的原理，当然是要服务输入输出函数的，scanf和printf是搭配使用的函数，他们使用方法基本一致，只是一个负责输入，一个负责输出。&lt;/p&gt;
+&lt;h2 id=&#34;解读scanf-&#34;&gt;解读scanf( )&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;scanf(&amp;quot;%d %d&amp;quot;,&amp;amp;n,&amp;amp;m);
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;第一个参数格式化输入控制字符串（C语言中双引号中的内容表示字符串）即“%d %d”，在printf这个字符串用来规定打印在屏幕上内容的格式，对其加空格，让变量以何种形式展现等等，scanf中也一样，规定我们要以何种方式来输入。&lt;/li&gt;
+&lt;li&gt;后面的变量是与第一个参数（字符串）相对应的接收输入数据的变量地址列表。（地址这个概念这里先不多做赘述，这也就是为什么scanf变量要加上&amp;amp;的原因，先理解为变量按顺序匹配字符串中的%就行）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;说多概念无益直接上代码&#34;&gt;&lt;strong&gt;说多概念无益，直接上代码&lt;/strong&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C&#34; data-lang=&#34;C&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+
+    &lt;span class=&#34;n&#34;&gt;scanf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d %d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;a+b=%d&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+
+    &lt;span class=&#34;n&#34;&gt;scanf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d   %d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;a+b=%d&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+
+    &lt;span class=&#34;n&#34;&gt;scanf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d, %d, %d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;a+b+c=%d&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+   
+    &lt;span class=&#34;n&#34;&gt;scanf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d is bigger than %d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;a-b=%d&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+
+  	&lt;span class=&#34;n&#34;&gt;scanf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d%d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;a+b=%d&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;运行结果：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;10    20↙			//输入(↙表示回车)
+a+b=30
+100 200↙			//输入(↙表示回车)
+a+b=300
+56,45,78↙			//输入(↙表示回车)
+a+b+c=179	
+25 is bigger than 11↙			//输入(↙表示回车)
+a-b=14
+10 20↙					//输入(↙表示回车)
+a+b=30
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;第一个 scanf() 的格式控制字符串为&lt;code&gt;&amp;quot;%d %d&amp;quot;&lt;/code&gt;，中间有一个空格，而我们却输入了&lt;code&gt;10  20&lt;/code&gt;，中间有多个空格。&lt;/li&gt;
+&lt;li&gt;第二个 scanf() 的格式控制字符串为&lt;code&gt;&amp;quot;%d  %d&amp;quot;&lt;/code&gt;，中间有多个空格，而我们却输入了&lt;code&gt;100 200&lt;/code&gt;，中间只有一个空格。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这两个例子说明 scanf() 对输入数据之间的空格的处理比较宽松，并不要求空格数严格对应，多几个少几个无所谓，只要有空格就行。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;第三个 scanf() 的控制字符串为&lt;code&gt;&amp;quot;%d, %d, %d&amp;quot;&lt;/code&gt;，中间以逗号分隔，所以输入的整数也要以逗号分隔。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;第四个 scanf() 要求整数之间以&lt;code&gt;is bigger than&lt;/code&gt;分隔。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;第五个 scanf() 格式控制字符串为&lt;code&gt;&amp;quot;%d%d&amp;quot;&lt;/code&gt;，但也能正常读入，为什么呢？&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这里就是缓冲区在起作用了，缓冲区的内容会被scanf一个一个比对读取。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;首先10被%d(整数)匹配上，10赋值给a&lt;/li&gt;
+&lt;li&gt;接着空格跟下一个%d匹配不上，因为空格为字符(char)，而%d是整数&lt;/li&gt;
+&lt;li&gt;最后20还是跟这个%d匹配，匹配上，20赋值给a&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;所以能发现，对多个整数的输入来说，输入似乎没那么严格，无论是输一个提交一个或者是一次性输入完都能得到一样的结果&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;如下面这个程序&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 134; flex-basis: 323px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/basicio/2.png&#34; data-size=&#34;1986x1472&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/basicio/2.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/basicio/2_hu825028b08dc2e7a05df6b496361426e4_584801_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/basicio/2_hu825028b08dc2e7a05df6b496361426e4_584801_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1986&#34;
+				height=&#34;1472&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;截屏2021-03-26 上午12.55.01&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;截屏2021-03-26 上午12.55.01&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;按代码思路，应该是一次输入带一次输出才对，为何又能做到三个数输入完，再三个数都输出出来呢？&lt;/p&gt;
+&lt;p&gt;这就是上面提到的缓冲区原理，&lt;code&gt;12 13 -1&lt;/code&gt;被我们放进缓冲区，按下回车后遇到scanf缓冲区便会为我们提交一段内容，如上面这题先是12被提交进第一个scanf然后打印12，接着13提交进第二次的scanf，再打印13&amp;hellip;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;由于缓冲区的提交我们无法看见，这样就让我们觉得输入和输出分开了，其实确实是一次输入跟着一次输出。缓冲区可以理解为对程序的一种计划。&lt;/p&gt;
+&lt;p&gt;当然我们也完全可以不利用缓冲区的特性，自己一次一次地提交：&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 134; flex-basis: 323px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/basicio/3.png&#34; data-size=&#34;1986x1472&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/basicio/3.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/basicio/3_hu825028b08dc2e7a05df6b496361426e4_576757_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/basicio/3_hu825028b08dc2e7a05df6b496361426e4_576757_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1986&#34;
+				height=&#34;1472&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;截屏2021-03-26 上午1.03.45&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;截屏2021-03-26 上午1.03.45&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;但其实输出的内容是一样的，都是：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;12
+13
+-1
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;输入的东西不能当做输出&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;当存在字符输入时就要额外小心了&#34;&gt;&lt;strong&gt;当存在字符输入时就要额外小心了&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;看下面这个例子：&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 126; flex-basis: 304px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/basicio/4.png&#34; data-size=&#34;2046x1612&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/basicio/4.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/basicio/4_hu89103a9fccedcf7fef381f0aeaa74d54_618801_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/basicio/4_hu89103a9fccedcf7fef381f0aeaa74d54_618801_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;2046&#34;
+				height=&#34;1612&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;截屏2021-03-26 下午9.58.36&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;截屏2021-03-26 下午9.58.36&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;这里scanf中的为&lt;code&gt;&amp;quot;%d%c&amp;quot;&lt;/code&gt;，中间没有空格&lt;/p&gt;
+&lt;p&gt;我输入了&lt;code&gt;12 c&lt;/code&gt;但发现输出只有12，为什么呢，我们进行调试如下图：&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 126; flex-basis: 304px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/basicio/5.png&#34; data-size=&#34;2046x1612&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/basicio/5.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/basicio/5_hu89103a9fccedcf7fef381f0aeaa74d54_652968_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/basicio/5_hu89103a9fccedcf7fef381f0aeaa74d54_652968_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;2046&#34;
+				height=&#34;1612&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;截屏2021-03-26 下午10.00.41&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;截屏2021-03-26 下午10.00.41&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;出现了很意外的情况，b的值是32（也就是空格）&lt;/p&gt;
+&lt;p&gt;这是因为输入缓冲区的空格与%c匹配上（空格是字符），因此修改一下scnaf中字符串即可&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 126; flex-basis: 304px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/basicio/6.png&#34; data-size=&#34;2046x1612&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/basicio/6.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/basicio/6_hu89103a9fccedcf7fef381f0aeaa74d54_616358_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/basicio/6_hu89103a9fccedcf7fef381f0aeaa74d54_616358_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;2046&#34;
+				height=&#34;1612&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;截屏2021-03-26 下午10.03.02&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;截屏2021-03-26 下午10.03.02&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;其实这样还比较好看出问题&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;有时会出现两个scanf分开的情况，如下面的例子：&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 126; flex-basis: 304px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/basicio/7.png&#34; data-size=&#34;2046x1612&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/basicio/7.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/basicio/7_hu89103a9fccedcf7fef381f0aeaa74d54_621578_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/basicio/7_hu89103a9fccedcf7fef381f0aeaa74d54_621578_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;2046&#34;
+				height=&#34;1612&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;截屏2021-03-26 下午10.05.18&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;截屏2021-03-26 下午10.05.18&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;但我输入&lt;code&gt;12(回车)&lt;/code&gt;，程序直接结束，原因就是上面提到的缓冲区原理啦。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;12(回车)&lt;/code&gt;缓冲区中会存进&lt;code&gt;12\n&lt;/code&gt;，导致&lt;code&gt;12&lt;/code&gt;与&lt;code&gt;%d&lt;/code&gt;匹配，&lt;code&gt;\n&lt;/code&gt;与&lt;code&gt;%c&lt;/code&gt;匹配，这样程序不需要其他的输入了，也就结束。&lt;/p&gt;
+&lt;p&gt;使用调试模式可以验证：&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 126; flex-basis: 304px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/basicio/8.png&#34; data-size=&#34;2046x1612&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/basicio/8.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/basicio/8_hu89103a9fccedcf7fef381f0aeaa74d54_659081_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/basicio/8_hu89103a9fccedcf7fef381f0aeaa74d54_659081_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;2046&#34;
+				height=&#34;1612&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;截屏2021-03-26 下午10.31.52&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;截屏2021-03-26 下午10.31.52&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;解决办法，加空格，可加在%c前，也可加在%d后&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 126; flex-basis: 304px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/basicio/9.png&#34; data-size=&#34;2046x1612&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/basicio/9.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/basicio/9_hu89103a9fccedcf7fef381f0aeaa74d54_627899_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/basicio/9_hu89103a9fccedcf7fef381f0aeaa74d54_627899_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;2046&#34;
+				height=&#34;1612&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;截屏2021-03-26 下午10.33.10&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;截屏2021-03-26 下午10.33.10&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>How To Use Clion</title>
         <link>https://hungyam.gitee.io/code/p/how-to-use-clion/</link>
         <pubDate>Wed, 17 Mar 2021 00:00:00 +0000</pubDate>

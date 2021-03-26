@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C&#43;&#43; on 小橘子&#39;s BLOG</title>
+    <link>https://hungyam.gitee.io/code/categories/c&#43;&#43;/</link>
+    <description>Recent content in C&#43;&#43; on 小橘子&#39;s BLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 24 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hungyam.gitee.io/code/categories/c++/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BasicIO</title>
+      <link>https://hungyam.gitee.io/code/p/basicio/</link>
+      <pubDate>Wed, 24 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hungyam.gitee.io/code/p/basicio/</guid>
+      <description>输入缓冲区与scanf( )的详细解读 输入缓冲区 C语言中我们用到的最频繁的输入输出方式就是scanf()与printf()。
+  scanf()： 从标准输入设备(键盘)读取数据，并将值存放在变量中。
+  printf()： 将指定的文字/字符串输出到标准输出设备(屏幕)。
+  但从键盘读入数据到程序变量之间还有一个东西起着至关重要的作用&amp;mdash;&amp;mdash;缓冲区（如下图）
+ 缓冲区 
+但缓冲区具体如何工作的呢？
+当我们从键盘上输入输入某些内容（未敲回车前），这些内容将被读进缓冲区，等待被处理。直到敲击了回车键，回车键是将缓冲区内容提交到程序代码中的标志。
+ 特别要注意的是，作为标志的回车键本身也是字符（\n 换行符）
+ 因此，假设我在键盘上输入Love并按下回车，缓冲区应该是先读入换行符，再进行提交。
+过程如下：
+​	键盘输入: Love (回车)
+​	缓冲区内容: Love\n (得到提交要求)
+​	程序获取缓冲区内容: Love\n
+看到这里，或许还是不清楚\n会对输入带来什么影响。在文章的后面内容会有关于字符读入的更详细的例子。
+引入缓冲区的原理，当然是要服务输入输出函数的，scanf和printf是搭配使用的函数，他们使用方法基本一致，只是一个负责输入，一个负责输出。
+解读scanf( ) scanf(&amp;quot;%d %d&amp;quot;,&amp;amp;n,&amp;amp;m);  第一个参数格式化输入控制字符串（C语言中双引号中的内容表示字符串）即“%d %d”，在printf这个字符串用来规定打印在屏幕上内容的格式，对其加空格，让变量以何种形式展现等等，scanf中也一样，规定我们要以何种方式来输入。 后面的变量是与第一个参数（字符串）相对应的接收输入数据的变量地址列表。（地址这个概念这里先不多做赘述，这也就是为什么scanf变量要加上&amp;amp;的原因，先理解为变量按顺序匹配字符串中的%就行）  说多概念无益，直接上代码 #include &amp;lt;stdio.h&amp;gt;int main() { int a, b, c; scanf(&amp;#34;%d %d&amp;#34;, &amp;amp;a, &amp;amp;b); printf(&amp;#34;a+b=%d\n&amp;#34;, a+b); scanf(&amp;#34;%d %d&amp;#34;, &amp;amp;a, &amp;amp;b); printf(&amp;#34;a+b=%d\n&amp;#34;, a+b); scanf(&amp;#34;%d, %d, %d&amp;#34;, &amp;amp;a, &amp;amp;b, &amp;amp;c); printf(&amp;#34;a+b+c=%d\n&amp;#34;, a+b+c); scanf(&amp;#34;%d is bigger than %d&amp;#34;, &amp;amp;a, &amp;amp;b); printf(&amp;#34;a-b=%d\n&amp;#34;, a-b); scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;a, &amp;amp;b); printf(&amp;#34;a+b=%d\n&amp;#34;, a+b); return 0; } 运行结果：</description>
+    </item>
+    
+  </channel>
+</rss>
