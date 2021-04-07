@@ -1,12 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 小橘子&#39;s BLOG</title>
+    <title>Posts on 🍊&#39;s BLOG</title>
     <link>https://hungyam.gitee.io/code/post/</link>
-    <description>Recent content in Posts on 小橘子&#39;s BLOG</description>
+    <description>Recent content in Posts on 🍊&#39;s BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hungyam.gitee.io/code/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hungyam.gitee.io/code/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Loop</title>
+      <link>https://hungyam.gitee.io/code/p/loop/</link>
+      <pubDate>Wed, 07 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hungyam.gitee.io/code/p/loop/</guid>
+      <description>[TOC]
+循环语句解析与图形打印 表达式的值 表达式分为两种：
+  赋值运算表达式
+使用到= += -= ++ --等赋值运算符的式子，例如b=5 a++等等，这些表达式都有值，他们的值取决于被赋值的变量是否为0，为0则表达式的值为0（假），非0则表达式的值为1（真）。
+  关系运算表达式
+使用到&amp;gt; == &amp;lt;=等关系运算符的式子，例如a&amp;lt;=b c==5等等，这些表达式的值取决于表达式是否成立，条件成立则值为1（真），条件不成立则为0（假）。
+   可理解为数学中的命题真假性
+ 这里是一些表达式的值：
+循环语句 while循环 一般形式为：
+while(表达式){ 语句块 } 意思是，先计算“表达式”的值，当值为真（非0）时， 执行“语句块”；执行完“语句块”，再次计算表达式的值，如果为真，继续执行“语句块”……这个过程会一直重复，直到表达式的值为假（0），就退出循环，执行 while 后面的代码。
+通常将“表达式”称为循环条件，把“语句块”称为循环体，整个循环的过程就是不停判断循环条件、并执行循环体代码的过程。
+用 while 循环计算1加到100的值：
+#include &amp;lt;stdio.h&amp;gt;int main(){ int i=1, sum=0; while(i&amp;lt;=100){ sum+=i; i++; } printf(&amp;#34;%d\n&amp;#34;,sum); return 0; } 运行结果：
+5050 代码分析：
+ 程序运行到 while 时，因为 i=1，i&amp;lt;=100 成立，所以会执行循环体；执行结束后 i 的值变为 2，sum 的值变为 1。 接下来会继续判断 i&amp;lt;=100是否成立，因为此时 i=2，i&amp;lt;=100 成立，所以继续执行循环体；执行结束后 i 的值变为 3，sum 的值变为3。 重复执行步骤 2。 当循环进行到第100次，i 的值变为 101，sum 的值变为5050；因为此时 i&amp;lt;=100 不再成立，所以就退出循环，不再执行循环体，转而执行while循环后面的代码。  for循环 for 循环的一般形式为：</description>
+    </item>
+    
     <item>
       <title>BasicIO</title>
       <link>https://hungyam.gitee.io/code/p/basicio/</link>

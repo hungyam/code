@@ -12,7 +12,7 @@ Design a C program to implement:
 Design a C program to implement:
  (1) Arithmetic expression translation: from in-fix to post-fix notation (2) Evaluation of an arithmetic expression in post-fix notation  Solution: #include&amp;lt;stdio.h&amp;gt;#include&amp;lt;string.h&amp;gt;int main(){ char in_fix[20]={0};//中缀  char post_fix[20]={0};//后准  char stack[20]={0};//  int top=0; int index=0; scanf(&amp;#34;%s&amp;#34;,in_fix); /*translation*/ for(int i=0;i&amp;lt;strlen(in_fix);i&#43;&#43;){ if(in_fix[i]&amp;gt;=&amp;#39;0&amp;#39;&amp;amp;&amp;amp;in_fix[i]&amp;lt;=&amp;#39;9&amp;#39;){ post_fix[index&#43;&#43;]=in_fix[i]; }else if(in_fix[i]==&amp;#39;(&amp;#39;){ stack[top&#43;&#43;]=&amp;#39;(&amp;#39;; }else if(in_fix[i]==&amp;#39;)&amp;#39;){ while(stack[top-1]!=&amp;#39;(&amp;#39;){ post_fix[index&#43;&#43;]=stack[top-1]; top--; } }else if(in_fix[i]==&amp;#39;&#43;&amp;#39;||in_fix[i]==&amp;#39;-&amp;#39;){ if(top){ while(stack[top-1]==&amp;#39;*&amp;#39;||stack[top-1]==&amp;#39;/&amp;#39;){ post_fix[index&#43;&#43;]=stack[top-1]; top--; } } stack[top&#43;&#43;]=in_fix[i]; }else{ stack[top&#43;&#43;]=in_fix[i]; } } while(top){ if(stack[top-1]!'>
 <meta property='og:url' content='https://hungyam.gitee.io/code/p/%E4%B8%AD%E7%BC%80%E8%BD%AC%E5%90%8E%E7%BC%80%E5%90%8E%E7%BC%80%E6%B1%82%E8%A7%A3/'>
-<meta property='og:site_name' content='小橘子&#39;s BLOG'>
+<meta property='og:site_name' content='🍊&#39;s BLOG'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2020-11-10T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-11-10T00:00:00&#43;00:00'/><meta property='og:image' content='https://hungyam.gitee.io/code/p/%E4%B8%AD%E7%BC%80%E8%BD%AC%E5%90%8E%E7%BC%80%E5%90%8E%E7%BC%80%E6%B1%82%E8%A7%A3/3.jpg' />
 <meta name="twitter:title" content="中缀转后缀、后缀求解">
 <meta name="twitter:description" content="Lab Work 04-1. Application of Stacks Note: Programming in C,
@@ -70,7 +70,7 @@ Design a C program to implement:
                 
             </figure>
         
-        <h1 class="site-name"><a href="https://hungyam.gitee.io/code">小橘子&#39;s BLOG</a></h1>
+        <h1 class="site-name"><a href="https://hungyam.gitee.io/code">🍊&#39;s BLOG</a></h1>
         <h2 class="site-description">与理想平等交易</h2>
     </header>
 
@@ -416,6 +416,28 @@ Evaluaion:  48
                 
                     
 <article class="has-image">
+    <a href="/code/p/loop/">
+        
+        
+            <div class="article-image">
+                <img src="/code/p/loop/4.ff0173154ddcf84cb546fbf3d0790b2e_hu40fdc18304af1214f97f24e32aac122d_12677_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="" 
+                        data-hash="md5-/wFzFU3c&#43;Ey1Rvvz0HkLLg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Loop</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
     <a href="/code/p/basicio/">
         
         
@@ -530,7 +552,7 @@ Evaluaion:  48
         
             2020 - 
         
-        2021 小橘子&#39;s BLOG
+        2021 🍊&#39;s BLOG
     </section>
     
     <section class="powerby">

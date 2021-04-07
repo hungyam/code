@@ -1,12 +1,188 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>小橘子&#39;s BLOG</title>
+        <title>🍊&#39;s BLOG</title>
         <link>https://hungyam.gitee.io/code/</link>
-        <description>Recent content on 小橘子&#39;s BLOG</description>
+        <description>Recent content on 🍊&#39;s BLOG</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 24 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hungyam.gitee.io/code/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 07 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hungyam.gitee.io/code/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Loop</title>
+        <link>https://hungyam.gitee.io/code/p/loop/</link>
+        <pubDate>Wed, 07 Apr 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://hungyam.gitee.io/code/p/loop/</guid>
+        <description>&lt;img src="https://hungyam.gitee.io/code/p/loop/4.jpg" alt="Featured image of post Loop" /&gt;&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h1 id=&#34;循环语句解析与图形打印&#34;&gt;循环语句解析与图形打印&lt;/h1&gt;
+&lt;h2 id=&#34;表达式的值&#34;&gt;表达式的值&lt;/h2&gt;
+&lt;p&gt;表达式分为两种：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;赋值运算表达式&lt;/p&gt;
+&lt;p&gt;使用到&lt;code&gt;=&lt;/code&gt; &lt;code&gt;+=&lt;/code&gt; &lt;code&gt;-=&lt;/code&gt; &lt;code&gt;++&lt;/code&gt; &lt;code&gt;--&lt;/code&gt;等赋值运算符的式子，例如&lt;code&gt;b=5&lt;/code&gt; &lt;code&gt;a++&lt;/code&gt;等等，这些表达式都有&lt;strong&gt;值&lt;/strong&gt;，他们的值取决于被赋值的变量是否为0，为0则表达式的值为0（假），非0则表达式的值为1（真）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;关系运算表达式&lt;/p&gt;
+&lt;p&gt;使用到&lt;code&gt;&amp;gt;&lt;/code&gt; &lt;code&gt;==&lt;/code&gt; &lt;code&gt;&amp;lt;=&lt;/code&gt;等关系运算符的式子，例如&lt;code&gt;a&amp;lt;=b&lt;/code&gt; &lt;code&gt;c==5&lt;/code&gt;等等，这些表达式的值取决于表达式是否成立，条件成立则值为1（真），条件不成立则为0（假）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;可理解为数学中的命题真假性&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这里是一些表达式的值：&lt;/p&gt;
+&lt;h2 id=&#34;循环语句&#34;&gt;循环语句&lt;/h2&gt;
+&lt;h3 id=&#34;while循环&#34;&gt;while循环&lt;/h3&gt;
+&lt;p&gt;一般形式为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;k&#34;&gt;while&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;表达式&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+  &lt;span class=&#34;err&#34;&gt;语句块&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;意思是，先计算“表达式”的值，当值为真（非0）时， 执行“语句块”；执行完“语句块”，再次计算表达式的值，如果为真，继续执行“语句块”……这个过程会一直重复，直到表达式的值为假（0），就退出循环，执行 while 后面的代码。&lt;/p&gt;
+&lt;p&gt;通常将“表达式”称为循环条件，把“语句块”称为循环体，整个循环的过程就是不停判断循环条件、并执行循环体代码的过程。&lt;/p&gt;
+&lt;p&gt;用 while 循环计算1加到100的值：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(){&lt;/span&gt;    
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sum&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;    
+    &lt;span class=&#34;k&#34;&gt;while&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;        
+        &lt;span class=&#34;n&#34;&gt;sum&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;        
+        &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;    
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;    
+    &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;    
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;运行结果：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;5050
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;代码分析：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;程序运行到 while 时，因为 i=1，i&amp;lt;=100 成立，所以会执行循环体；执行结束后 i 的值变为 2，sum 的值变为 1。&lt;/li&gt;
+&lt;li&gt;接下来会继续判断 i&amp;lt;=100是否成立，因为此时 i=2，i&amp;lt;=100 成立，所以继续执行循环体；执行结束后 i 的值变为 3，sum 的值变为3。&lt;/li&gt;
+&lt;li&gt;重复执行步骤 2。&lt;/li&gt;
+&lt;li&gt;当循环进行到第100次，i 的值变为 101，sum 的值变为5050；因为此时 i&amp;lt;=100 不再成立，所以就退出循环，不再执行循环体，转而执行while循环后面的代码。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;for循环&#34;&gt;for循环&lt;/h3&gt;
+&lt;p&gt;for 循环的一般形式为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;表达式&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;表达式&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;表达式&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+  &lt;span class=&#34;err&#34;&gt;语句块&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;它的运行过程为：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;先执行“表达式1”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;再执行“表达式2”，如果它的值为真（非0），则执行循环体，否则结束循环。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;执行完循环体后再执行“表达式3”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;重复执行步骤 2) 和 3)，直到“表达式2”的值为假，就结束循环。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;上面的步骤中，2) 和 3) 是一次循环，会重复执行，for 语句的主要作用就是不断执行步骤 2) 和 3)。&lt;/p&gt;
+&lt;h3 id=&#34;两种循环的对比&#34;&gt;两种循环的对比&lt;/h3&gt;
+&lt;p&gt;上面我们使用 while 循环来计算1加到100的值，代码如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(){&lt;/span&gt;    
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sum&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;    
+    &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;//语句①    
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;while&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;100&lt;/span&gt; &lt;span class=&#34;cm&#34;&gt;/*语句②*/&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;        
+        &lt;span class=&#34;n&#34;&gt;sum&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;        
+        &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;//语句③    
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;    
+    &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;    
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;可以看到，语句①②③被放到了不同的地方，代码结构较为松散。&lt;/p&gt;
+&lt;p&gt;为了让程序看起来更为整洁，可以使用for循环来代替，如下所示：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(){&lt;/span&gt;    
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sum&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;    
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;/*语句①*/&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;/*语句②*/&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;/*语句③*/&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;        
+        &lt;span class=&#34;n&#34;&gt;sum&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;    
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;    
+    &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;    
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在 for 循环中，语句①②③被集中到了一起，代码结构一目了然。&lt;/p&gt;
+&lt;p&gt;上面的&lt;code&gt;i&lt;/code&gt;称为循环变量&lt;/p&gt;
+&lt;p&gt;所以当我们不需要循环变量时，常使用while循环&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;无限循环程序&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(){&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;while&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+      &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;hello&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这个程序将会一直运行下去（请勿轻易尝试）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通常的，若指定程序循环做n次相同的任务，也可这样做&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(){&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;scanf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;while&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+      &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;hello&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这将打印对应次数的&lt;code&gt;hello&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;可进行一定的修改，查看n对应的变化，如下：&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 131; flex-basis: 315px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/loop/1.png&#34; data-size=&#34;1914x1458&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/loop/1.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/loop/1_hu3cbe5841338a663ce513b35625d65791_571609_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/loop/1_hu3cbe5841338a663ce513b35625d65791_571609_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1914&#34;
+				height=&#34;1458&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;n--&lt;/code&gt;先判断n是否为0，再进行递减，当n为0时退出循环，以此达到循环n次的功能。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;打印图形&#34;&gt;打印图形&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;大循环控制行数量，每个大循环中的两个小循环分别控制空格和星号的打印&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;打印一个指定大小的平行四边形&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 126; flex-basis: 303px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/loop/2.png&#34; data-size=&#34;1914x1514&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/loop/2.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/loop/2_hue7050b47daf195e6bfc7b96d4254a6be_591880_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/loop/2_hue7050b47daf195e6bfc7b96d4254a6be_591880_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1914&#34;
+				height=&#34;1514&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;空格数等于高(n)-行数(i)-1，星号数等于高(h)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;打印一个指定大小的三角形&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 120; flex-basis: 289px&#34;&gt;
+		&lt;a href=&#34;https://hungyam.gitee.io/code/code/p/loop/3.png&#34; data-size=&#34;1990x1648&#34;&gt;&lt;img src=&#34;https://hungyam.gitee.io/code/code/p/loop/3.png&#34;
+				srcset=&#34;https://hungyam.gitee.io/code/code/p/loop/3_hu1387e3bef213af02fe832e50d72cdfff_635039_480x0_resize_box_2.png 480w, https://hungyam.gitee.io/code/code/p/loop/3_hu1387e3bef213af02fe832e50d72cdfff_635039_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1990&#34;
+				height=&#34;1648&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;空格数等于高(n)-行数(i)-1，星号数等于行数(i)*2+1&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+        <item>
         <title>BasicIO</title>
         <link>https://hungyam.gitee.io/code/p/basicio/</link>
         <pubDate>Wed, 24 Mar 2021 00:00:00 +0000</pubDate>

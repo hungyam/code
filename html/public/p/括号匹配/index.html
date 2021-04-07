@@ -18,7 +18,7 @@
 ​	最后判断栈是否为空，空则匹配。
 #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;string.h&amp;gt;int main() { char a[100]={0}; char stack[100]={0}; scanf(&amp;#34;%s&amp;#34;,a); int len=strlen(a); int k=0; if(a[0]==&amp;#39;{&amp;#39;||a[0]==&amp;#39;}&amp;#39;||a[0]==&amp;#39;[&amp;#39;||a[0]==&amp;#39;]&amp;#39;||a[0]==&amp;#39;(&amp;#39;||a[0]==&amp;#39;)&amp;#39;) { stack[k&#43;&#43;]=a[0]; } for(int i=1;i&amp;lt;len;i&#43;&#43;) { if(a[i]==&amp;#39;{&amp;#39;||a[i]==&amp;#39;[&amp;#39;||a[i]==&amp;#39;(&amp;#39;) stack[k&#43;&#43;]=a[i]; if(a[i]==&amp;#39;}&amp;#39;) { if(stack[k-1]==&amp;#39;{&amp;#39;) stack[--k]=0; else stack[k&#43;&#43;]=a[i]; } if(a[i]==&amp;#39;]&amp;#39;) { if(stack[k-1]==&amp;#39;[&amp;#39;) stack[--k]=0; else stack[k&#43;&#43;]=a[i]; } if(a[i]==&amp;#39;)&amp;#39;) { if(stack[k-1]==&amp;#39;(&amp;#39;) stack[--k]=0; else stack[k&#43;&#43;]=a[i]; } } if(stack[0]==0&amp;amp;&amp;amp;stack[1]==0) printf(&amp;#34;Yes&amp;#34;); else printf(&amp;#34;No&amp;#34;); return 0; } 例如：4&#43;(2&#43;8)*[5/(9-7)]​ 由于栈具有“先进后出”的特点，能很好地表现优先级这个性质，因此可以用栈来存储已经检测到的括号。'>
 <meta property='og:url' content='https://hungyam.gitee.io/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/'>
-<meta property='og:site_name' content='小橘子&#39;s BLOG'>
+<meta property='og:site_name' content='🍊&#39;s BLOG'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2020-12-01T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-12-01T00:00:00&#43;00:00'/><meta property='og:image' content='https://hungyam.gitee.io/code/p/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/3.jpg' />
 <meta name="twitter:title" content="括号匹配">
 <meta name="twitter:description" content="括号匹配 1.直接对相应的左右括号进行记录，左括号加一，右括号减一，一旦计数出现负数则不匹配（因为不能先出现右括号）
@@ -79,7 +79,7 @@
                 
             </figure>
         
-        <h1 class="site-name"><a href="https://hungyam.gitee.io/code">小橘子&#39;s BLOG</a></h1>
+        <h1 class="site-name"><a href="https://hungyam.gitee.io/code">🍊&#39;s BLOG</a></h1>
         <h2 class="site-description">与理想平等交易</h2>
     </header>
 
@@ -500,6 +500,28 @@
                 
                     
 <article class="has-image">
+    <a href="/code/p/loop/">
+        
+        
+            <div class="article-image">
+                <img src="/code/p/loop/4.ff0173154ddcf84cb546fbf3d0790b2e_hu40fdc18304af1214f97f24e32aac122d_12677_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="" 
+                        data-hash="md5-/wFzFU3c&#43;Ey1Rvvz0HkLLg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Loop</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
     <a href="/code/p/basicio/">
         
         
@@ -614,7 +636,7 @@
         
             2020 - 
         
-        2021 小橘子&#39;s BLOG
+        2021 🍊&#39;s BLOG
     </section>
     
     <section class="powerby">
