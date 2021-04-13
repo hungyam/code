@@ -6,7 +6,21 @@
     <description>Recent content in C on 🍊&#39;s BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hungyam.gitee.io/code/categories/c/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hungyam.gitee.io/code/categories/c/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sort</title>
+      <link>https://hungyam.gitee.io/code/p/sort/</link>
+      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hungyam.gitee.io/code/p/sort/</guid>
+      <description>[TOC]
+排序算法：即把一串无序数列，按照从大到小或者从小到大的规则进行排列。
+ 数组：C语言数组可理解为多个连续相同变量的集合。 定义方法如下：  int num[10];	//长度为10的整数数组，即10个int变量的集合 char str[20];	//长度为20的字符数组，同时可以存字符串（长度最大为19） double n[30];	//长度为30的双精度数组，即30个double变量的集合  读与写：   注意C语言习惯从0开始，数组下标（中括号中的数字称为下标）规定以0开始，因此开10个长度的数组，最大只能访问到下标9，如下面使用：
+ int num[10]; num[9]=2;	//accept num[10]=1;	//error，数组越界 printf(&amp;#34;%d&amp;#34;,num[10]); //error  即定义时的num[10]中的10表示的是长度，要与之后的使用相区别，10个长度的数组对应的变量为num[0],num[1],...,num[9]共10个。
+ 下面是几种初始化方法：  int num[10]={1,2,3,4,5,6,7,8,9,10}; //初始化 //num[0]~num[9]分别对应 1～10  int n[10]={0};	//初始化，全为0  char str[20]=&amp;#34;hello!&amp;#34;; //初始化，字符串，一个一个字符赋值 //str[0]~str[6]分别对应 &amp;#39;h&amp;#39;&amp;#39;e&amp;#39;&amp;#39;l&amp;#39;&amp;#39;l&amp;#39;&amp;#39;o&amp;#39;&amp;#39;!&amp;#39;&amp;#39;\0&amp;#39;,最后一个为字符串结束符号 //因此20长度的char数组只能存长度为19的字符串 对数组的读与写：
+int num[10]={1,2,3,4,5,6,7,8,9,10}; char str[20]=&amp;#34;hello!&amp;#34;; //read int b=num[3];	//b=4 printf(&amp;#34;%d %d&amp;#34;,num[9],b); //output: 10 4  //write num[4]=99; str[0]=&amp;#39;H&amp;#39;; printf(&amp;#34;%c %d %s&amp;#34;,str[0],num[4],str);//output: H 99 Hello!</description>
+    </item>
+    
     <item>
       <title>Loop</title>
       <link>https://hungyam.gitee.io/code/p/loop/</link>
