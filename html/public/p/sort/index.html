@@ -416,10 +416,11 @@
   <span class="kt">int</span> <span class="n">n</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
   <span class="k">while</span><span class="p">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d &#34;</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
-    <span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="o">%</span><span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="o">%</span><span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">){</span>
+      <span class="n">n</span><span class="o">++</span><span class="p">;</span>
       <span class="k">continue</span><span class="p">;</span>
+    <span class="p">}</span>
     <span class="n">printf</span><span class="p">(</span><span class="s">&#34;is an even number</span><span class="se">\n</span><span class="s">;&#34;</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
-    <span class="n">n</span><span class="o">++</span><span class="p">;</span>
   <span class="p">}</span>
   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>

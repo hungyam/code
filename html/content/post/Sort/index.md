@@ -216,10 +216,11 @@ int main(){
   int n=0;
   while(n <= 5) {
     printf("%d ",n);
-    if(n%2 != 0)
+    if(n%2 != 0){
+      n++;
       continue;
+    }
     printf("is an even number\n;",n);
-    n++;
   }
   return 0;
 }
