@@ -5,7 +5,7 @@ date: 2021-05-22
 sticky: 999
 subtitle:
 lang: cn
-header-img: /img/header_img/tag_bg.jpg
+header-img: /code/img/header_img/tag_bg.jpg
 tags:
 - C
 categories:

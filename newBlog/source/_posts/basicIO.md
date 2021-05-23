@@ -4,7 +4,7 @@ catalog: true
 date: 2021-03-24
 subtitle: 
 lang: cn
-header-img: /img/header_img/lml_bg.jpg
+header-img: /code/img/header_img/lml_bg.jpg
 tags:
 - C
 categories:

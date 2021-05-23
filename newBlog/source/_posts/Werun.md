@@ -4,7 +4,7 @@ catalog: true
 date: 2020-11-11
 subtitle: 
 lang: cn
-header-img: /img/header_img/lml_bg.jpg
+header-img: /code/img/header_img/lml_bg.jpg
 tags:
 - html
 ---

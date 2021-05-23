@@ -295,19 +295,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/code/img/header_img/404_bg.jpg');
-      --intro-header-background-image-url-post: url('/img/header_img/lml_bg.jpg');
-      --intro-header-background-image-url-page: url('/code//img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-post: url('/code/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: url('/code//code/img/header_img/lml_bg.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/code/img/header_img/404_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg.jpg');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/code//img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/code/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/code//code/img/header_img/lml_bg.jpg');
     }
 
     header.intro-header {
        /*post*/
         background-image: var(--intro-header-background-image-url-post);
-        /* background-image: url('/img/header_img/lml_bg.jpg'); */
+        /* background-image: url('/code/img/header_img/lml_bg.jpg'); */
       
     }
 
@@ -409,16 +409,12 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>循环语句解析与图形打印</h1>
-<h2 id="表达式的值">表达式的值</h2>
-<p>表达式分为两种：</p>
+        <h1 id="循环语句解析与图形打印"><a href="#循环语句解析与图形打印" class="headerlink" title="循环语句解析与图形打印"></a>循环语句解析与图形打印</h1><h2 id="表达式的值"><a href="#表达式的值" class="headerlink" title="表达式的值"></a>表达式的值</h2><p>表达式分为两种：</p>
 <ul>
-<li>
-<p>赋值运算表达式</p>
+<li><p>赋值运算表达式</p>
 <p>使用到<code>=</code> <code>+=</code> <code>-=</code> <code>++</code> <code>--</code>等赋值运算符的式子，例如<code>b=5</code> <code>a++</code>等等，这些表达式都有<strong>值</strong>，他们的值取决于被赋值的变量是否为0，为0则表达式的值为0（假），非0则表达式的值为1（真）。</p>
 </li>
-<li>
-<p>关系运算表达式</p>
+<li><p>关系运算表达式</p>
 <p>使用到<code>&gt;</code> <code>==</code> <code>&lt;=</code>等关系运算符的式子，例如<code>a&lt;=b</code> <code>c==5</code>等等，这些表达式的值取决于表达式是否成立，条件成立则值为1（真），条件不成立则为0（假）。</p>
 </li>
 </ul>
@@ -426,9 +422,7 @@
 <p>可理解为数学中的命题真假性</p>
 </blockquote>
 <p>这里是一些表达式的值：</p>
-<h2 id="循环语句">循环语句</h2>
-<h3 id="while循环">while循环</h3>
-<p>一般形式为：</p>
+<h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><h3 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h3><p>一般形式为：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(表达式)&#123;</span><br><span class="line">  语句块</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>意思是，先计算“表达式”的值，当值为真（非0）时， 执行“语句块”；执行完“语句块”，再次计算表达式的值，如果为真，继续执行“语句块”……这个过程会一直重复，直到表达式的值为假（0），就退出循环，执行 while 后面的代码。</p>
 <p>通常将“表达式”称为循环条件，把“语句块”称为循环体，整个循环的过程就是不停判断循环条件、并执行循环体代码的过程。</p>
@@ -443,27 +437,14 @@
 <li>重复执行步骤 2。</li>
 <li>当循环进行到第100次，i 的值变为 101，sum 的值变为5050；因为此时 i&lt;=100 不再成立，所以就退出循环，不再执行循环体，转而执行while循环后面的代码。</li>
 </ol>
-<h3 id="for循环">for循环</h3>
-<p>for 循环的一般形式为：</p>
+<h3 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h3><p>for 循环的一般形式为：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(表达式<span class="number">1</span>; 表达式<span class="number">2</span>; 表达式<span class="number">3</span>)&#123;</span><br><span class="line">  语句块</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>它的运行过程为：</p>
-<ol>
-<li>
-<p>先执行“表达式1”。</p>
-</li>
-<li>
-<p>再执行“表达式2”，如果它的值为真（非0），则执行循环体，否则结束循环。</p>
-</li>
-<li>
-<p>执行完循环体后再执行“表达式3”。</p>
-</li>
-<li>
-<p>重复执行步骤 2) 和 3)，直到“表达式2”的值为假，就结束循环。</p>
-</li>
-</ol>
+<p>它的运行过程为：<br>1) 先执行“表达式1”。</p>
+<p>2) 再执行“表达式2”，如果它的值为真（非0），则执行循环体，否则结束循环。</p>
+<p>3) 执行完循环体后再执行“表达式3”。</p>
+<p>4) 重复执行步骤 2) 和 3)，直到“表达式2”的值为假，就结束循环。</p>
 <p>上面的步骤中，2) 和 3) 是一次循环，会重复执行，for 语句的主要作用就是不断执行步骤 2) 和 3)。</p>
-<h3 id="两种循环的对比">两种循环的对比</h3>
-<p>上面我们使用 while 循环来计算1加到100的值，代码如下：</p>
+<h3 id="两种循环的对比"><a href="#两种循环的对比" class="headerlink" title="两种循环的对比"></a>两种循环的对比</h3><p>上面我们使用 while 循环来计算1加到100的值，代码如下：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;    </span><br><span class="line">    <span class="keyword">int</span> i, sum=<span class="number">0</span>;    </span><br><span class="line">    i = <span class="number">1</span>;  <span class="comment">//语句①    </span></span><br><span class="line">    <span class="keyword">while</span>(i&lt;=<span class="number">100</span> <span class="comment">/*语句②*/</span> )&#123;        </span><br><span class="line">        sum+=i;        </span><br><span class="line">        i++;  <span class="comment">//语句③    </span></span><br><span class="line">    &#125;    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,sum);    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>可以看到，语句①②③被放到了不同的地方，代码结构较为松散。</p>
 <p>为了让程序看起来更为整洁，可以使用for循环来代替，如下所示：</p>
@@ -472,13 +453,11 @@
 <p>上面的<code>i</code>称为循环变量</p>
 <p>所以当我们不需要循环变量时，常使用while循环</p>
 <ul>
-<li>
-<p>无限循环程序</p>
+<li><p>无限循环程序</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">    	<span class="built_in">printf</span>(<span class="string">&quot;hello\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这个程序将会一直运行下去（请勿轻易尝试）</p>
 </li>
-<li>
-<p>通常的，若指定程序循环做n次相同的任务，也可这样做</p>
+<li><p>通常的，若指定程序循环做n次相同的任务，也可这样做</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    <span class="keyword">while</span>(n--)&#123;</span><br><span class="line">    	<span class="built_in">printf</span>(<span class="string">&quot;hello\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这将打印对应次数的<code>hello</code></p>
 <p>可进行一定的修改，查看n对应的变化，如下：</p>
@@ -486,9 +465,8 @@
 <p><code>n--</code>先判断n是否为0，再进行递减，当n为0时退出循环，以此达到循环n次的功能。</p>
 </li>
 </ul>
-<h2 id="打印图形">打印图形</h2>
-<blockquote>
-<p>大循环控制行数量，每个大循环中的两个小循环分别控制空格和星号的打印</p>
+<h2 id="打印图形"><a href="#打印图形" class="headerlink" title="打印图形"></a>打印图形</h2><blockquote>
+<p> 大循环控制行数量，每个大循环中的两个小循环分别控制空格和星号的打印</p>
 </blockquote>
 <ul>
 <li>打印一个指定大小的平行四边形</li>
@@ -563,7 +541,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">循环语句解析与图形打印</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E5%80%BC"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">表达式的值</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">循环语句</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#while%E5%BE%AA%E7%8E%AF"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">while循环</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#for%E5%BE%AA%E7%8E%AF"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">for循环</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%A4%E7%A7%8D%E5%BE%AA%E7%8E%AF%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">两种循环的对比</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%89%93%E5%8D%B0%E5%9B%BE%E5%BD%A2"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">打印图形</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5%E8%A7%A3%E6%9E%90%E4%B8%8E%E5%9B%BE%E5%BD%A2%E6%89%93%E5%8D%B0"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">循环语句解析与图形打印</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E5%80%BC"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">表达式的值</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">循环语句</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#while%E5%BE%AA%E7%8E%AF"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">while循环</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#for%E5%BE%AA%E7%8E%AF"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">for循环</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%A4%E7%A7%8D%E5%BE%AA%E7%8E%AF%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">两种循环的对比</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%89%93%E5%8D%B0%E5%9B%BE%E5%BD%A2"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">打印图形</span></a></li></ol></li></ol>
         
         </div>
       </aside>

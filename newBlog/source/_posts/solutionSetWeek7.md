@@ -4,7 +4,7 @@ catalog: true
 date: 2021-05-01
 subtitle:
 lang: cn
-header-img: /img/header_img/tag_bg.jpg
+header-img: /code/img/header_img/tag_bg.jpg
 tags:
 - C
 categories:

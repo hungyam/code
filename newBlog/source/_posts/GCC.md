@@ -4,7 +4,7 @@ catalog: true
 date: 2021-01-23
 subtitle: 
 lang: cn
-header-img: /img/header_img/lml_bg.jpg
+header-img: /code/img/header_img/lml_bg.jpg
 tags:
 - 工具使用
 categories:
