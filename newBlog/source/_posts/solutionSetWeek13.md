@@ -2,7 +2,6 @@
 title: solutionSetWeek13
 catalog: true
 date: 2021-05-22
-sticky: 999
 subtitle:
 lang: cn
 header-img: /code/img/header_img/tag_bg.jpg
@@ -243,17 +242,18 @@ int main(){
 #include <stdio.h>
 
 int main() {
-    int n;		//质数个数
-    int num[10000] = {2};	//存质数，把首位初始化为2（第一个质数）
+    int n;		//需要打印的质数个数
+    int num[10000] = {0};	//存质数
     int flag;		//标记该数是否为质数
-    int count;	//记录当前质数个数
-    int i;			//循环数字
+    int count;	//记录当前存进数组的质数个数，同时它也为数组空位置的下标
+    int i;			//循环数字，用来判断其是否为质数
     scanf("%d",&n);
-    for (i = 3, count = 1; count < n; i++) {
-        flag = 1;
-        for (int j = 0; j < count && num[j]*num[j] <= i; j++) {	
-          //判断该数是否被比他小的质数所整除且只需要搜索到sqrt(i)
-          //若被整除，则该数不为质数，标记置为0，同时结束判断
+    for (i = 2, count = 0; count < n; i++) {
+        flag = 1;				//先假设它为质数
+        for (int j = 0; j < count && num[j]*num[j] <= i; j++) {	//数组的搜索
+          //判断该数是否被比他小的质数所整除且只需要搜索到他的算术平方根sqrt(i)
+          //这里用 num[j]*num[j] <= i 代替 num[j] <= sqrt(i)
+          //若被整除，则该数不为质数，标记置为0，同时结束循环，不再往下判断
             if (i%num[j] == 0) {
                 flag = 0;	
                 break;
