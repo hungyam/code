@@ -472,6 +472,41 @@ Code
   <!-- top end -->
   
 
+  <a href="/code/cn/Peterson/">
+    <h2 class="post-title">
+      Peterson算法的简单分析
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      Peterson算法的简单分析最近操作系统学到进程同步，介绍了Peterson算法。
+第一种（谦让式）上课教材《操作系统概念》第七版（翻译版）和百度百科，还有查到的绝大部分的资料中，都是下面这种方法实现的。下面代码是教材中摘的(P169)。
+123456789/*进程Pi的结构*/do&#123;	flag[i] = TRUE;	turn = j;	while(flag[j] &amp;&a......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Hungyam on
+    2021-05-22
+  </p>
+  <div class="tags">
+    
+    <a href="/code/tags/#C" title="C">C</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
   <a href="/code/cn/solutionSetWeek12/">
     <h2 class="post-title">
       solutionSetWeek12
@@ -720,49 +755,6 @@ solution主要考对ascii码的认识，大写字母的ascii分别为A～Z对应
 </div>
 <hr>
 
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/code/cn/basicIO/">
-    <h2 class="post-title">
-      输入缓冲区解读
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      输入缓冲区与scanf( )的详细解读输入缓冲区C语言中我们用到的最频繁的输入输出方式就是scanf()与printf()。
-
-scanf()： 从标准输入设备(键盘)读取数据，并将值存放在变量中。
-
-printf()： 将指定的文字/字符串输出到标准输出设备(屏幕)。
-
-
-但从键盘读入数据到程序变量之间还有一个东西起着至关重要的作用———缓冲区（如下图）
-
-但缓冲区具体如何工作的呢？
-当我......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Hungyam on
-    2021-03-24
-  </p>
-  <div class="tags">
-    
-    <a href="/code/tags/#C" title="C">C</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
   <!-- Pager -->
   <ul class="pager">
@@ -795,7 +787,7 @@ printf()： 将指定的文字/字符串输出到标准输出设备(屏幕)。
   <div class="tags">
     
     
-    <a href="/code/tags/#C" title="C" rel="13">C</a>
+    <a href="/code/tags/#C" title="C" rel="14">C</a>
     
     
     
@@ -891,16 +883,16 @@ printf()： 将指定的文字/字符串输出到标准输出设备(屏幕)。
       <li>solutionSetWeek13</li>
     </a>
     
+    <a href="Peterson/">
+      <li>Peterson算法的简单分析</li>
+    </a>
+    
     <a href="solutionSetWeek12/">
       <li>solutionSetWeek12</li>
     </a>
     
     <a href="solutionSetWeek11/">
       <li>solutionSetWeek11</li>
-    </a>
-    
-    <a href="solutionSetWeek9/">
-      <li>solutionSetWeek9</li>
     </a>
     
   </ul>
@@ -925,7 +917,7 @@ printf()： 将指定的文字/字符串输出到标准输出设备(屏幕)。
 
 <h5><a href="/code/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archives/2021/05/">May 2021</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2021/03/">March 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/11/">November 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/10/">October 2020</a><span class="archive-list-count">3</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archives/2021/05/">May 2021</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2021/03/">March 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/11/">November 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/10/">October 2020</a><span class="archive-list-count">3</span></li></ul>
 </div>
 
 
@@ -959,6 +951,10 @@ printf()： 将指定的文字/字符串输出到标准输出设备(屏幕)。
     
     <a href="/code/categories/#题解">
       <li>题解</li>
+    </a>
+    
+    <a href="/code/categories/#操作系统">
+      <li>操作系统</li>
     </a>
     
   </ul>
