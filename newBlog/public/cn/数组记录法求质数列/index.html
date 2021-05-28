@@ -347,7 +347,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">555</span> In Total
+              Words <span class="post-count">554</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -409,24 +409,21 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2 id="6-6题目描述">6.6题目描述</h2>
-<p>A more efficient approach to determine whether n is prime is to check whether any of the prime numbers less than or equal sqrt(n) can divide n evenly. If not, n is prime. Rewrite 4.11 to display the first fifty prime numbers using this approach. You need to use an array to store the prime numbers and later use them to check whether they are possible divisors for n</p>
+        <h2 id="6-6题目描述"><a href="#6-6题目描述" class="headerlink" title="6.6题目描述"></a>6.6题目描述</h2><p>A more efficient approach to determine whether n is prime is to check whether any of the prime numbers less than or equal sqrt(n) can divide n evenly. If not, n is prime. Rewrite 4.11 to display the first fifty prime numbers using this approach. You need to use an array to store the prime numbers and later use them to check whether they are possible divisors for n</p>
 <p>简单地讲就是每次把得到的质数存进数组，当判断一个新的数是否为质数时，那这个新的数来一一除以之前得到的质数，看是否被整除，不被整除则为质数存进数组，同时作为下一次判断新数的条件。</p>
 <p>比如判断31时，比它小的质数有<code>2 3 5 7 11 13 17 19 23 27 29</code> (在num数组里)，但只搜索小于等于sqrt(31)的部分<code>2 3 5</code>，均不被整除，因此31为质数，存进数组</p>
-<p>再往下判断32，比它小的质数有<code>2 3 5 7 11 13 17 19 23 27 29 31</code> (在num数组里)… 以此类推</p>
+<p>再往下判断32，比它小的质数有<code>2 3 5 7 11 13 17 19 23 27 29 31</code> (在num数组里)…… 以此类推</p>
 <ul>
-<li>
-<p>参考代码</p>
+<li><p>参考代码</p>
   <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;		<span class="comment">//需要打印的质数个数</span></span><br><span class="line">    <span class="keyword">int</span> num[<span class="number">10000</span>] = &#123;<span class="number">0</span>&#125;;	<span class="comment">//存质数</span></span><br><span class="line">    <span class="keyword">int</span> flag;		<span class="comment">//标记该数是否为质数</span></span><br><span class="line">    <span class="keyword">int</span> count;	<span class="comment">//记录当前存进数组的质数个数，同时它也为数组空位置的下标</span></span><br><span class="line">    <span class="keyword">int</span> i;			<span class="comment">//循环数字，用来判断其是否为质数</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">2</span>, count = <span class="number">0</span>; count &lt; n; i++) &#123;</span><br><span class="line">        flag = <span class="number">1</span>;				<span class="comment">//先假设它为质数</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; count &amp;&amp; num[j]*num[j] &lt;= i; j++) &#123;	<span class="comment">//数组的搜索</span></span><br><span class="line">          <span class="comment">//判断该数是否被比他小的质数所整除且只需要搜索到他的算术平方根sqrt(i)</span></span><br><span class="line">          <span class="comment">//这里用 num[j]*num[j] &lt;= i 代替 num[j] &lt;= sqrt(i)</span></span><br><span class="line">          <span class="comment">//若被整除，则该数不为质数，标记置为0，同时结束循环，不再往下判断</span></span><br><span class="line">            <span class="keyword">if</span> (i%num[j] == <span class="number">0</span>) &#123;</span><br><span class="line">                flag = <span class="number">0</span>;	</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (flag) &#123;		<span class="comment">//为质数则存进数组</span></span><br><span class="line">            num[count] = i;</span><br><span class="line">            count++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; count<span class="number">-1</span>; i++) &#123;		<span class="comment">//打印储存的质数</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,num[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,num[count<span class="number">-1</span>]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>
-<p>执行的图解</p>
-<p>循环第一次时 <code>i = 2</code>:</p>
-<p><img src="1.png" alt=""></p>
-<p>循环第二次时<code>i = 3</code>:</p>
-<p><img src="2.png" alt=""></p>
-<p>循环第三次时<code>i = 4</code>:</p>
-<p><img src="3.png" alt=""></p>
+<li><p>执行的图解</p>
+<p>  循环第一次时 <code>i = 2</code>:</p>
+<p>  <img src="1.png" alt=""></p>
+<p>  循环第二次时<code>i = 3</code>:</p>
+<p>  <img src="2.png" alt=""></p>
+<p>  循环第三次时<code>i = 4</code>:</p>
+<p>  <img src="3.png" alt=""></p>
 </li>
 </ul>
 </li>
@@ -438,7 +435,7 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/code/cn/solutionSetWeek14/" data-toggle="tooltip" data-placement="top" title="solutionSetWeek13">&larr; Previous Post</a>
+            <a href="/code/cn/solutionSetWeek14/" data-toggle="tooltip" data-placement="top" title="solutionSetWeek14">&larr; Previous Post</a>
           </li>
           
           
