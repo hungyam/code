@@ -466,11 +466,11 @@ int binarySearch(int array[], int key, int size)
 
 For example, 
 
-```array[] = {9, 7, 5}```
-
-```binarySerach(array, 9, 3)``` returns ```0```,
-
-```binarySerach(array, 0, 3)``` returns ```-1```,
+```c
+array[] = {9, 7, 5}
+binarySerach(array, 9, 3)  returns 0,
+binarySerach(array, 0, 3)``` returns -1,
+```
 
 ### solution
 
